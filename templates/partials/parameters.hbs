@@ -1,0 +1,24 @@
+{{#if parameters}}
+    <h4>Parameters</h4>
+
+    <table class="table">
+        <thead>
+            <th class="sw_code">Name</th>
+            <th class="sw_desc">Description</th>
+            <th class="sw_param_type">Parameter Type</th>
+            <th class="sw_data_type">Data Type</th>
+        </thead>
+        <tbody>
+    {{#each parameters}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{md description}}</td>
+            <td>{{in}}</td>
+            <td>{{datatype type}}{{json schema}}</td>
+        </tr>
+    {{/each}}
+        </tbody>
+    </table>
+
+
+{{/if}}

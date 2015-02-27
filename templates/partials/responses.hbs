@@ -1,0 +1,25 @@
+{{#if responses}}
+    <h4>Responses</h4>
+
+    <p>{{#each produces}}<span class="label label-default">{{.}}</span> {{/each}}</p>
+
+
+
+    <table class="table">
+        <thead>
+        <th class="sw_code">HTTP Status Code</th>
+        <th class="sw_desc">Reason</th>
+        <th class="sw_data_type">Response Model</th>
+        </thead>
+        <tbody>
+        {{#each responses}}
+            <tr>
+                <td>{{@key}}</td>
+                <td>{{md description}}</td>
+                <td>{{json schema}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+
+{{/if}}

@@ -1,0 +1,33 @@
+{
+  "name": "swagger-to-html",
+  "version": "0.0.1",
+  "description": "Converts a swagger-definition into a static html page",
+  "main": "index.js",
+  "bin": {
+    "swagger-to-html": "bin/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nknapp/swagger-to-html.git"
+  },
+  "author": "Nils Knappmeier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nknapp/swagger-to-html/issues"
+  },
+  "homepage": "https://github.com/nknapp/swagger-to-html",
+  "dependencies": {
+    "atom-light-syntax": "git://github.com/atom/atom-light-syntax#v0.27.0",
+    "bootstrap": "^3.3.2",
+    "commander": "^2.6.0",
+    "handlebars": "^3.0.0",
+    "json-stable-stringify": "^1.0.0",
+    "less": "^2.4.0",
+    "lodash": "^3.3.1",
+    "map-values": "^1.0.1",
+    "marky-markdown": "^5.0.2",
+    "q": "^1.2.0",
+    "q-deep": "^1.0.0",
+    "q-io": "^1.11.6"
+  }
+}
