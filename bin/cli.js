@@ -5,10 +5,11 @@
 var program = require('commander');
 var qfs = require("q-io/fs");
 var Q = require("q");
-var Converter = require("../");
+var Converter = require("../src/index.js");
 
 program.version(require("../package").version)
     .usage("[options] <swaggerfile> <targetdir>")
+    .description("Convert a swagger-definition file into a static html-page.")
     .option('-f, --config-file <file>', 'Specify a config file for custom configurations')
     .option('-C, --no-css', 'Omit css generation')
     .parse(process.argv);

@@ -38,13 +38,13 @@ module.exports = {
         var $ = marky("```json\n" + schemaString + "\n```");
         var definitions = $('span:not(:has(span)):contains("#/definitions/")');
         definitions.each(function(index,item) {
-            var ref = $(item).html()
+            var ref = $(item).html();
             // TODO: This should be done in a template
             $(item).html("<a href="+ref+">"+ref+"</a>");
-        })
+        });
 
         return new Handlebars.SafeString($("pre").html());
     }
-}
+};
 
 

@@ -2,10 +2,14 @@
   "name": "swagger-to-html",
   "version": "0.0.1",
   "description": "Converts a swagger-definition into a static html page",
-  "main": "index.js",
+  "main": "src/index.js",
   "bin": {
     "swagger-to-html": "bin/cli.js"
   },
+  "scripts": {
+    "test":  "bin/cli.js example/petstore.json target/"
+  },
+  "preferGlobal": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/nknapp/swagger-to-html.git"
@@ -24,7 +28,6 @@
     "json-stable-stringify": "^1.0.0",
     "less": "^2.4.0",
     "lodash": "^3.3.1",
-    "map-values": "^1.0.1",
     "marky-markdown": "^5.0.2",
     "q": "^1.2.0",
     "q-deep": "^1.0.0",
