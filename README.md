@@ -142,7 +142,7 @@ helpers can be provided and existing helpers can be overridden. The following he
 
 This option can contain the path to an additional lesscss-file that contains theme-adaptions.
 You can use it (for example) to specify different color schemes for the css. Take a look at
-http://getbootstrap.com/css/#less to see what can be changed in the bootstrap-theme.
+[the bootstrap documention](http://getbootstrap.com/css/#less) to see what can be changed in the bootstrap-theme.
 
 The less-file provided here, is imported after all other less-files in use, so you should be able
 to override all properties in here.
