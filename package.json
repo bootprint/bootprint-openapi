@@ -1,6 +1,6 @@
 {
   "name": "swagger-to-html",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Converts a swagger-definition into a static html page",
   "main": "src/index.js",
   "bin": {
