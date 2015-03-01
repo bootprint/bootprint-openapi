@@ -1,13 +1,13 @@
 {
   "name": "swagger-to-html",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Converts a swagger-definition into a static html page",
   "main": "src/index.js",
   "bin": {
     "swagger-to-html": "bin/cli.js"
   },
   "scripts": {
-    "test":  "bin/cli.js example/petstore.json target/"
+    "test": "bin/cli.js example/petstore.json target/"
   },
   "preferGlobal": true,
   "repository": {
