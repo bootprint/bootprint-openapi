@@ -94,7 +94,7 @@ The configuration object can contain the following options:
 {
   "partials": {
       "htmlBody": "path/to/partial.hbs",
-      "parameters: "...",
+      "parameters": "...",
       "...": "..."
   },
   "template": "path/to/the/main/template.hbs",
