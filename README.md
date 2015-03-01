@@ -156,11 +156,6 @@ to override all properties in here.
 * **templates** contains the default Handlebars-template and partials
 * **target** is the directory that is created when you run `npm test`
 
-#### styles
-
-This directory contains included less-stylesheets
-
-
 ## TODOs
 
 I think that the following things are needed for this module to be finished (i.e. Version 1.0).
