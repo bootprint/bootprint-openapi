@@ -69,7 +69,7 @@ the css.
 
 ```js
 // 'require' the module
-var Swagger2Html = require('swagger-to-html");
+var Swagger2Html = require('swagger-to-html');
 
 // instantiate the converter class passing an 'options'-javascript-object.
 var converter = new Swagger2Html({ /* options */ });
