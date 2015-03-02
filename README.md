@@ -104,7 +104,10 @@ The configuration object can contain the following options:
       }
       // '...'
   }
-  "theme": "path/to/a/less-file.less"
+  "less": {
+      paths: [ "path/to/an/include-directory/" ],
+      main: [ "path/to/a/less-file.less" ]
+  }
 }
 ```
 
@@ -138,9 +141,14 @@ helpers can be provided and existing helpers can be overridden. The following he
   `$ref`-tags pointing to `#/definitions/...` are changed into links to the particular definition.
 
 
-### theme
+### less.paths
 
-This option can contain the path to an additional lesscss-file that contains theme-adaptions.
+This option is a list of additional lesscss include-paths. Use this option, if your main lesscss-file needs
+to @import files from some directories.
+
+### less.main
+
+This option is an array of additional lesscss-files that can contain theme-adaptions.
 You can use it (for example) to specify different color schemes for the css. Take a look at
 [the bootstrap documention](http://getbootstrap.com/css/#less) to see what can be changed in the bootstrap-theme.
 
@@ -160,7 +168,6 @@ to override all properties in here.
 
 I think that the following things are needed for this module to be finished (i.e. Version 1.0).
 
-* Define custom css classes for method-headers (GET, POST, PUT, ...)
 * Provide a more complex example with custom configuration file
 * The Handlebars template is not complete yet. Missing parts:
   * Request-Content-Type
@@ -176,5 +183,22 @@ I think that the following things are needed for this module to be finished (i.e
   for printing.
 * Development mode with file-system-watcher and css-source-maps and production version with inlined css
 * Option to run WeasyPrint to generate a PDF.
+
+
+## Changelog
+
+#### 0.1.0, 2.3.2015
+
+* Refactoring: More main template divided into more partials
+* Changing config-options for lesscss
+* Define custom css classes for method-headers (GET, POST, PUT, ...)
+
+#### 0.0.2 - 0.0.5, 1.3.0215
+
+* Changes in README
+
+#### 0.0.1, 1.3.2015
+
+* Initial version
 
 

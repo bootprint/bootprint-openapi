@@ -7,7 +7,7 @@ var _ = require("lodash");
  * @returns {*}
  */
 function generatePartialsObj() {
-    var partialDir = path.resolve(__dirname, "..","templates", "partials");
+    var partialDir = path.resolve(__dirname, "..", "templates", "partials");
     var partials = fs.readdirSync(partialDir);
 
     // Create a structure { name, contents } for each partial in the partialdir
@@ -26,7 +26,16 @@ module.exports = {
     partials: generatePartialsObj(),
     template: require.resolve("../templates/page.hbs"),
     helpers: require("./handlebars-helper.js"),
-    theme: undefined
+    less: {
+        main_files: [
+            require.resolve("bootstrap/less/bootstrap.less"),
+            require.resolve("atom-light-syntax/index.less"),
+            require.resolve("../styles/base-theme.less")
+        ],
+        paths: [
+            path.resolve(__dirname, "..", "node_modules", "bootstrap", "less"),
+            path.resolve(__dirname, "..", "node_modules", "atom-light-syntax", "styles")
+        ]
+    }
 };
-
 

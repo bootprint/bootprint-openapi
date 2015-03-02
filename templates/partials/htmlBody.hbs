@@ -2,28 +2,13 @@
 
 <p>{{{info.description}}}</p>
 
-
 <h2>Paths</h2>
 
+
 {{#each paths as | pathDef path |}}
-{{#each . as | methodDef method |}}
-
-<div class="panel panel-{{methodClass method}}">
-  <div class="panel-heading">
-    <div class="pull-right">{{md summary "true"}}</div>
-    <h3 class="panel-title"><strong>{{toUpperCase method}} {{path}}</strong></h3>
-  </div>
-  <div class="panel-body">
-      {{md description}}
-      {{>parameters}}
-      {{>responses}}
-  </div>
-</div>
-
-
-
+    {{>path pathDef=pathDef path=path}}
 {{/each}}
-{{/each}}
+
 
 <h2>Definitions</h2>
 

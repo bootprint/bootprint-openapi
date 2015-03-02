@@ -5,15 +5,13 @@ var path = require("path");
 var less = require("less");
 var _ = require("lodash");
 var deep = require("q-deep");
+var debug = require("debug")("s2h");
 
-var baseLessFiles = [require.resolve("bootstrap/less/bootstrap.less"),
-    require.resolve("atom-light-syntax/index.less"),
-    require.resolve("../styles/baseTheme.less")];
 
 function Converter(userOptions) {
     var HtmlHandlebars = Handlebars.create();
     var ready = Q.defer();
-    var options = _.merge(require("./defaultConfig.js"), userOptions);
+    var options = mergeOptions(userOptions);
 
     // Resolve partial-filenames to their contents
     deep(_.mapValues(options.partials, function (file) {
@@ -31,12 +29,16 @@ function Converter(userOptions) {
      * @returns {*}
      */
     this.generateHtml = function (swaggerJson, targetDir) {
+        debug("Generating HTML from %s",options.template);
         var pageTemplateProm = qfs.read(options.template);
+
         var targetDirProm = qfs.makeTree(targetDir);
         // When all is ready, do the work
         return Q.all([pageTemplateProm, targetDirProm, ready.promise]).spread(function (pageTemplateContents) {
+            debug("...compiling pageTemplate");
             var pageTemplate = HtmlHandlebars.compile(pageTemplateContents);
             var targetFile = path.join(targetDir, "index.html");
+            debug("...calling pageTemplate");
             var content = pageTemplate({
                 body: swaggerJson
             });
@@ -53,23 +55,15 @@ function Converter(userOptions) {
      * @returns {*}
      */
     this.generateCss = function (targetDir) {
+        debug("Generating CSS");
         var targetDirProm = qfs.makeTree(targetDir);
         return Q.all([targetDirProm, ready.promise]).then(function () {
-            var lessFiles = baseLessFiles.slice(); //Copy
-            if (options.theme) {
-                lessFiles.push(options.theme);
-            }
-
-            var lessSource = lessFiles.map(function (file) {
+            var lessSource = options.less.main_files.map(function (file) {
                 return '@import "' + file + '";'
             }).join("\n");
             return less.render(lessSource, {
                 // sourceMap: {},
-                paths: [
-                    // Import paths
-                    path.resolve(__dirname, "..", "node_modules", "bootstrap", "less"),
-                    path.resolve(__dirname, "..", "node_modules", "atom-light-syntax", "styles")
-                ],
+                paths: options.less.paths,
                 filename: "main.less", // Specify a filename, for better error messages
                 compress: true
             });
@@ -77,7 +71,6 @@ function Converter(userOptions) {
         }).then(function (lessResult) {
             return Q.all([
                 qfs.write(path.join(targetDir, "main.css"), lessResult.css)
-                // ,qfs.write(path.join(targetDir, "main.css.map"), lessResult.map)
             ]);
         });
     };
@@ -87,4 +80,15 @@ function Converter(userOptions) {
 module.exports = function createConverter(options) {
     return new Converter(options);
 };
+
+function mergeOptions(listOfOptions) {
+    // Prepare arguments for "apply". First arg must be an empty object to prevent reuse of the default-config.js
+    var args = _.flatten([{}, require("./default-config.js") ,listOfOptions, function(a, b) {
+        if (_.isArray(a)) {
+            return a.concat(b);
+        }
+    }]);
+    debug(args);
+    return _.merge.apply(this,args);
+}
 

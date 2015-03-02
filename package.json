@@ -7,7 +7,7 @@
     "swagger-to-html": "bin/cli.js"
   },
   "scripts": {
-    "test": "bin/cli.js example/petstore.json target/"
+    "test": "DEBUG=s2h bin/cli.js example/petstore.json target/"
   },
   "preferGlobal": true,
   "repository": {
@@ -24,6 +24,7 @@
     "atom-light-syntax": "git://github.com/atom/atom-light-syntax#v0.27.0",
     "bootstrap": "^3.3.2",
     "commander": "^2.6.0",
+    "debug": "^2.1.2",
     "handlebars": "^3.0.0",
     "json-stable-stringify": "^1.0.0",
     "less": "^2.4.0",
