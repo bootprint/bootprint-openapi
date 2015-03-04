@@ -122,6 +122,8 @@ This option contains an object of partial-definitions that a registered with Han
 By default, one entry is generated for each partial that is included in the module's partial directory:
 
 * `htmlBody`: This partial renders the whole html-body contents
+* `path`: This partial renders a single path definition
+* `method`: This partial renders a single method definition
 * `parameters`: This partial renders the request-parameters of a single request (path-method)
 * `responses`: This partial renders the response definitions of a request.
 * `definitions`: This partial renders the `definitions` part of the swagger-json.

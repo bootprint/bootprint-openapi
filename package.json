@@ -7,7 +7,7 @@
     "swagger-to-html": "bin/cli.js"
   },
   "scripts": {
-    "test": "DEBUG=s2h bin/cli.js example/petstore.json target/"
+    "test": "DEBUG=bootprint bin/cli-debug.js example/petstore.json target/"
   },
   "preferGlobal": true,
   "repository": {
@@ -33,5 +33,10 @@
     "q": "^1.2.0",
     "q-deep": "^1.0.0",
     "q-io": "^1.11.6"
+  },
+  "devDependencies": {
+    "clarify": "^1.0.5",
+    "nodeunit": "^0.9.1",
+    "trace": "^1.1.0"
   }
 }

@@ -1,25 +1,24 @@
 #!/usr/bin/env node
 
-//require('njstrace').inject();
-
 var program = require('commander');
 var qfs = require("q-io/fs");
 var Q = require("q");
-var Converter = require("../src/index.js");
+var debug = require("debug")("bootprint");
 
+debug("Loading 'commander'");
 program.version(require("../package").version)
     .usage("[options] <swaggerfile> <targetdir>")
     .description("Convert a swagger-definition file into a static html-page.")
     .option('-f, --config-file <file>', 'Specify a config file for custom configurations')
     .option('-C, --no-css', 'Omit css generation')
+    .option('-d, --development-mode', 'Turn on file-watcher, less source maps and http-server with live-reload')
     .parse(process.argv);
+debug("done");
 
 
 if (program.args.length<2) {
     program.help();
 }
-
-
 
 
 
@@ -30,18 +29,22 @@ var config = {};
 if (configFile) {
     config = require(path.resolve(configFile));
 }
+debug("loading swagger-to-html");
+var bootprint = require("../src/swagger-to-html.js");
+debug("swagger-to-html loaded");
 
-var converter = new Converter(config);
+
 
 qfs.read(swaggerFile).then(function(swaggerJson) {
-    var cssReady;
-    if (program.css) {
-        cssReady = converter.generateCss(targetDir);
-    } else {
-        cssReady = Q();
-    }
+    var converter = bootprint(config);
+    var cssReady = program['css'] ? converter.generateCss(targetDir) : Q();
     var htmlReady = converter.generateHtml(JSON.parse(swaggerJson),targetDir);
+    if (program["developmentMode"]) {
+        converter.watch();
+    }
     return Q.all([cssReady,htmlReady]);
 }).done(function() {
     console.log("done");
+    console.log(program);
 });
+

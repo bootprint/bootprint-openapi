@@ -5,22 +5,13 @@ var path = require("path");
 var less = require("less");
 var _ = require("lodash");
 var deep = require("q-deep");
-var debug = require("debug")("s2h");
+var debug = require("debug")("bootprint");
+var loadPartials = require("./read-partials.js");
+
+function Converter(options) {
 
 
-function Converter(userOptions) {
-    var HtmlHandlebars = Handlebars.create();
-    var ready = Q.defer();
-    var options = mergeOptions(userOptions);
 
-    // Resolve partial-filenames to their contents
-    deep(_.mapValues(options.partials, function (file) {
-        return qfs.read(file);
-    })).done(function (partials) {
-        HtmlHandlebars.registerPartial(partials);
-        HtmlHandlebars.registerHelper(options.helpers);
-        ready.resolve(true);
-    });
 
     /**
      * Generate html-output and store the result into the index.html-file in the specified target directory
@@ -30,18 +21,31 @@ function Converter(userOptions) {
      */
     this.generateHtml = function (swaggerJson, targetDir) {
         debug("Generating HTML from %s",options.template);
-        var pageTemplateProm = qfs.read(options.template);
+        var pageTemplateP = qfs.read(options.template);
+        var targetDirP = qfs.makeTree(targetDir);
+        var handleBarsP = loadPartials(options.partials).then(function(partials) {
+            debug("Partials loaded");
+            var hbs = Handlebars.create();
+            hbs.logger.level = 0;
+            hbs.registerHelper(options.helpers);
+            hbs.registerPartial(partials);
+            debug("Partials registered");
+            return hbs
+        });
 
-        var targetDirProm = qfs.makeTree(targetDir);
+
         // When all is ready, do the work
-        return Q.all([pageTemplateProm, targetDirProm, ready.promise]).spread(function (pageTemplateContents) {
-            debug("...compiling pageTemplate");
-            var pageTemplate = HtmlHandlebars.compile(pageTemplateContents);
+        return Q.all([pageTemplateP, handleBarsP, targetDirP ]).spread(function (pageTemplateContents, HtmlHandlebars) {
+            debug("compiling pageTemplate");
+            var pageTemplate = HtmlHandlebars.compile(pageTemplateContents, {
+                trackIds: true
+            });
             var targetFile = path.join(targetDir, "index.html");
             debug("...calling pageTemplate");
             var content = pageTemplate({
                 body: swaggerJson
             });
+            debug("html created");
             qfs.write(targetFile, content);
         }).catch(function (error) {
             console.log(error);
@@ -57,7 +61,7 @@ function Converter(userOptions) {
     this.generateCss = function (targetDir) {
         debug("Generating CSS");
         var targetDirProm = qfs.makeTree(targetDir);
-        return Q.all([targetDirProm, ready.promise]).then(function () {
+        return Q.all([targetDirProm]).then(function () {
             var lessSource = options.less.main_files.map(function (file) {
                 return '@import "' + file + '";'
             }).join("\n");
@@ -75,20 +79,21 @@ function Converter(userOptions) {
         });
     };
 
+
+    /**
+     * Watch for file changes and perform appropriate build steps
+     */
+    this.watch = function () {
+        var chokidar = require("chokidar");
+
+        var partialFiles =_(options.partials).values().flatten().value();
+        debug("Partial-files to watch: %o",partialFiles);
+        var templateWatcher = chokidar.watch(partialFiles);
+        templateWatcher.on("chnange",console.log)
+
+    }
 }
 
-module.exports = function createConverter(options) {
-    return new Converter(options);
-};
+module.exports = Converter;
 
-function mergeOptions(listOfOptions) {
-    // Prepare arguments for "apply". First arg must be an empty object to prevent reuse of the default-config.js
-    var args = _.flatten([{}, require("./default-config.js") ,listOfOptions, function(a, b) {
-        if (_.isArray(a)) {
-            return a.concat(b);
-        }
-    }]);
-    debug(args);
-    return _.merge.apply(this,args);
-}
 

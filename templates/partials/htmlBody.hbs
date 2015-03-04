@@ -6,10 +6,10 @@
 
 
 {{#each paths as | pathDef path |}}
-    {{>path pathDef=pathDef path=path}}
+    {{>swagger-to-html/path pathDef=pathDef path=path}}
 {{/each}}
 
 
 <h2>Definitions</h2>
 
-{{>definitions}}
+{{>swagger-to-html/definitions}}
