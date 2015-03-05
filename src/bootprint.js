@@ -10,6 +10,8 @@ var loadPartials = require("./read-partials.js");
 
 function Converter(options) {
 
+    // Visible field with actual options needed by developmentMode
+    this.options = options;
 
 
 
@@ -40,6 +42,7 @@ function Converter(options) {
             var pageTemplate = HtmlHandlebars.compile(pageTemplateContents, {
                 trackIds: true
             });
+            debug("targetdir: ",targetDir);
             var targetFile = path.join(targetDir, "index.html");
             debug("...calling pageTemplate");
             var content = pageTemplate({
@@ -47,6 +50,7 @@ function Converter(options) {
             });
             debug("html created");
             qfs.write(targetFile, content);
+            return targetFile;
         }).catch(function (error) {
             console.log(error);
             throw error;
@@ -60,6 +64,7 @@ function Converter(options) {
      */
     this.generateCss = function (targetDir) {
         debug("Generating CSS");
+        var mainCss = path.join(targetDir, "main.css");
         var targetDirProm = qfs.makeTree(targetDir);
         return Q.all([targetDirProm]).then(function () {
             var lessSource = options.less.main_files.map(function (file) {
@@ -74,24 +79,13 @@ function Converter(options) {
 
         }).then(function (lessResult) {
             return Q.all([
-                qfs.write(path.join(targetDir, "main.css"), lessResult.css)
+                qfs.write(mainCss, lessResult.css)
             ]);
+        }).then(function() {
+            return mainCss;
         });
     };
 
-
-    /**
-     * Watch for file changes and perform appropriate build steps
-     */
-    this.watch = function () {
-        var chokidar = require("chokidar");
-
-        var partialFiles =_(options.partials).values().flatten().value();
-        debug("Partial-files to watch: %o",partialFiles);
-        var templateWatcher = chokidar.watch(partialFiles);
-        templateWatcher.on("chnange",console.log)
-
-    }
 }
 
 module.exports = Converter;

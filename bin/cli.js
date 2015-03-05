@@ -34,17 +34,16 @@ var bootprint = require("../src/swagger-to-html.js");
 debug("swagger-to-html loaded");
 
 
+var converter = bootprint(config);
 
 qfs.read(swaggerFile).then(function(swaggerJson) {
-    var converter = bootprint(config);
     var cssReady = program['css'] ? converter.generateCss(targetDir) : Q();
     var htmlReady = converter.generateHtml(JSON.parse(swaggerJson),targetDir);
-    if (program["developmentMode"]) {
-        converter.watch();
-    }
     return Q.all([cssReady,htmlReady]);
 }).done(function() {
     console.log("done");
-    console.log(program);
 });
 
+if (program["developmentMode"]) {
+    require("../src/developmentMode.js")(converter,swaggerFile,targetDir);
+}
