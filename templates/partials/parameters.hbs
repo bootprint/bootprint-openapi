@@ -14,7 +14,8 @@
             <td>{{name}}</td>
             <td>{{md description}}</td>
             <td>{{in}}</td>
-            <td>{{datatype type}}{{json schema}}</td>
+            <td>{{datatype type}}{{#if collectionFormat}},  Format: {{collectionFormat}}{{/if}}
+                {{json schema}}</td>
 
         </tr>
     {{/each}}
