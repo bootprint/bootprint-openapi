@@ -1,5 +1,6 @@
 var Handlebars = require("handlebars");
-var marky = require("marky-markdown");
+var marked = require("marked");
+var cheerio = require("cheerio");
 
 module.exports = {
     'toUpperCase': function (value) {
@@ -21,7 +22,7 @@ module.exports = {
         if (!value) {
             return value;
         }
-        var $ = marky(value);
+        var $ = cheerio.load(marked(value));
         return new Handlebars.SafeString(strip ? $("p").html() : $.html());
     },
     "datatype": function (value) {
@@ -34,16 +35,10 @@ module.exports = {
         if (!value) {
             return "";
         }
-        var schemaString = require("json-stable-stringify")(value, {space: 4});
-        var $ = marky("```json\n" + schemaString + "\n```");
-        var definitions = $('span:not(:has(span)):contains("#/definitions/")');
-        definitions.each(function(index,item) {
-            var ref = $(item).html();
-            // TODO: This should be done in a template
-            $(item).html("<a href="+ref+">"+ref+"</a>");
-        });
+        var schemaString = require("json-stable-stringify")(value, {space: 1});
+        var highlighted = schemaString.replace(/"(#\/definitions\/.*)"/g,"<a href='$1'>$1</a>");
 
-        return new Handlebars.SafeString($("pre").html());
+        return new Handlebars.SafeString('<pre>'+highlighted+'</pre>');
     }
 };
 
