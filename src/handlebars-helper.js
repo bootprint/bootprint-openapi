@@ -18,7 +18,6 @@ marked.setOptions({
             highlighted = highlight.highlightAuto(code).value;
         }
         var result = highlight.fixMarkup(highlighted);
-        console.log(result);
         return result;
     }
 });
@@ -48,7 +47,7 @@ module.exports = {
     },
     "datatype": function (value) {
         if (value==="array") {
-            return this.items+"[]";
+            return this.items.type+"[]";
         }
         return value;
     },
