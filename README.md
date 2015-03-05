@@ -162,10 +162,10 @@ Consider a directory `path/to/directory` that contains the files `one.hbs` abd `
 
 ```json
 {
-    partials: {
-        "partialFile": "path/to/file.hbs",
-        "partialDir": "path/to/directory"
-    }
+  "partials": {
+    "partialFile": "path/to/file.hbs",
+    "partialDir": "path/to/directory"
+  }
 }
 ```
 
