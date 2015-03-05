@@ -110,16 +110,15 @@ The configuration object can contain the following options:
 
 ```js
 {
-  "partials": {
-      "somePartial": "path/to/partial.hbs",
-      "somePartialDirectory: "path/to/directory"
-
-      "parameters": "...",
+  partials: {
+      somePartial: "path/to/partial.hbs",
+      somePartialDirectory: "path/to/directory"
+      parameters: "...",
       "...": "..."
   },
   "template": "path/to/the/main/template.hbs",
   "helpers": {
-      'aHandlebarsHelper': function(value) {
+      aHandlebarsHelper: function(value) {
           return 'result';
       }
       // '...'
