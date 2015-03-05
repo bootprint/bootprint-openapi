@@ -42,12 +42,15 @@ will be displayed:
 ```bash
   Usage: swagger-to-html [options] <swaggerfile> <targetdir>
 
+  Convert a swagger-definition file into a static html-page.
+
   Options:
 
     -h, --help                output usage information
     -V, --version             output the version number
     -f, --config-file <file>  Specify a config file for custom configurations
     -C, --no-css              Omit css generation
+    -d, --development-mode    Turn on file-watcher, less source maps and http-server with live-reload
 
 ```
 
@@ -64,6 +67,21 @@ generated you files before and have only changed your swagger-definition.
 
 This option might disappear in the future. I'm thinking about using a fs-watcher to perform live-updates of the template and
 the css.
+
+### -d, --development-mode
+
+This options activates a development-mode. This means:
+
+* The template-files, all partials, all less-files and the swagger-file are watched using [the chokidar module](https://www.npmjs.com/package/chokidar). CSS and/or HTML are rebuilt automatically when needed.
+* A [live-server](https://www.npmjs.com/package/live-server) is run on the target directory to enable live-reloading html and css.
+* LESS source-maps are generated and inlined into the CSS.
+
+
+*Note: Generally, chokidar is used in a non-polling mode if a whole directory is referenced in the configuration (partial
+templates and less-paths. For explicit files (swagger-file, less-files, directly referenced partials) the polling mode is
+used. Otherwise, there are problems with text-editors that use "atomic writes".*
+
+*Note: Chrome does not seem to repaint the page, if only the CSS changes, until the mouse hovers over the browser window*
 
 ## Programmatic usage
 
@@ -93,7 +111,9 @@ The configuration object can contain the following options:
 ```js
 {
   "partials": {
-      "htmlBody": "path/to/partial.hbs",
+      "somePartial": "path/to/partial.hbs",
+      "somePartialDirectory: "path/to/directory"
+
       "parameters": "...",
       "...": "..."
   },
@@ -119,16 +139,43 @@ is part of the module. The path to a custom template can be specified in this op
 ### partials
 
 This option contains an object of partial-definitions that a registered with Handlebars to be used by the template.
-By default, one entry is generated for each partial that is included in the module's partial directory:
+The values in this object are generally paths to partial-files.
 
-* `htmlBody`: This partial renders the whole html-body contents
-* `path`: This partial renders a single path definition
-* `method`: This partial renders a single method definition
-* `parameters`: This partial renders the request-parameters of a single request (path-method)
-* `responses`: This partial renders the response definitions of a request.
-* `definitions`: This partial renders the `definitions` part of the swagger-json.
+If the value of an entry is a file, the file is registered as partial by its key.
+If the value of an entry is a directory, all ".hbs"-files within this directory are added as partial
+the name of the partial is then `key/filename-without-extension`.
+
+The following partials are included by default:
+
+* `swagger-to-html/htmlBody`: This partial renders the whole html-body contents
+* `swagger-to-html/path`: This partial renders a single path definition
+* `swagger-to-html/method`: This partial renders a single method definition
+* `swagger-to-html/parameters`: This partial renders the request-parameters of a single request (path-method)
+* `swagger-to-html/responses`: This partial renders the response definitions of a request.
+* `swagger-to-html/definitions`: This partial renders the `definitions` part of the swagger-json.
 
 These keys can be extended or overridden in the provided configuration.
+
+Example:
+
+Consider a directory `path/to/directory` that contains the files `one.hbs` abd `two.hbs` and the following configuration:
+
+```json
+{
+    partials: {
+        "partialFile": "path/to/file.hbs",
+        "partialDir": "path/to/directory"
+    }
+}
+```
+
+The following partials would be registered:
+
+* `partialFile`: Contents of `path/to/file.hbs`,
+* `partialDir/one`: Contents of `path/to/directory/one.hbs`
+* `partialDir/two`: Contents of `path/to/directory/two.hbs`
+
+
 
 ### helpers
 
@@ -165,6 +212,7 @@ to override all properties in here.
 * **styles** contains the less-files adapting the bootstrap-theme
 * **templates** contains the default Handlebars-template and partials
 * **target** is the directory that is created when you run `npm test`
+* **tests** contains some unit tests
 
 ## TODOs
 
@@ -183,19 +231,31 @@ I think that the following things are needed for this module to be finished (i.e
   * Cross-references containing page- or chapter-numbers
 * Include better navigation [affix](http://getbootstrap.com/javascript/#affix) for browser view and a table of contents
   for printing.
-* Development mode with file-system-watcher and css-source-maps and production version with inlined css
+* Production version with inlined css
 * Option to run WeasyPrint to generate a PDF.
+* **Extract the code part into its own module so that it can be reused with other templates**
+
 
 
 ## Changelog
 
-#### 0.1.0, 2.3.2015
+#### 0.2.0, 2015-03-05
+
+* Development mode with file-system-watcher, live-reload server and LESS-source-maps
+* Partial-configurations can now contain directories.
+* Use [marked](https://www.npmjs.com/package/marked), [highlight.js](https://www.npmjs.com/package/highlight.js)
+  and [cheerio](https://www.npmjs.com/package/cheerio) instead of
+  [marky-markdown](https://www.npmjs.com/package/marky-markdown). The latter does not seem to work on MS-Windows.
+
+
+
+#### 0.1.0, 2015-03-02
 
 * Refactoring: More main template divided into more partials
 * Changing config-options for lesscss
 * Define custom css classes for method-headers (GET, POST, PUT, ...)
 
-#### 0.0.2 - 0.0.5, 1.3.0215
+#### 0.0.2 - 0.0.5, 2015-03-01
 
 * Changes in README
 

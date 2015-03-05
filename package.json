@@ -7,7 +7,8 @@
     "swagger-to-html": "bin/cli.js"
   },
   "scripts": {
-    "test": "DEBUG=bootprint bin/cli-debug.js example/petstore.json target/"
+    "start": "bin/cli.js -d example/petstore.json target/",
+    "test": "nodeunit tests/"
   },
   "preferGlobal": true,
   "repository": {
