@@ -13,10 +13,12 @@ function isDirectory(file) {
 }
 
 function watch(files, callback, chokOptions) {
-    var watcher = chokidar.watch(files, _.merge({
-        ignoreInitial: true
-    }), chokOptions);
-    console.log("Watching ", files, chokOptions);
+    // Distinct variable to prevent wrong parens in the next call
+    var mergedOptions = _.merge({ ignoreInitial: true }, chokOptions);
+
+    var watcher = chokidar.watch(files, mergedOptions);
+
+    console.log("Watching ", files, mergedOptions);
     var fn = function () {
         callback().catch(console.log).done(notify);
     };
@@ -24,9 +26,7 @@ function watch(files, callback, chokOptions) {
     watcher.on("ready", function () {
         console.log("Watchers for ", files, " ready");
     });
-    watcher.on("change", fn);
-    watcher.on("add", fn);
-    watcher.on("delete", fn);
+    watcher.on("change", fn).on("add", fn).on("delete", fn);
 }
 
 /**
@@ -36,11 +36,10 @@ function watch(files, callback, chokOptions) {
  * @param chokOptions addition options for chokidar
  */
 function watchFilesOrDirs(files, callback, chokOptions) {
-    console.log("file",files);
+    console.log("file", files);
     // Divide files into "real" files and directories
-    var groupsP = files.reduce(function(subresult, file) {
-        return Q.all([subresult, qfs.isDirectory(file)]).spread(function(subresult, isDirectory) {
-
+    var groupsP = files.reduce(function (subresult, file) {
+        return Q.all([subresult, qfs.isDirectory(file)]).spread(function (subresult, isDirectory) {
             if (isDirectory) {
                 subresult.dirs.push(file)
             } else {
@@ -49,33 +48,29 @@ function watchFilesOrDirs(files, callback, chokOptions) {
             return subresult;
         });
 
-    },Q({ files: [], dirs: []}));
+    }, Q({files: [], dirs: []}));
 
-    deep(groupsP).done(function(groups) {
+    deep(groupsP).done(function (groups) {
         // Files must be watched with polling in order to solve problems with "atomic writes"
         watch(groups.files, callback, _.merge({
             usePolling: true
-        },chokOptions));
+        }, chokOptions));
 
         // Directories work well, even with "atomic writes"
         watch(groups.dirs, callback, chokOptions);
 
     });
 
-
 }
 
 module.exports = function (bootprint, swaggerFile, targetDir) {
     var options = bootprint.options;
-
-
 
     // Watch partial templates and swagger file
     var htmlDependencies = _.union(
         _.flatten(_.values(options.partials)),
         [swaggerFile]
     );
-    console.log("swaggerfile",htmlDependencies);
     watchFilesOrDirs(htmlDependencies, function () {
         // swaggerFile must be read every time, since it is also on the watch-list
         return qfs.read(swaggerFile).catch(console.log).then(function (swaggerJson) {
@@ -83,14 +78,24 @@ module.exports = function (bootprint, swaggerFile, targetDir) {
         });
     });
 
-
     // Watch less files and include paths
     var lessFiles = _.flatten([
         options.less.main_files,
         options.less.paths
     ]);
-    watchFilesOrDirs(lessFiles,function() {
-        return bootprint.generateCss();
+    watchFilesOrDirs(lessFiles, function () {
+        return bootprint.generateCss(targetDir);
     });
+
+    var liveServer = require("live-server");
+
+    var params = {
+        port: 8181,
+        host: "0.0.0.0",
+        root: targetDir,
+        noBrowser: false
+
+    };
+    liveServer.start(params);
 
 };
