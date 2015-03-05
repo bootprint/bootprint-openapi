@@ -216,7 +216,6 @@ to override all properties in here.
 
 ## TODOs
 
-I think that the following things are needed for this module to be finished (i.e. Version 1.0).
 
 * Provide a more complex example with custom configuration file
 * The Handlebars template is not complete yet. Missing parts:
