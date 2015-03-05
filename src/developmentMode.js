@@ -58,7 +58,7 @@ function watchFilesOrDirs(files, callback, chokOptions) {
         },chokOptions));
 
         // Directories work well, even with "atomic writes"
-        watch(groups.files, callback, chokOptions);
+        watch(groups.dirs, callback, chokOptions);
 
     });
 
