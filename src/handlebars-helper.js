@@ -1,6 +1,27 @@
 var Handlebars = require("handlebars");
 var marked = require("marked");
 var cheerio = require("cheerio");
+var highlight = require('highlight.js');
+
+
+highlight.configure({
+    "useBR": true
+})
+
+marked.setOptions({
+    highlight: function (code,name) {
+
+        var highlighted;
+        if (name) {
+            highlighted =  highlight.highlight(name,code).value;
+        } else {
+            highlighted = highlight.highlightAuto(code).value;
+        }
+        var result = highlight.fixMarkup(highlighted);
+        console.log(result);
+        return result;
+    }
+});
 
 module.exports = {
     'toUpperCase': function (value) {
@@ -35,10 +56,17 @@ module.exports = {
         if (!value) {
             return "";
         }
-        var schemaString = require("json-stable-stringify")(value, {space: 1});
-        var highlighted = schemaString.replace(/"(#\/definitions\/.*)"/g,"<a href='$1'>$1</a>");
+        var schemaString = require("json-stable-stringify")(value, {space: 4});
 
-        return new Handlebars.SafeString('<pre>'+highlighted+'</pre>');
+        var $ = cheerio.load(marked("```json\r\n" + schemaString + "\n```"));
+        var definitions = $('span:not(:has(span)):contains("#/definitions/")');
+        definitions.each(function(index,item) {
+            var ref = $(item).html();
+            // TODO: This should be done in a template
+            $(item).html("<a href="+ref.replace(/&quot;/g,"")+">"+ref+"</a>");
+        });
+
+        return new Handlebars.SafeString($.html());
     }
 };
 
