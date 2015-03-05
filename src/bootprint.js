@@ -49,11 +49,9 @@ function Converter(options) {
                 body: swaggerJson
             });
             debug("html created");
-            qfs.write(targetFile, content);
-            return targetFile;
-        }).catch(function (error) {
-            console.log(error);
-            throw error;
+            return qfs.write(targetFile, content).then(function() {
+                return targetFile;
+            });
         });
     };
 
