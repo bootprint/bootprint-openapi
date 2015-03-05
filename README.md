@@ -102,9 +102,9 @@ converter.generateHtml(swaggerJson, targetDir)
 
 ## Configuration options
 
-*Disclaimer: I have not written any unit tests to verify these options yet. (In fact, I haven't written any unit tests
-at all for this module. I am sure I will do so some time, but until then I cannot guarantee anything.
-You are welcome to test the options and submit bugs or even tests.*
+*Disclaimer: I have not written any unit tests to verify these options yet.
+ I am sure I will do so some time, but until then I cannot guarantee anything.
+ You are welcome to test the options and submit bugs or even tests.*
 
 The configuration object can contain the following options:
 
