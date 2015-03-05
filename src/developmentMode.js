@@ -93,7 +93,7 @@ module.exports = function (bootprint, swaggerFile, targetDir) {
         port: 8181,
         host: "0.0.0.0",
         root: targetDir,
-        noBrowser: false
+        noBrowser: true
 
     };
     liveServer.start(params);

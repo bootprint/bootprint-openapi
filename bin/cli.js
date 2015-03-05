@@ -25,16 +25,17 @@ if (program.args.length<2) {
 var configFile = program['config-file'];
 var swaggerFile = program.args[0];
 var targetDir = program.args[1];
-var config = {};
+var options = {};
 if (configFile) {
-    config = require(path.resolve(configFile));
+    options = require(path.resolve(configFile));
 }
 debug("loading swagger-to-html");
 var bootprint = require("../src/swagger-to-html.js");
 debug("swagger-to-html loaded");
 
+options.developmentMode = program["developmentMode"];
 
-var converter = bootprint(config);
+var converter = bootprint(options);
 
 qfs.read(swaggerFile).then(function(swaggerJson) {
     var cssReady = program['css'] ? converter.generateCss(targetDir) : Q();
@@ -44,6 +45,7 @@ qfs.read(swaggerFile).then(function(swaggerJson) {
     console.log("done");
 });
 
-if (program["developmentMode"]) {
+
+if (options.developmentMode) {
     require("../src/developmentMode.js")(converter,swaggerFile,targetDir);
 }

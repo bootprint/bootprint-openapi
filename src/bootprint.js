@@ -13,8 +13,6 @@ function Converter(options) {
     // Visible field with actual options needed by developmentMode
     this.options = options;
 
-
-
     /**
      * Generate html-output and store the result into the index.html-file in the specified target directory
      * @param swaggerJson
@@ -22,10 +20,10 @@ function Converter(options) {
      * @returns {*}
      */
     this.generateHtml = function (swaggerJson, targetDir) {
-        debug("Generating HTML from %s",options.template);
+        debug("Generating HTML from %s", options.template);
         var pageTemplateP = qfs.read(options.template);
         var targetDirP = qfs.makeTree(targetDir);
-        var handleBarsP = loadPartials(options.partials).then(function(partials) {
+        var handleBarsP = loadPartials(options.partials).then(function (partials) {
             debug("Partials loaded");
             var hbs = Handlebars.create();
             hbs.logger.level = 0;
@@ -35,21 +33,20 @@ function Converter(options) {
             return hbs
         });
 
-
         // When all is ready, do the work
-        return Q.all([pageTemplateP, handleBarsP, targetDirP ]).spread(function (pageTemplateContents, HtmlHandlebars) {
+        return Q.all([pageTemplateP, handleBarsP, targetDirP]).spread(function (pageTemplateContents, HtmlHandlebars) {
             debug("compiling pageTemplate");
             var pageTemplate = HtmlHandlebars.compile(pageTemplateContents, {
                 trackIds: true
             });
-            debug("targetdir: ",targetDir);
+            debug("targetdir: ", targetDir);
             var targetFile = path.join(targetDir, "index.html");
             debug("...calling pageTemplate");
             var content = pageTemplate({
                 body: swaggerJson
             });
             debug("html created");
-            return qfs.write(targetFile, content).then(function() {
+            return qfs.write(targetFile, content).then(function () {
                 return targetFile;
             });
         });
@@ -69,7 +66,7 @@ function Converter(options) {
                 return '@import "' + file + '";'
             }).join("\n");
             return less.render(lessSource, {
-                // sourceMap: {},
+                sourceMap:  options.developmentMode && {sourceMapFileInline: true, outputSourceFiles: true},
                 paths: options.less.paths,
                 filename: "main.less", // Specify a filename, for better error messages
                 compress: true
@@ -79,7 +76,7 @@ function Converter(options) {
             return Q.all([
                 qfs.write(mainCss, lessResult.css)
             ]);
-        }).then(function() {
+        }).then(function () {
             return mainCss;
         });
     };
