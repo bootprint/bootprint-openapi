@@ -237,6 +237,10 @@ to override all properties in here.
 
 ## Changelog
 
+#### 2015-03-05 - Version 0.2.1
+
+* Fix README markup for code examples
+
 #### 2015-03-05 - Version 0.2.0
 
 * Development mode with file-system-watcher, live-reload server and LESS-source-maps
