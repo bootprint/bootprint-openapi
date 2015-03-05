@@ -238,7 +238,7 @@ to override all properties in here.
 
 ## Changelog
 
-#### 0.2.0, 2015-03-05
+#### 2015-03-05 - Version 0.2.0
 
 * Development mode with file-system-watcher, live-reload server and LESS-source-maps
 * Partial-configurations can now contain directories.
@@ -246,19 +246,17 @@ to override all properties in here.
   and [cheerio](https://www.npmjs.com/package/cheerio) instead of
   [marky-markdown](https://www.npmjs.com/package/marky-markdown). The latter does not seem to work on MS-Windows.
 
-
-
-#### 0.1.0, 2015-03-02
+#### 2015-03-02 - Version 0.1.0
 
 * Refactoring: More main template divided into more partials
 * Changing config-options for lesscss
 * Define custom css classes for method-headers (GET, POST, PUT, ...)
 
-#### 0.0.2 - 0.0.5, 2015-03-01
+#### 2015-03-01 - Version 0.0.2 - 0.0.5
 
 * Changes in README
 
-#### 0.0.1, 1.3.2015
+#### 2015-03-01 - Version 0.0.1
 
 * Initial version
 
