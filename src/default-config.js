@@ -15,12 +15,11 @@ module.exports = {
     less: {
         main_files: [
             require.resolve("bootstrap/less/bootstrap.less"),
-            require.resolve("atom-light-syntax/index.less"),
             require.resolve("../styles/base-theme.less")
         ],
         paths: [
             path.resolve(__dirname, "..", "node_modules", "bootstrap", "less"),
-            path.resolve(__dirname, "..", "node_modules", "atom-light-syntax", "styles")
+            path.resolve(__dirname, "..", "node_modules", "highlight.js", "styles")
         ]
     }
 };
