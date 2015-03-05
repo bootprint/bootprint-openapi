@@ -116,14 +116,14 @@ The configuration object can contain the following options:
       parameters: "...",
       "...": "..."
   },
-  "template": "path/to/the/main/template.hbs",
-  "helpers": {
+  template: "path/to/the/main/template.hbs",
+  helpers: {
       aHandlebarsHelper: function(value) {
           return 'result';
       }
       // '...'
   }
-  "less": {
+  less: {
       paths: [ "path/to/an/include-directory/" ],
       main: [ "path/to/a/less-file.less" ]
   }
@@ -159,11 +159,11 @@ Example:
 
 Consider a directory `path/to/directory` that contains the files `one.hbs` abd `two.hbs` and the following configuration:
 
-```json
+```js
 {
-  "partials": {
-    "partialFile": "path/to/file.hbs",
-    "partialDir": "path/to/directory"
+  partials: {
+    partialFile: "path/to/file.hbs",
+    partialDir: "path/to/directory"
   }
 }
 ```
