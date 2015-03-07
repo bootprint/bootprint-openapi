@@ -1,3 +1,5 @@
+// This module create handlbars-helpers for swagger-to-html
+
 var Handlebars = require("handlebars");
 var marked = require("marked");
 var cheerio = require("cheerio");

@@ -1,3 +1,7 @@
+// This module resolves partial definition from the configuration
+// an mapping "partial-name" -> "partial-contents"
+// See "../tests/partials_test.js" for details
+
 var qfs = require("q-io/fs");
 var path = require("path");
 var deep = require("q-deep");

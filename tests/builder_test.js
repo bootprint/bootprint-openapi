@@ -20,3 +20,19 @@ module.exports.testBuilder = function(test) {
     test.done();
 };
 
+module.exports.testExtendPartialsDef = function(test) {
+    var builder = require("../src/builder.js")({
+        partials: { name : 'aDirectory'}
+    });
+    test.deepEqual(builder._options, {
+        partials: { name : [ 'aDirectory' ]}
+    })
+    builder.override({
+        partials: { name : 'secondDirectory' }
+    });
+    test.deepEqual(builder._options, {
+        partials: { name : [ 'aDirectory','secondDirectory' ]}
+    })
+    test.done();
+}
+

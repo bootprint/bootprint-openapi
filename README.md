@@ -86,11 +86,9 @@ used. Otherwise, there are problems with text-editors that use "atomic writes".*
 ## Programmatic usage
 
 ```js
-// 'require' the module
-var Swagger2Html = require('swagger-to-html');
 
-// instantiate the converter class passing an 'options'-javascript-object.
-var converter = new Swagger2Html({ /* options */ });
+// 'require' the module
+var converter = require("swagger-to-html")({ /* options */ });
 
 // call the lesscss-compiler to generate css
 converter.generateCss(targetDir)
@@ -98,6 +96,8 @@ converter.generateCss(targetDir)
 // call handlebars to generate the HTML-code
 converter.generateHtml(swaggerJson, targetDir)
 ```
+
+*The development-mode cannot officially be activated programmatically at the moment*
 
 
 ## Configuration options
@@ -112,7 +112,7 @@ The configuration object can contain the following options:
 {
   partials: {
       somePartial: "path/to/partial.hbs",
-      somePartialDirectory: "path/to/directory"
+      somePartialDirectory: "another/directory"
       parameters: "...",
       "...": "..."
   },
@@ -138,43 +138,94 @@ is part of the module. The path to a custom template can be specified in this op
 ### partials
 
 This option contains an object of partial-definitions that a registered with Handlebars to be used by the template.
-The values in this object are generally paths to partial-files.
 
-If the value of an entry is a file, the file is registered as partial by its key.
-If the value of an entry is a directory, all ".hbs"-files within this directory are added as partial
-the name of the partial is then `key/filename-without-extension`.
+The recommended use of this option is the following:
 
-The following partials are included by default:
-
-* `swagger-to-html/htmlBody`: This partial renders the whole html-body contents
-* `swagger-to-html/path`: This partial renders a single path definition
-* `swagger-to-html/method`: This partial renders a single method definition
-* `swagger-to-html/parameters`: This partial renders the request-parameters of a single request (path-method)
-* `swagger-to-html/responses`: This partial renders the response definitions of a request.
-* `swagger-to-html/definitions`: This partial renders the `definitions` part of the swagger-json.
-
-These keys can be extended or overridden in the provided configuration.
-
-Example:
-
-Consider a directory `path/to/directory` that contains the files `one.hbs` abd `two.hbs` and the following configuration:
+* The key of each entry is the name-prefix of some partials.
+* The value of each entry contains a directory containing these partials.
 
 ```js
 {
   partials: {
-    partialFile: "path/to/file.hbs",
-    partialDir: "path/to/directory"
+    custom: "directory1"
   }
 }
 ```
 
-The following partials would be registered:
+With files `directory1` containing file `a.hbs` and `b.hbs`, the registered partials, you can
+us the following in you handlebars-template to call the partials.
 
-* `partialFile`: Contents of `path/to/file.hbs`,
-* `partialDir/one`: Contents of `path/to/directory/one.hbs`
-* `partialDir/two`: Contents of `path/to/directory/two.hbs`
+```hbs
+Partial-A: {>custom/a}
+Partial-B: {>custom/b}
+```
 
+The directory is traversed recursively, so there might appear partials like `custom/subdir/c` as
+well.
 
+The following partials are included by default:
+
+* **swagger-to-html/htmlBody**  renders the whole html-body contents.
+* **swagger-to-html/path** renders a single path definition.
+* **swagger-to-html/method** renders a single method definition.
+* **swagger-to-html/parameters** renders the request-parameters of a single request (path-method).
+* **swagger-to-html/responses** renders the response definitions of a request.
+* **swagger-to-html/definitions** renders the `definitions` part of the swagger-json.
+
+Those can be overridden by specifying a partial-directory `swagger-to-html`:
+
+```js
+{
+  partials: {
+    custom: "directory1",
+    "swagger-to-html": "directory2",
+  }
+}
+```
+
+Internally, this definition will be used to extend the default configuration to
+
+```js
+{
+  partials: {
+    module1: [ "directory1" ],
+    "swagger-to-html": [ "template/partials", "directory2"],
+  }
+}
+```
+
+All files in `directory2` and `template/partials` will now be registered as partials. If files
+with the same name occur in both directories, they the later directory (i.e. `directory2`)
+overwrite previous definitions: If `directory2` contains a single file
+`htmlBody.hbs`, it will override the default `swagger-to-html/htmlBody` partial. All other
+default partials are still being used.
+
+#### Deprecated configuration
+
+Previous versions did not support partial-directories, but
+only partial-files.
+
+```js
+{
+  partials: {
+    customPartial: "path/to/file.hbs"
+  }
+}
+```
+Such configuration is now deprecated, but still works. If `path/to/file.hbs` is not a
+directory, but a regular file, the partial is registered by the entry's key (i.e. `customPartial`).
+
+However, partial-fils can **not** be used to override partials in partial-directories.
+One might think that the following should work:
+
+```js
+{  partials: {   "swagger-to-html/htmlBody": "path/to/file.hbs"} }
+```
+
+However, it is **not defined**, which file (the default-partial or the custom-partial)
+is used in such a case. Entries of the `partials`-object are processed in parallel,
+so which partial overrides probably depends on the I/O timing for reading the directory and files.
+It may also depend on the traversing order of the object's keys.
 
 ### helpers
 
@@ -236,6 +287,12 @@ to override all properties in here.
 
 
 ## Changelog
+
+#### 2015-03-07 - Version 0.2.2
+
+* Update documentation
+* Possibility to specify strings as partial-directories (instead of arrays)
+* Fix broken programmatic usage
 
 #### 2015-03-05 - Version 0.2.1
 

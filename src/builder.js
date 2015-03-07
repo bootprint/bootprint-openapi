@@ -22,8 +22,15 @@ function Builder(options) {
      * @param additionalOptions {object} a plain js object containing configuration values.
      */
     this.override = function (additionalOptions) {
-        debug("Adding config: %o", additionalOptions);
-        _.merge(this._options, additionalOptions, function (a, b) {
+        var copy = _.clone(additionalOptions,true);
+        if (copy.partials) {
+            // Make sure that partials always contains arrays of paths
+            copy.partials = _.mapValues(copy.partials, function(value) {
+                return _.isArray(value) ? value : [value];
+            });
+        }
+        debug("Adding config: %o", copy);
+        _.merge(this._options, copy, function (a, b) {
             if (_.isArray(a)) {
                 return a.concat(b);
             }

@@ -2,13 +2,14 @@ var path = require("path");
 var fs = require("fs");
 var _ = require("lodash");
 
-
-
-
-
+/**
+ * This module contains the default config (less-files,template, partials, helpers)
+ * for swagger-to-html. See the README for details
+ * @type {{partials: {object}, template: string, helpers: function[], less: {main_files: string[], paths: string[]}}}
+ */
 module.exports = {
     partials: {
-        "swagger-to-html": [ path.join(__dirname,"..","templates","partials") ]
+        "swagger-to-html": path.join(__dirname,"..","templates","partials")
     },
     template: require.resolve("../templates/page.hbs"),
     helpers: require("./handlebars-helper.js"),

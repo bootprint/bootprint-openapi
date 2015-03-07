@@ -1,3 +1,6 @@
+// This module is called when the development mode is activated
+// It is responsible for starting the watcher and live-server
+
 var chokidar = require("chokidar");
 var _ = require("lodash");
 var qfs = require("q-io/fs");
