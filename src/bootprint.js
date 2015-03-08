@@ -37,7 +37,8 @@ function Converter(options) {
         return Q.all([pageTemplateP, handleBarsP, targetDirP]).spread(function (pageTemplateContents, HtmlHandlebars) {
             debug("compiling pageTemplate");
             var pageTemplate = HtmlHandlebars.compile(pageTemplateContents, {
-                trackIds: true
+                trackIds: true,
+                preventIndent: true
             });
             debug("targetdir: ", targetDir);
             var targetFile = path.join(targetDir, "index.html");

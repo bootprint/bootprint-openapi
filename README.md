@@ -288,6 +288,10 @@ to override all properties in here.
 
 ## Changelog
 
+#### 2015-03-08 - Version 0.2.3
+
+* Add Handlebars option `preventIndent` to fix wrong layout of `<pre>`-tags (json-schema parts)
+
 #### 2015-03-07 - Version 0.2.2
 
 * Update documentation

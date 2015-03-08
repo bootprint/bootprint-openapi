@@ -8,7 +8,7 @@ var highlight = require('highlight.js');
 
 highlight.configure({
     "useBR": true
-})
+});
 
 marked.setOptions({
     highlight: function (code,name) {
@@ -19,8 +19,7 @@ marked.setOptions({
         } else {
             highlighted = highlight.highlightAuto(code).value;
         }
-        var result = highlight.fixMarkup(highlighted);
-        return result;
+        return highlight.fixMarkup(highlighted);
     }
 });
 
@@ -52,6 +51,14 @@ module.exports = {
             return this.items.type+"[]";
         }
         return value;
+    },
+    // http://stackoverflow.com/questions/8853396/logical-operator-in-a-handlebars-js-if-conditional
+    "ifeq": function(v1,v2,options) {
+
+        if(v1 === v2) {
+            return options.fn(this);
+        }
+        return options.inverse(this);
     },
     "json": function (value) {
         if (!value) {
