@@ -23,6 +23,7 @@ function Converter(options) {
         debug("Generating HTML from %s", options.template);
         var pageTemplateP = qfs.read(options.template);
         var targetDirP = qfs.makeTree(targetDir);
+        var preprocessedP = options.preprocessor ? options.preprocessor(swaggerJson) : swaggerJson;
         var handleBarsP = loadPartials(options.partials).then(function (partials) {
             debug("Partials loaded");
             var hbs = Handlebars.create();
@@ -34,7 +35,8 @@ function Converter(options) {
         });
 
         // When all is ready, do the work
-        return Q.all([pageTemplateP, handleBarsP, targetDirP]).spread(function (pageTemplateContents, HtmlHandlebars) {
+        return Q.all([pageTemplateP, handleBarsP, preprocessedP, targetDirP])
+            .spread(function (pageTemplateContents, HtmlHandlebars,preprocessed) {
             debug("compiling pageTemplate");
             var pageTemplate = HtmlHandlebars.compile(pageTemplateContents, {
                 trackIds: true,
@@ -44,7 +46,7 @@ function Converter(options) {
             var targetFile = path.join(targetDir, "index.html");
             debug("...calling pageTemplate");
             var content = pageTemplate({
-                body: swaggerJson
+                body: preprocessed
             });
             debug("html created");
             return qfs.write(targetFile, content).then(function () {
@@ -67,7 +69,7 @@ function Converter(options) {
                 return '@import "' + file + '";'
             }).join("\n");
             return less.render(lessSource, {
-                sourceMap:  options.developmentMode && {sourceMapFileInline: true, outputSourceFiles: true},
+                sourceMap: options.developmentMode && {sourceMapFileInline: true, outputSourceFiles: true},
                 paths: options.less.paths,
                 filename: "main.less", // Specify a filename, for better error messages
                 compress: true
