@@ -22,6 +22,7 @@ module.exports = {
             path.resolve(__dirname, "..", "node_modules", "bootstrap", "less"),
             path.resolve(__dirname, "..", "node_modules", "highlight.js", "styles")
         ]
-    }
+    },
+    preprocessor: require("./preprocessor.js")
 };
 

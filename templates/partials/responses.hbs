@@ -3,21 +3,28 @@
 
     <p>{{#each produces}}<span class="label label-default">{{.}}</span> {{/each}}</p>
 
-
-
     <table class="table">
         <thead>
         <th class="sw_code">HTTP Status Code</th>
         <th class="sw_desc">Reason</th>
-        <th class="sw_data_type">Response Model</th>
+        <th class="sw_response_data_type hidden-xs hidden-sm    ">Response Model</th>
         </thead>
         <tbody>
         {{#each responses}}
             <tr>
                 <td>{{@key}}</td>
-                <td>{{md description}}</td>
-                <td>{{json schema}}</td>
+                <td>
+                    {{md description}}
+                    {{#if schema}}
+                        <div class="visible-xs visible-sm">
+                            <strong>Response Model:</strong>
+                            {{json schema}}
+                        </div>
+                    {{/if}}
+                </td>
+                <td class="hidden-xs hidden-sm">{{json schema}}</td>
             </tr>
+
         {{/each}}
         </tbody>
     </table>

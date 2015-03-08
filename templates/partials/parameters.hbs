@@ -3,22 +3,22 @@
 
     <table class="table">
         <thead>
-            <th class="sw_code">Name</th>
-            <th class="sw_desc">Description</th>
-            <th class="sw_param_type">Parameter Type</th>
-            <th class="sw_data_type">Data Type</th>
+        <th class="sw_code">Name</th>
+        <th class="sw_desc">Description</th>
+        <th class="sw_param_type">Parameter Type</th>
+        <th class="sw_data_type">Data Type</th>
         </thead>
         <tbody>
-    {{#each parameters}}
-        <tr>
-            <td>{{name}}</td>
-            <td>{{md description}}</td>
-            <td>{{in}}</td>
-            <td>{{datatype type}}{{#if collectionFormat}},  Format: {{collectionFormat}}{{/if}}
-                {{json schema}}</td>
+        {{#each parameters}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{md description}}</td>
+                <td>{{in}}</td>
+                <td>{{datatype type}}{{#if collectionFormat}}, Format: {{collectionFormat}}{{/if}}
+                    {{json schema}}</td>
 
-        </tr>
-    {{/each}}
+            </tr>
+        {{/each}}
         </tbody>
     </table>
 
