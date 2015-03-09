@@ -5,9 +5,9 @@
 <h2>Paths</h2>
 
 
-{{#each paths as | pathDef path |}}
-    {{>swagger-to-html/path pathDef=pathDef path=path}}
-{{/each}}
+{{#eachSorted paths}}
+    {{>swagger-to-html/path value pathDef=value path=key}}
+{{/eachSorted}}
 
 
 <h2>Definitions</h2>

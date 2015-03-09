@@ -31,6 +31,14 @@ module.exports = {
             return '';
         }
     },
+    'eachSorted': function(context, options) {
+        // https://gist.github.com/wiedi/fb09a0317e0db2caee6a
+        var ret = "";
+        Object.keys(context).sort().forEach(function(key) {
+            ret = ret + options.fn({key: key, value: context[key]})
+        }) ;
+        return ret
+    },
     'methodClass': function (value) {
         return {
             "post": "success",
