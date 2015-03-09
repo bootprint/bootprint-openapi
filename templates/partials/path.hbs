@@ -1,3 +1,3 @@
 {{#eachSorted pathDef}}
-    {{>swagger-to-html/method value method=key path=../path}}
+    {{>swagger-to-html/method value methodDef=value method=key path=../path}}
 {{/eachSorted}}
