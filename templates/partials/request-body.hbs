@@ -1,3 +1,5 @@
+{{! renders the request-body section of a method}}
+
 {{#if consumes}}
     <section class="sw-request-body">
         <p>{{#each consumes}}<span class="label label-default">{{.}}</span> {{/each}}</p>

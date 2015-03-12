@@ -12,6 +12,9 @@ module.exports = {
         "swagger-to-html": path.join(__dirname,"..","templates","partials"),
         "json-schema": path.join(__dirname,"..","templates","partials-json-schema")
     },
+    resources: {
+        "swagger-to-html": path.join(__dirname,"..", "resources")
+    },
     template: require.resolve("../templates/page.hbs"),
     helpers: require("./handlebars-helper.js"),
     less: {

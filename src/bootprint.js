@@ -36,23 +36,29 @@ function Converter(options) {
 
         // When all is ready, do the work
         return Q.all([pageTemplateP, handleBarsP, preprocessedP, targetDirP])
-            .spread(function (pageTemplateContents, HtmlHandlebars,preprocessed) {
-            debug("compiling pageTemplate");
-            var pageTemplate = HtmlHandlebars.compile(pageTemplateContents, {
-                trackIds: true,
-                preventIndent: true
+            .spread(function (pageTemplateContents, HtmlHandlebars, preprocessed) {
+                debug("compiling pageTemplate");
+                try {
+
+                    var pageTemplate = HtmlHandlebars.compile(pageTemplateContents, {
+                        trackIds: true,
+                        preventIndent: true
+                    });
+                    debug("targetdir: ", targetDir);
+                    var targetFile = path.join(targetDir, "index.html");
+                    debug("...calling pageTemplate");
+                    var content = pageTemplate({
+                        body: preprocessed
+                    });
+                    debug("html created");
+                    return qfs.write(targetFile, content).then(function () {
+                        return targetFile;
+                    });
+                } catch (e) {
+                    console.log(e);
+                    throw e;
+                }
             });
-            debug("targetdir: ", targetDir);
-            var targetFile = path.join(targetDir, "index.html");
-            debug("...calling pageTemplate");
-            var content = pageTemplate({
-                body: preprocessed
-            });
-            debug("html created");
-            return qfs.write(targetFile, content).then(function () {
-                return targetFile;
-            });
-        });
     };
 
     /**

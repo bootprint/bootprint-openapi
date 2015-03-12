@@ -1,3 +1,5 @@
+{{! renders a single path definition with all ist medhot (GET, POST).}}
+
 {{#eachSorted pathDef}}
     {{>swagger-to-html/method value methodDef=value method=key path=../path}}
 {{/eachSorted}}

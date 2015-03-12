@@ -3,6 +3,20 @@ var Converter = require("./bootprint.js");
 var debug = require("debug")("bootprint");
 
 /**
+ * Convert an object "key->value" to an object "key->[value]"
+ */
+function withArrayValues(obj) {
+
+    if (obj) {
+        // Make sure that partials always contains arrays of paths
+        return _.mapValues(obj, function(value) {
+            return _.isArray(value) ? value : [value];
+        });
+    }
+    return obj;
+}
+
+/**
  * Builder for creating a converter with multiple overriding options-objects.
  * @param options
  * @constructor
@@ -23,12 +37,8 @@ function Builder(options) {
      */
     this.override = function (additionalOptions) {
         var copy = _.clone(additionalOptions,true);
-        if (copy.partials) {
-            // Make sure that partials always contains arrays of paths
-            copy.partials = _.mapValues(copy.partials, function(value) {
-                return _.isArray(value) ? value : [value];
-            });
-        }
+        copy.partials = withArrayValues(copy.partials);
+        copy.resources = withArrayValues(copy.resources);
         debug("Adding config: %o", copy);
         _.merge(this._options, copy, function (a, b) {
             if (_.isArray(a)) {

@@ -6,6 +6,7 @@ var _ = require("lodash");
 var qfs = require("q-io/fs");
 var Q = require("q");
 var deep = require("q-deep");
+var debug = require("debug")("bootprint:dev");
 
 function notify() {
     console.log("Generated", arguments);
@@ -21,13 +22,13 @@ function watch(files, callback, chokOptions) {
 
     var watcher = chokidar.watch(files, mergedOptions);
 
-    console.log("Watching ", files, mergedOptions);
+    debug("Watching ", files, mergedOptions);
     var fn = function () {
         callback().catch(console.log).done(notify);
     };
     fn = _.throttle(fn, 1000);
     watcher.on("ready", function () {
-        console.log("Watchers for ", files, " ready");
+        debug("Watchers for ", files, " ready");
     });
     watcher.on("change", fn).on("add", fn).on("delete", fn);
 }
@@ -39,7 +40,7 @@ function watch(files, callback, chokOptions) {
  * @param chokOptions addition options for chokidar
  */
 function watchFilesOrDirs(files, callback, chokOptions) {
-    console.log("file", files);
+    debug("file", files);
     // Divide files into "real" files and directories
     var groupsP = files.reduce(function (subresult, file) {
         return Q.all([subresult, qfs.isDirectory(file)]).spread(function (subresult, isDirectory) {

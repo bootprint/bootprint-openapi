@@ -285,14 +285,14 @@ to override all properties in here.
 
 ## Changelog
 
-#### 2015-03-12 - Version 0.3.1
-
-* Fix for loading custom config file via command line.
-
 #### 2015-03-12 - Version 0.3.0
 
 * Updated template and partials to draw a more readble version of the swagger-models.
+* Some template refactorings
 * Almost all labels and section headers are are now configurable in LESS
+* Fix for loading custom config file via command line.
+* Included custom-config-example in "example" TODO: document example
+
 
 #### 2015-03-08 - Version 0.2.3
 

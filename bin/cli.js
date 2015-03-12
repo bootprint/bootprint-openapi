@@ -31,7 +31,6 @@ if (configFile) {
     options = require(path.resolve(configFile));
 }
 
-console.log(configFile);
 
 debug("loading swagger-to-html");
 var bootprint = require("../src/swagger-to-html.js");

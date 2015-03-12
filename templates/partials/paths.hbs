@@ -1,0 +1,6 @@
+{{! renders the paths-section of the HTML-page}}
+<h2>Paths</h2>
+
+{{#eachSorted paths}}
+    {{>swagger-to-html/path value pathDef=value path=key}}
+{{/eachSorted}}
