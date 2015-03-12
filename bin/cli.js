@@ -4,6 +4,7 @@ var program = require('commander');
 var qfs = require("q-io/fs");
 var Q = require("q");
 var debug = require("debug")("bootprint");
+var path = require("path");
 
 debug("Loading 'commander'");
 program.version(require("../package").version)
@@ -22,13 +23,16 @@ if (program.args.length<2) {
 
 
 
-var configFile = program['config-file'];
+var configFile = program['configFile'];
 var swaggerFile = program.args[0];
 var targetDir = program.args[1];
 var options = {};
 if (configFile) {
     options = require(path.resolve(configFile));
 }
+
+console.log(configFile);
+
 debug("loading swagger-to-html");
 var bootprint = require("../src/swagger-to-html.js");
 debug("swagger-to-html loaded");
