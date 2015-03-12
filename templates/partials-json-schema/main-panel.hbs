@@ -1,0 +1,14 @@
+<div class="panel panel-definition">
+    {{#if title}}
+        <div class="panel-heading">
+            {{#if anchor}}
+                <h3 class="panel-title"><a name="/definitions/{{title}}"></a>{{title}}</h3>
+            {{else}}
+                <h3 class="panel-title">{{title}}</h3>
+            {{/if}}
+        </div>
+    {{/if}}
+    <div class="panel-body">
+        {{>json-schema/body}}
+    </div>
+</div>

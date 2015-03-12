@@ -1,0 +1,19 @@
+{{#if $ref}}
+    <a class="json-schema-ref" href="{{$ref}}">{{$ref}}</a>
+{{/if}}
+{{#if description}}
+    <section class="json-schema-description">
+        {{md description}}
+    </section>
+{{/if}}
+
+{{#if properties}}
+    {{>json-schema/properties}}
+{{/if}}
+{{#if items}}
+    {{>json-schema/array items}}
+{{/if}}
+{{#if allOf}}
+    {{>json-schema/allOf allOf}}
+{{/if}}
+

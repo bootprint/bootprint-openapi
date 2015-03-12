@@ -1,0 +1,105 @@
+/**
+ * This color is used as border for definition boxes and for border within the definition
+ */
+@definition-panel-header-bg-color: @gray-lighter;
+@definition-panel-header-text-color: contrast(@definition-panel-header-bg-color);
+@definition-panel-border-color: darken(@definition-panel-header-bg-color, 30%);
+@definition-panel-inner-border-color: @definition-panel-border-color;
+
+.panel-definition {
+  .panel-variant(@definition-panel-border-color, @definition-panel-header-text-color, @definition-panel-header-bg-color, @definition-panel-border-color);
+}
+
+// Method sections
+.named-section(@title) {
+  &:before {
+    font-weight: bold;
+    color: @gray;
+    text-transform: uppercase;
+    content: @title;
+    padding-bottom: 0.5em;
+    display: block;
+  }
+  &:not(:last-child) {
+    padding-bottom: 1.5em;
+  }
+}
+
+.json-schema-description {
+  .named-section(@msg-json-section-description);
+}
+
+.json-schema-properties {
+  .named-section(@msg-json-section-properties);
+
+  dt, dd {
+    padding-left: 1em;
+  }
+
+  dd:not(:last-child) {
+    padding-bottom: 1em;
+  }
+
+  dl {
+    margin: 0;
+  }
+}
+
+.json-schema-array-items {
+  .named-section(@msg-json-section-items);
+}
+
+.json-schema-allOf-inherited {
+  .named-section(@msg-json-section-inherited);
+  ul {
+    .list-unstyled();
+  }
+}
+
+.json-schema-allOf-additional {
+  //  border-top: 1px solid @definition-panel-inner-border-color;
+}
+
+.json-inner-schema {
+  .json-schema-properties, .json-schema-array-items, .json-schema-description {
+    padding-left: 1em;
+    margin-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-left: 2px solid @definition-panel-inner-border-color;
+  }
+}
+
+.json-property-discriminator {
+  &:before {
+    .label();
+    .label-default();
+    content: @msg-json-discriminator;
+  }
+}
+
+.json-schema-ref {
+  &:before {
+    content: @msg-json-ref-prefix;
+  }
+}
+
+.json-property-type {
+  font-style: italic;
+  font-weight: 100;
+}
+
+.json-property-enum {
+  font-weight: lighter;
+  font-size: small;
+
+}
+
+.json-property-enum-item {
+  &:before, &:after {
+    content: "\""
+  }
+  font-weight: lighter;
+  font-size: small;
+
+}
+

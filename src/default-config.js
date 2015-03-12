@@ -9,14 +9,18 @@ var _ = require("lodash");
  */
 module.exports = {
     partials: {
-        "swagger-to-html": path.join(__dirname,"..","templates","partials")
+        "swagger-to-html": path.join(__dirname,"..","templates","partials"),
+        "json-schema": path.join(__dirname,"..","templates","partials-json-schema")
     },
     template: require.resolve("../templates/page.hbs"),
     helpers: require("./handlebars-helper.js"),
     less: {
         main_files: [
             require.resolve("bootstrap/less/bootstrap.less"),
-            require.resolve("../styles/base-theme.less")
+            require.resolve("../styles/json-schema.less"),
+            require.resolve("../styles/json-schema-labels.less"),
+            require.resolve("../styles/swagger-to-html.less"),
+            require.resolve("../styles/swagger-to-html-labels.less")
         ],
         paths: [
             path.resolve(__dirname, "..", "node_modules", "bootstrap", "less"),

@@ -54,12 +54,7 @@ module.exports = {
         var $ = cheerio.load(marked(value));
         return new Handlebars.SafeString(strip ? $("p").html() : $.html());
     },
-    "datatype": function (value) {
-        if (value==="array") {
-            return this.items.type+"[]";
-        }
-        return value;
-    },
+    "datatype": dataType,
     // http://stackoverflow.com/questions/8853396/logical-operator-in-a-handlebars-js-if-conditional
     "ifeq": function(v1,v2,options) {
 
@@ -85,5 +80,27 @@ module.exports = {
         return new Handlebars.SafeString($.html());
     }
 };
+
+/**
+ * Returns a descriptive string for a datatype
+ * @param value
+ * @returns {*}
+ */
+function dataType(value) {
+    if (!value.type) {
+        return "object";
+    }
+    if (value.type === "array") {
+        if (!value.items) {
+            return "array";
+        }
+        if (value.items.type) {
+            return dataType(value.items) + "[]";
+        } else {
+            return "object[]";
+        }
+    }
+    return value.type;
+}
 
 

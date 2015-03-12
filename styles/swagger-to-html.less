@@ -1,0 +1,108 @@
+@container-lg: 900px;
+@container-sm: 800px;
+
+// Draw a panel in a given color
+.panel-method(@color) {
+  .panel-variant(darken(@color, 30%), @panel-default-text, @color, darken(@color, 30%));
+  .method-name {
+    font-weight: bold;
+  }
+  .method-summary {
+    .pull-right
+  }
+}
+
+// Panels
+.panel-method-post {
+  .panel-method(#e7f6ec);
+}
+
+.panel-method-get {
+  .panel-method(#e7f0f7);
+}
+
+.panel-method-put {
+  .panel-method(#f9f2e9);
+}
+
+.panel-method-patch {
+  .panel-method(#FCE9E3);
+}
+
+.panel-method-options {
+  .panel-method(#e7f0f7);
+}
+
+.panel-method-delete {
+  .panel-method(#f5e8e8);
+}
+
+.panel-method-head {
+  .panel-method(#fcffcd);
+}
+
+
+
+.sw-method-description {
+  .named-section(@msg-sw-section-method-description);
+}
+
+.sw-request-params {
+  .named-section(@msg-sw-section-request-params);
+}
+
+.sw-request-body {
+  .named-section(@msg-sw-section-request-body);
+}
+
+.sw-response-body {
+  .named-section(@msg-sw-section-response-body);
+}
+
+.table-header(@label,@width: auto) {
+  width: auto;
+  &:before {
+    content: @label;
+  }
+}
+
+// Tables
+table.table {
+
+  th.sw-response-code {
+    .table-header(@msg-sw-response-code,10em);
+  }
+  th.sw-response-description {
+    .table-header(@msg-sw-response-description);
+  }
+  th.sw-response-data-type {
+    .table-header(@msg-sw-response-data-type, 40%);
+  }
+
+
+  th.sw-param-name {
+    .table-header(@msg-sw-param-name, 10%);
+  }
+  th.sw-param-description {
+    .table-header(@msg-sw-param-description);
+  }
+  th.sw-param-data-type {
+    .table-header(@msg-sw-param-data-type, 30%);
+  }
+  th.sw-param-type {
+    .table-header(@msg-sw-param-type, 10%);
+  }
+}
+
+.sw-response-description-text {
+  padding-bottom: 0.5em;
+}
+
+
+code.highlight {
+  padding: 0
+}
+
+
+
+

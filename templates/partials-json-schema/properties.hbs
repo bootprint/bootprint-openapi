@@ -1,0 +1,35 @@
+<section class="json-schema-properties">
+    <dl>
+        {{#each properties}}
+            <dt>
+                {{!Single property, default type is "object"}}
+                <span class="json-property-name">{{@key}}:</span>
+                <span class="json-property-type">{{datatype .}}</span>
+
+                {{#if enum}}
+                    <span class="json-property-enum" title="Possible values">&isin; {
+                        {{#each enum}}
+                            <span class="json-property-enum-item">{{.}}</span>{{#unless @last}},{{/unless}}
+                        {{/each}}
+                        }
+                        </span>
+                {{/if}}
+            </dt>
+            <dd>
+                {{#ifeq @key ../discriminator}}
+                    <span class="json-property-discriminator"></span>
+                {{/ifeq}}
+                {{md description}}
+                {{!Show details of nested property schema}}
+                <div class="json-inner-schema">
+                    {{#if properties}}
+                        {{>json-schema/properties}}
+                    {{/if}}
+                    {{#if items}}
+                        {{>json-schema/array items}}
+                    {{/if}}
+                </div>
+            </dd>
+        {{/each}}
+    </dl>
+</section>

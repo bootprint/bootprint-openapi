@@ -1,32 +1,32 @@
 {{#if responses}}
-    <h4>Responses</h4>
+    <section class="sw-response-body">
+        <p>{{#each produces}}<span class="label label-default">{{.}}</span> {{/each}}</p>
 
-    <p>{{#each produces}}<span class="label label-default">{{.}}</span> {{/each}}</p>
-
-    <table class="table">
-        <thead>
-        <th class="sw_code">HTTP Status Code</th>
-        <th class="sw_desc">Reason</th>
-        <th class="sw_response_data_type hidden-xs hidden-sm    ">Response Model</th>
-        </thead>
-        <tbody>
-        {{#each responses}}
+        <table class="table">
+            <thead>
             <tr>
-                <td>{{@key}}</td>
-                <td>
-                    {{md description}}
-                    {{#if schema}}
-                        <div class="visible-xs visible-sm">
-                            <strong>Response Model:</strong>
-                            {{json schema}}
-                        </div>
-                    {{/if}}
-                </td>
-                <td class="hidden-xs hidden-sm">{{json schema}}</td>
+                <th class="sw-response-code"></th>
+                <th class="sw-response-description"></th>
+                <th class="sw-response-data-type hidden-xs hidden-sm"></th>
             </tr>
-
-        {{/each}}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {{#each responses}}
+                <tr>
+                    <td>{{@key}}</td>
+                    <td>
+                        <div class="sw-response-description-text">
+                            {{md description}}
+                        </div>
+                        <section class="visible-xs visible-sm">
+                            {{>swagger-to-html/model schema}}
+                        </section>
+                    </td>
+                    <td class="hidden-xs hidden-sm">{{>swagger-to-html/model schema}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </section>
 
 {{/if}}

@@ -111,7 +111,6 @@ The configuration object can contain the following options:
 ```js
 {
   partials: {
-      somePartial: "path/to/partial.hbs",
       somePartialDirectory: "another/directory"
       parameters: "...",
       "...": "..."
@@ -163,7 +162,7 @@ Partial-B: {>custom/b}
 The directory is traversed recursively, so there might appear partials like `custom/subdir/c` as
 well.
 
-The following partials are included by default:
+The following partials are included by default: (*Warning! This list is outdated*)
 
 * **swagger-to-html/htmlBody**  renders the whole html-body contents.
 * **swagger-to-html/path** renders a single path definition.
@@ -227,7 +226,7 @@ is used in such a case. Entries of the `partials`-object are processed in parall
 so which partial overrides probably depends on the I/O timing for reading the directory and files.
 It may also depend on the traversing order of the object's keys.
 
-### helpers
+### helpers (*Warning: List is outdated*)
 
 This object contains name-function mapping of Handlebars-helpers used by the template. Additional
 helpers can be provided and existing helpers can be overridden. The following helpers exist in the default configuration:
@@ -269,10 +268,8 @@ to override all properties in here.
 
 * Provide a more complex example with custom configuration file
 * The Handlebars template is not complete yet. Missing parts:
-  * Request-Content-Type
   * Tags
   * Most parts of the "info"-block are still missing.
-  * Provide a nicer template for the JSON-Schema parts
 * Write unit tests
 * Include css-directives for [CSS Paged Media Module Level 3](http://www.w3.org/TR/css3-page/) in order to
   create a nicer print version (printable e.g. with [WeasyPrint](http://weasyprint.org)). This should include:
@@ -287,6 +284,11 @@ to override all properties in here.
 
 
 ## Changelog
+
+#### 2015-03-08 - Version 0.3.0
+
+* Updated template and partials to draw a more readble version of the swagger-models.
+* Almost all labels and section headers are are now configurable in LESS
 
 #### 2015-03-08 - Version 0.2.3
 

@@ -1,17 +1,15 @@
 {{#if consumes}}
-
-    <h4>Request body</h4>
-
-    <p>{{#each consumes}}<span class="label label-default">{{.}}</span> {{/each}}</p>
-
-    {{#if _request_body}}
-        {{#with _request_body}}
-            <div class="row">
-                <div class="col-md-6">
-                    <p>{{md description}}</p>
+    <section class="sw-request-body">
+        <p>{{#each consumes}}<span class="label label-default">{{.}}</span> {{/each}}</p>
+        {{#if _request_body}}
+            {{#with _request_body}}
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>{{md description}}</p>
+                    </div>
+                    <div class="col-md-6 sw-request-model">{{>swagger-to-html/model schema}}</div>
                 </div>
-                <div class="col-md-6"><strong>Request-model:</strong> {{json schema}}</div>
-            </div>
-        {{/with}}
-    {{/if}}
+            {{/with}}
+        {{/if}}
+    </section>
 {{/if}}
