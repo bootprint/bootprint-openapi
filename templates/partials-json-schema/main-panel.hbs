@@ -4,7 +4,9 @@
     {{#if title}}
         <div class="panel-heading">
             {{#if anchor}}
-                <h3 class="panel-title"><a name="/definitions/{{title}}"></a>{{title}}</h3>
+                <h3 class="panel-title"><a name="/definitions/{{title}}"></a>{{title}}:
+                    <span class="json-property-type">{{datatype .}}</span>
+                </h3>
             {{else}}
                 <h3 class="panel-title">{{title}}</h3>
             {{/if}}
