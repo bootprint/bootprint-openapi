@@ -1,0 +1,26 @@
+{{! renders the security-section of the HTML-page}}
+
+{{#if securityDefinitions}}
+    <h2>Security</h2>
+
+    {{#each securityDefinitions}}
+        <div id="security-definition-{{@key}}" class="panel panel-security-definition panel-security-definition-{{type}}">
+            <div class="panel-heading">
+                <h3 class="panel-title"><span class="security-name">{{@key}}</span> <strong><span class="sw-security-definition-{{type}}"></span></strong></h3>
+            </div>
+            <div class="panel-body">
+                <section class="sw-security-properties">
+                    {{#each this}}
+                        <dt>
+                            {{#ifeq @key 'type'}}
+                            {{else}}
+                                <span class="security-property-name">{{@key}}:</span>
+                                <span class="security-property-type">{{this}}</span>
+                            {{/ifeq}}
+                        </dt>
+                    {{/each}}
+                </section>
+            </div>
+        </div>
+    {{/each}}
+{{/if}}

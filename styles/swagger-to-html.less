@@ -92,6 +92,13 @@ table.table {
   th.sw-param-type {
     .table-header(@msg-sw-param-type, 10%);
   }
+
+  th.sw-request-security-schema {
+    .table-header(@msg-sw-request-security-schema, 50%);
+  }
+  th.sw-request-security-scopes {
+    .table-header(@msg-sw-request-security-scopes, 50%);
+  }
 }
 
 .sw-response-description-text {
@@ -103,6 +110,20 @@ code.highlight {
   padding: 0
 }
 
+.panel-security-definition {
+  .panel-variant(@security-definition-panel-border-color, @security-definition-panel-header-text-color, @security-definition-panel-header-bg-color, @security-definition-panel-border-color);
+}
 
+.sw-request-security {
+  .named-section(@msg-sw-section-request-security);
+}
+
+.sw-security-definition-basic {
+  &:before {
+    color: @gray;
+    font-size: smaller;
+    content: @msg-sw-security-definition-type-basic;
+  }
+}
 
 
