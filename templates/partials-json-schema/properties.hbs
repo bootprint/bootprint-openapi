@@ -6,6 +6,9 @@
                 {{!Single property, default type is "object"}}
                 <span class="json-property-name">{{@key}}:</span>
                 <span class="json-property-type">{{datatype .}}</span>
+                {{#if format}}
+                    <span class="json-property-format">({{format}})</span>
+                {{/if}}
 
                 {{#if enum}}
                     <span class="json-property-enum" title="Possible values">&isin; {
