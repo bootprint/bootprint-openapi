@@ -78,6 +78,13 @@ module.exports = {
         });
 
         return new Handlebars.SafeString($.html());
+    },
+    "ifcontains": function(array, object,options) {
+        console.log(array);
+        if (array && array.indexOf(object)>=0) {
+            return options.fn(this);
+        }
+        return options.inverse(this);
     }
 };
 

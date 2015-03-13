@@ -61,12 +61,21 @@
   }
 }
 
-.json-property-discriminator {
+.named-label(@name) {
   &:before {
     .label();
     .label-default();
-    content: @msg-json-discriminator;
+    content: @name;
   }
+
+}
+
+.json-property-discriminator {
+  .named-label(@msg-json-discriminator)
+}
+
+.json-property-required {
+  .named-label(@msg-json-required)
 }
 
 .json-schema-ref {

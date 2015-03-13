@@ -20,6 +20,10 @@
                 {{#ifeq @key ../discriminator}}
                     <span class="json-property-discriminator"></span>
                 {{/ifeq}}
+                {{#ifcontains ../required @key}}
+                    <span class="json-property-required"></span>
+                {{/ifcontains}}
+
                 {{md description}}
                 {{!Show details of nested property schema}}
                 <div class="json-inner-schema">
