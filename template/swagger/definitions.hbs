@@ -3,5 +3,5 @@
 <h2>Definitions</h2>
 
 {{#each definitions}}
-    {{>swagger-to-html/model schema=. title=@key anchor="/definitions" }}
+    {{>swagger/model schema=. title=@key anchor="/definitions" }}
 {{/each}}
