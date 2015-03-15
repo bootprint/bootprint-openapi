@@ -18,7 +18,7 @@
                     <td>{{md description}}</td>
                     <td>{{in}}</td>
                     <td>
-                        {{datatype .}}{{#if collectionFormat}},
+                        {{json-schema--datatype .}}{{#if collectionFormat}},
                         <span class="sw-param-collection-format">{{collectionFormat}}</span>
                     {{/if}}
                     </td>
