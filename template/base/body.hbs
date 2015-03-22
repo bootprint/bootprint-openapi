@@ -1,7 +1,8 @@
 {{! renders the <body> of the HTML page.}}
 <h1>{{info.title}}</h1>
-
 <p>{{{info.description}}}</p>
+
+{{>swagger/summary}}
 
 {{>swagger/securityDefinitions}}
 

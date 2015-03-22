@@ -11,7 +11,6 @@ module.exports = function (builder) {
     return builder
         .load(require("bootprint-json-schema"))
         .merge({
-            "template": require.resolve("./template/template.hbs"),
             "partials": path.join(__dirname, "template/"),
             "helpers": {},
             "less": {

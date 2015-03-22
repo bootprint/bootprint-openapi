@@ -1,9 +1,17 @@
 @container-lg: 900px;
 @container-sm: 800px;
 
+
+.table.swagger--summary>tbody>tr>td {
+  &.swagger--summary-path {
+    vertical-align: middle;
+  }
+}
+
 // Draw a panel in a given color
-.panel-method(@color) {
-  .panel-variant(darken(@color, 30%), @panel-default-text, @color, darken(@color, 30%));
+.swagger--panel-method(@color) {
+  .panel-variant(darken(@color,30%), @panel-default-text, @color, darken(@color, 30%));
+
   .method-name {
     font-weight: bold;
   }
@@ -13,32 +21,34 @@
 }
 
 // Panels
-.panel-method-post {
-  .panel-method(#e7f6ec);
-}
+.swagger--panel-method-post {
+    .swagger--panel-method(#e7f6ec);
+  }
 
-.panel-method-get {
-  .panel-method(#e7f0f7);
-}
+.swagger--panel {
+  &-method-get {
+    .swagger--panel-method(#e7f0f7);
+  }
 
-.panel-method-put {
-  .panel-method(#f9f2e9);
-}
+  &-method-put {
+    .swagger--panel-method(#f9f2e9);
+  }
 
-.panel-method-patch {
-  .panel-method(#FCE9E3);
-}
+  &-method-patch {
+    .swagger--panel-method(#FCE9E3);
+  }
 
-.panel-method-options {
-  .panel-method(#e7f0f7);
-}
+  &-method-options {
+    .swagger--panel-method(#e7f0f7);
+  }
 
-.panel-method-delete {
-  .panel-method(#f5e8e8);
-}
+  &-method-delete {
+    .swagger--panel-method(#f5e8e8);
+  }
 
-.panel-method-head {
-  .panel-method(#fcffcd);
+  &-method-head {
+    .swagger--panel-method(#fcffcd);
+  }
 }
 
 
