@@ -1,8 +1,0 @@
-{
-  "partials": {
-    "swagger-to-html": "partials"
-  },
-  "less": {
-    "main_files": "custom.less"
-  }
-}
