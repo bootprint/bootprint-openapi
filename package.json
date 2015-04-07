@@ -2,7 +2,7 @@
   "name": "bootprint-swagger",
   "version": "0.4.2",
   "description": "Converts a swagger-definition into a static html page",
-  "main": "bootprint-options.js",
+  "main": "index.js",
   "preferGlobal": true,
   "author": "Nils Knappmeier",
   "license": "MIT",
