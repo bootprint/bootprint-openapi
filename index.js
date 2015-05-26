@@ -6,6 +6,7 @@ module.exports = function (builder) {
         .load(require("bootprint-json-schema"))
         .merge({
             "partials": path.join(__dirname, "handlebars/partials"),
+            "helpers": require.resolve("./handlebars/helpers.js"),
             "less": {
                 "main": [
                     require.resolve("./less/theme.less"),
