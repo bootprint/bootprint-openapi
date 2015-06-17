@@ -13,11 +13,11 @@
             <tr>
                 {{#if @first}}
                     <td class="swagger--summary-path" rowspan="{{@length}}">
-                        <a href="#method-{{@../key}}">{{@../key}}</a>
+                        <a href="#path-{{htmlId @../key}}">{{@../key}}</a>
                     </td>
                 {{/if}}
                 <td>
-                    <a href="#method-{{@../key}}-{{@key}}">{{toUpperCase @key}}</a>
+                    <a href="#method-{{htmlId @../key}}-{{htmlId @key}}">{{toUpperCase @key}}</a>
                 </td>
                 <td>
                     {{md summary}}
