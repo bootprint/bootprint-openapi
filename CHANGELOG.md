@@ -1,6 +1,6 @@
 # Release notes
 
-## Upcoming
+## v0.6.0 - 2015-06-28
 ### Update
 
 - Config-format of bootprint 0.5 used
