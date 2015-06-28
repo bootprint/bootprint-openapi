@@ -5,15 +5,17 @@ module.exports = function (builder) {
     return builder
         .load(require("bootprint-json-schema"))
         .merge({
-            "preprocessor": require("./lib/preprocessor.js"),
-            "partials": path.join(__dirname, "handlebars/partials"),
-            "helpers": require.resolve("./handlebars/helpers.js"),
+            "handlebars": {
+                "partials": path.join(__dirname, "handlebars/partials"),
+                "helpers": require.resolve("./handlebars/helpers.js")
+            },
             "less": {
                 "main": [
                     require.resolve("./less/theme.less"),
                     require.resolve("./less/variables.less")
                 ]
-            }
+            },
+            "preprocessor": require("./lib/preprocessor.js")
         });
 };
 
