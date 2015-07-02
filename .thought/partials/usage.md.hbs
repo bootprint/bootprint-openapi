@@ -1,0 +1,18 @@
+## Usage
+
+```
+bootprint swagger http://petstore.swagger.io/v2/swagger.json target
+```
+
+The directory "target" should now contain a file `index.html` and `main.css` which contain a readble
+form of the [Swagger-Petstore-Example](http://petstore.swagger.io/).
+
+For details about command line parameters, please refer to the
+[documentation of the Bootprint](https://github.com/nknapp/bootprint)
+
+`bootprint-swagger` is just a template-module for `bootprint`. That means, it contains
+[LessCss-file](less), [Handlebars-partials](handlebars/partials) and a
+[preprocessor](handlebars/preprocessor.js) that converts
+[a Swagger-Specification](http://swagger.io) into the JSON actually neede by the templates.
+
+

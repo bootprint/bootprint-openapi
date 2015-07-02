@@ -1,7 +1,13 @@
 var path = require("path");
 
-// Export function to create new config (builder is passed in from outside)
-module.exports = function (builder) {
+/**
+ * Create a bootprint template-module that can be loaded via `Bootprint#load`.
+ * @name index
+ * @param {BootprintBuilder} builder the current bootprint builder
+ * @return {BootprintBuilder} a bootprint-builder containing the template an Less settings for `bootprint-swagger`
+ * @api public
+ */
+module.exports = function bootprintSwagger(builder) {
     return builder
         .load(require("bootprint-json-schema"))
         .merge({
