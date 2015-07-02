@@ -32,16 +32,33 @@ For details about command line parameters, please refer to the
 
 `bootprint-swagger` is just a template-module for `bootprint`. That means, it contains
 [LessCss-file](less), [Handlebars-partials](handlebars/partials) and a
-[preprocessor](handlebars/preprocessor.js) that converts
-[a Swagger-Specification](http://swagger.io) into the JSON actually neede by the templates.
+[preprocessor](lib/preprocessor.js) that converts
+[a Swagger-Specification](http://swagger.io) into the JSON actually needed by the templates.
 
 
+### Javascript-Usage
 
-#  API-reference
+The does essentially the same, just in a the above command line, just in JavaScript (i.e. `node`)
+
+```js
+// Load bootprint
+var bootprint = require('bootprint')
+    // Load bootprint-swagger
+   .load(require('bootprint-swagger'))
+    // Customize configuration, override any options
+   .merge({ /* Any other configuration */ })
+    // Specify build source and target
+   .build('http://petstore.swagger.io/v2/swagger.json','target')
+    // Generate swagger-documentation into "target" directory
+   .generate()
+   .done(console.log);
+```
+
+##  API-reference
 
 ## bootprintSwagger
 
-Create a bootprint template-module that can be loaded via `Bootprint#load`.
+Create a bootprint template-module that can be loaded via `Bootprint#load`:
 
 * Parameters:
   * builder: **BootprintBuilder** - the current bootprint builder    

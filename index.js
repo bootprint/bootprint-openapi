@@ -1,7 +1,8 @@
 var path = require("path");
 
 /**
- * Create a bootprint template-module that can be loaded via `Bootprint#load`.
+ * Create a bootprint template-module that can be loaded via `Bootprint#load`:
+ *
  * @name index
  * @param {BootprintBuilder} builder the current bootprint builder
  * @return {BootprintBuilder} a bootprint-builder containing the template an Less settings for `bootprint-swagger`
