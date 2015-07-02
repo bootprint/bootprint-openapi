@@ -5,7 +5,7 @@ var path = require("path");
  *
  * @name index
  * @param {BootprintBuilder} builder the current bootprint builder
- * @return {BootprintBuilder} a bootprint-builder containing the template an Less settings for `bootprint-swagger`
+ * @return {BootprintBuilder} a bootprint-builder containing the template and Less settings for `bootprint-swagger`
  * @api public
  */
 module.exports = function bootprintSwagger(builder) {

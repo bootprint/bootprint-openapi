@@ -64,7 +64,7 @@ Create a bootprint template-module that can be loaded via `Bootprint#load`:
   * builder: **BootprintBuilder** - the current bootprint builder    
 
 * Returns:
-  * **BootprintBuilder** - a bootprint-builder containing the template an Less settings for `bootprint-swagger`
+  * **BootprintBuilder** - a bootprint-builder containing the template and Less settings for `bootprint-swagger`
 
 
 
