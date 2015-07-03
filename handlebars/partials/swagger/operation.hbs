@@ -1,17 +1,23 @@
 {{!--
- renders a single operation definition.
+    This partial renders a box containing information about a single operation of the service
+    (such as calling a POST on the "/pets" resource).
+    @name swagger/operations
+    @param {Operation} operation a Swagger-Operation object.
+    @param {string} method the http-method (GET, POST, DELETE, PUT, PATCH)
+    @api public
 --}}
-<div id="operation-{{htmlId path}}-{{htmlId operation}}" class="swagger--panel-operation-{{operation}} panel">
+<div id="operation-{{htmlId path}}-{{htmlId method}}" class="swagger--panel-operation-{{method}} panel">
     <div class="panel-heading">
         <div class="operation-summary">{{md summary "true"}}</div>
-        <h3 class="panel-title"><span class="operation-name">{{toUpperCase operation}}</span> <strong>{{path}}</strong></h3>
+        <h3 class="panel-title"><span class="operation-name">{{toUpperCase method}}</span> <strong>{{path}}</strong></h3>
     </div>
     <div class="panel-body">
         <section class="sw-operation-description">
-            {{md methodDef.description}}
+            {{md operation.description}}
         </section>
-        {{>swagger/request-body}}
-        {{>swagger/parameters}}
+        {{! The _request_body variable is filled with the parameter `body` by the preprocessor. }}
+        {{>swagger/request-body consumes=operation.consumes body=_request_body}}
+        {{>swagger/parameters parameters=parameters}}
         {{>swagger/responses}}
         {{>swagger/security}}
     </div>

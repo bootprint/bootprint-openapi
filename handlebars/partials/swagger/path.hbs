@@ -2,11 +2,11 @@
     Renders a single path definition with all its methods (GET, POST).
     @name swagger/path
     @param {string} path the request path
-    @param {object<Operation>} pathdef a swagger [path-item-object](http://swagger.io/specification/#pathItemObject)
+    @param {object<Operation>} pathItems a swagger [path-item-object](http://swagger.io/specification/#pathItemObject)
     @api public
 --}}
 
 <span id="path-{{path}}"></span>
-{{#eachSorted pathDef}}
-    {{>swagger/operation . methodDef=. operation=@key path=../path}}
+{{#eachSorted pathItems}}
+    {{>swagger/operation . operation=. method=@key path=../path}}
 {{/eachSorted}}

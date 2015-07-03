@@ -1,6 +1,11 @@
-{{! renders a json-schema model within swagger (calls json-schema-partials).}}
+{{!--
+ Renders a json-schema model within swagger (calls json-schema-partials).
+ @param {JsonSchema} model a JSON-schema definition
+ @param {string} title the name of the definition
+ @api public
+--}}
 
 {{! "title" is usually past as parameter, call the json-schema partials if necessary}}
-{{#if .}}
-    {{>json-schema/main-panel title=title}}
+{{#if model}}
+    {{>json-schema/main-panel model title=title}}
 {{/if}}

@@ -1,6 +1,10 @@
-{{! renders the paths-section of the HTML-page}}
+{{!--
+    Renders the paths-section of the Rest-Service definition
+    @params {Path[]} paths a list of Swagger Path-Objects
+    @api public
+--}}
 <h2>Paths</h2>
 
 {{#eachSorted paths}}
-    {{>swagger/path . pathDef=. path=@key}}
+    {{>swagger/path pathItems=. path=@key}}
 {{/eachSorted}}

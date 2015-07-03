@@ -1,4 +1,9 @@
-{{! renders the responses section of a operation}}
+{{!--
+    Renders the responses section of an operation
+    @param {Response[]} responses a list of Swagger-Response definitions
+    @param {string[]} produces a list of response content types produces by the operation
+    @api public
+--}}
 
 {{#if responses}}
     <section class="sw-response-body">

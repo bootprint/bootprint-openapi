@@ -1,17 +1,20 @@
-{{! renders the request-body section of a operation}}
+{{!--
+    Renders the request-body section of an operation.
+    @param {string[]} consumes a list of request content type eligible for this operation.
+    @param {Parameter} body the Parameter-Object of the `body`-parameter
+    @api public
+--}}
 
 {{#if consumes}}
     <section class="sw-request-body">
         <p>{{#each consumes}}<span class="label label-default">{{.}}</span> {{/each}}</p>
-        {{#if _request_body}}
-            {{#with _request_body}}
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>{{md description}}</p>
-                    </div>
-                    <div class="col-md-6 sw-request-model">{{>swagger/model schema}}</div>
+        {{#with body}}
+            <div class="row">
+                <div class="col-md-6">
+                    <p>{{md description}}</p>
                 </div>
-            {{/with}}
-        {{/if}}
+                <div class="col-md-6 sw-request-model">{{>swagger/model model=schema}}</div>
+            </div>
+        {{/with}}
     </section>
 {{/if}}
