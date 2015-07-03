@@ -9,52 +9,52 @@
 }
 
 // Draw a panel in a given color
-.swagger--panel-method(@color) {
+.swagger--panel-operation(@color) {
   .panel-variant(darken(@color,30%), @panel-default-text, @color, darken(@color, 30%));
 
-  .method-name {
+  .operation-name {
     font-weight: bold;
   }
-  .method-summary {
+  .operation-summary {
     .pull-right
   }
 }
 
 // Panels
-.swagger--panel-method-post {
-    .swagger--panel-method(#e7f6ec);
+.swagger--panel-operation-post {
+    .swagger--panel-operation(#e7f6ec);
   }
 
 .swagger--panel {
-  &-method-get {
-    .swagger--panel-method(#e7f0f7);
+  &-operation-get {
+    .swagger--panel-operation(#e7f0f7);
   }
 
-  &-method-put {
-    .swagger--panel-method(#f9f2e9);
+  &-operation-put {
+    .swagger--panel-operation(#f9f2e9);
   }
 
-  &-method-patch {
-    .swagger--panel-method(#FCE9E3);
+  &-operation-patch {
+    .swagger--panel-operation(#FCE9E3);
   }
 
-  &-method-options {
-    .swagger--panel-method(#e7f0f7);
+  &-operation-options {
+    .swagger--panel-operation(#e7f0f7);
   }
 
-  &-method-delete {
-    .swagger--panel-method(#f5e8e8);
+  &-operation-delete {
+    .swagger--panel-operation(#f5e8e8);
   }
 
-  &-method-head {
-    .swagger--panel-method(#fcffcd);
+  &-operation-head {
+    .swagger--panel-operation(#fcffcd);
   }
 }
 
 
 
-.sw-method-description {
-  .named-section(@msg-sw-section-method-description);
+.sw-operation-description {
+  .named-section(@msg-sw-section-operation-description);
 }
 
 .sw-request-params {

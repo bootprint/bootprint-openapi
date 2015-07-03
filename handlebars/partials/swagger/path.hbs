@@ -8,5 +8,5 @@
 
 <span id="path-{{path}}"></span>
 {{#eachSorted pathDef}}
-    {{>swagger/method . methodDef=. method=@key path=../path}}
+    {{>swagger/operation . methodDef=. operation=@key path=../path}}
 {{/eachSorted}}
