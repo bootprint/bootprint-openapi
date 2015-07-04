@@ -1,0 +1,16 @@
+##  API-reference
+aasdadasd
+{{#if package.main}}
+{{{apidocs package.main}}}
+{{/if}}
+
+## Partial reference
+
+{{#each partials}}
+### {{partialName}}
+
+{{#each apidocs}}
+{{{.}}}
+{{/each}}
+
+{{/each}}

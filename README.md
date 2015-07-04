@@ -55,8 +55,8 @@ var bootprint = require('bootprint')
 ```
 
 ##  API-reference
-
-## bootprintSwagger
+aasdadasd
+## index
 
 Create a bootprint template-module that can be loaded via `Bootprint#load`:
 
@@ -68,10 +68,212 @@ Create a bootprint template-module that can be loaded via `Bootprint#load`:
 
 
 
+## Partial reference
+
+### base/body
+
+## 
+
+This partial renders the <body> of the HTML page.
+
+
+
+
+
+### base/footer
+
+
+### base/header
+
+
+### base/title
+
+## 
+
+Renders the page title
+
+* Parameters:
+  * $context$: **object** - the whole swagger definition    
+
+
+
+
+### json-schema/additionalProperties
+
+
+### json-schema/allOf
+
+
+### json-schema/anyOf
+
+
+### json-schema/array-items
+
+
+### json-schema/body
+
+
+### json-schema/datatype
+
+## 
+
+Enum values
+
+
+
+
+## 
+
+Default values (for non-enum types)
+
+
+
+
+
+### json-schema/definitions
+
+
+### json-schema/main-panel
+
+
+### json-schema/properties
+
+
+### json-schema/reference
+
+
+### swagger/definitions
+
+## 
+
+Renders the definition-section of the HTML-page.
+
+* Parameters:
+  * definitions: **Array<Definition>** - a list of JSON-subschemas.    
+
+
+
+
+### swagger/model
+
+## 
+
+Renders a json-schema model within swagger (calls json-schema-partials).
+
+* Parameters:
+  * model: **JsonSchema** - a JSON-schema definition    
+  * title: **string** - the name of the definition    
+
+
+
+
+### swagger/operation
+
+## 
+
+This partial renders a box containing information about a single operation of the service
+(such as calling a POST on the "/pets" resource).
+
+
+
+
+
+### swagger/parameters
+
+## 
+
+Renders the parameter table within a operation definition.
+
+* Parameters:
+  * parameters: **Array<Parameter>** - a list of Swagger-Parameter objects    
+
+
+
+
+### swagger/path
+
+## 
+
+Renders a single path definition with all its methods (GET, POST).
+
+
+
+
+
+### swagger/paths
+
+## 
+
+Renders the paths-section of the Rest-Service definition
+
+
+
+
+
+### swagger/request-body
+
+## 
+
+Renders the request-body section of an operation.
+
+* Parameters:
+  * consumes: **Array<string>** - a list of request content type eligible for this operation.    
+  * body: **Parameter** - the Parameter-Object of the `body`-parameter    
+
+
+
+
+### swagger/responses
+
+## 
+
+Renders the responses section of an operation
+
+* Parameters:
+  * responses: **Array<Response>** - a list of Swagger-Response definitions    
+  * produces: **Array<string>** - a list of response content types produces by the operation    
+
+
+
+
+### swagger/security
+
+## 
+
+Renders the security definitions of the Rest-service.
+
+* Parameters:
+  * security: **Array<Security>** - TODO    
+
+
+
+
+### swagger/securityDefinitions
+
+## 
+
+Renders the security-section of the HTML-page
+TODO: Parameters
+
+
+
+
+
+### swagger/summary
+
+## 
+
+Renders a summary of this services, containing references to all operations and paths
+
+
+
+
+
+
 ## License
 
 `bootprint-swagger` is published under the MIT-license. 
-See [LICENSE](LICENSE) for details.
+See []() for details.
 
 ## Contributing Guidelines
 
