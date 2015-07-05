@@ -56,7 +56,7 @@ var bootprint = require('bootprint')
 
 ##  API-reference
 
-## [index](index.js)
+## [index](https://github.com/nknapp/bootprint-swagger/blob/master/index.js#L11)
 
 Create a bootprint template-module that can be loaded via `Bootprint#load`:
 

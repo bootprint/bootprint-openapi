@@ -1,13 +1,13 @@
 # Partial reference
 
-## [base/body](handlebars/partials/base/body.hbs)
+## [base/body](https://github.com/nknapp/bootprint-swagger/blob/master/handlebars/partials/base/body.hbs#L7)
 
 This partial renders the <body> of the HTML page.
 
 
 
 
-## [base/title](handlebars/partials/base/title.hbs)
+## [base/title](https://github.com/nknapp/bootprint-swagger/blob/master/handlebars/partials/base/title.hbs#L6)
 
 Renders the page title
 
@@ -16,21 +16,21 @@ Renders the page title
 
 
 
-## [json-schema/datatype](../bootprint-json-schema/handlebars/partials/json-schema/datatype.hbs)
+## [json-schema/datatype](https://github.com/nknapp/bootprint-json-schema/blob/master/handlebars/partials/json-schema/datatype.hbs#L18)
 
 Enum values
 
 
 
 
-## [json-schema/datatype](../bootprint-json-schema/handlebars/partials/json-schema/datatype.hbs)
+## [json-schema/datatype](https://github.com/nknapp/bootprint-json-schema/blob/master/handlebars/partials/json-schema/datatype.hbs#L32)
 
 Default values (for non-enum types)
 
 
 
 
-## [swagger/definitions](handlebars/partials/swagger/definitions.hbs)
+## [swagger/definitions](https://github.com/nknapp/bootprint-swagger/blob/master/handlebars/partials/swagger/definitions.hbs#L7)
 
 Renders the definition-section of the HTML-page.
 
@@ -39,7 +39,7 @@ Renders the definition-section of the HTML-page.
 
 
 
-## [swagger/model](handlebars/partials/swagger/model.hbs)
+## [swagger/model](https://github.com/nknapp/bootprint-swagger/blob/master/handlebars/partials/swagger/model.hbs#L8)
 
 Renders a json-schema model within swagger (calls json-schema-partials).
 
@@ -49,7 +49,7 @@ Renders a json-schema model within swagger (calls json-schema-partials).
 
 
 
-## [swagger/operation](handlebars/partials/swagger/operation.hbs)
+## [swagger/operation](https://github.com/nknapp/bootprint-swagger/blob/master/handlebars/partials/swagger/operation.hbs#L9)
 
 This partial renders a box containing information about a single operation of the service
 (such as calling a POST on the "/pets" resource).
@@ -57,7 +57,7 @@ This partial renders a box containing information about a single operation of th
 
 
 
-## [swagger/parameters](handlebars/partials/swagger/parameters.hbs)
+## [swagger/parameters](https://github.com/nknapp/bootprint-swagger/blob/master/handlebars/partials/swagger/parameters.hbs#L7)
 
 Renders the parameter table within a operation definition.
 
@@ -66,21 +66,21 @@ Renders the parameter table within a operation definition.
 
 
 
-## [swagger/path](handlebars/partials/swagger/path.hbs)
+## [swagger/path](https://github.com/nknapp/bootprint-swagger/blob/master/handlebars/partials/swagger/path.hbs#L9)
 
 Renders a single path definition with all its methods (GET, POST).
 
 
 
 
-## [swagger/paths](handlebars/partials/swagger/paths.hbs)
+## [swagger/paths](https://github.com/nknapp/bootprint-swagger/blob/master/handlebars/partials/swagger/paths.hbs#L6)
 
 Renders the paths-section of the Rest-Service definition
 
 
 
 
-## [swagger/request-body](handlebars/partials/swagger/request-body.hbs)
+## [swagger/request-body](https://github.com/nknapp/bootprint-swagger/blob/master/handlebars/partials/swagger/request-body.hbs#L8)
 
 Renders the request-body section of an operation.
 
@@ -90,7 +90,7 @@ Renders the request-body section of an operation.
 
 
 
-## [swagger/responses](handlebars/partials/swagger/responses.hbs)
+## [swagger/responses](https://github.com/nknapp/bootprint-swagger/blob/master/handlebars/partials/swagger/responses.hbs#L8)
 
 Renders the responses section of an operation
 
@@ -100,7 +100,7 @@ Renders the responses section of an operation
 
 
 
-## [swagger/security](handlebars/partials/swagger/security.hbs)
+## [swagger/security](https://github.com/nknapp/bootprint-swagger/blob/master/handlebars/partials/swagger/security.hbs#L6)
 
 Renders the security definitions of the Rest-service.
 
@@ -109,7 +109,7 @@ Renders the security definitions of the Rest-service.
 
 
 
-## [swagger/securityDefinitions](handlebars/partials/swagger/securityDefinitions.hbs)
+## [swagger/securityDefinitions](https://github.com/nknapp/bootprint-swagger/blob/master/handlebars/partials/swagger/securityDefinitions.hbs#L7)
 
 Renders the security-section of the HTML-page
 TODO: Parameters
@@ -117,7 +117,7 @@ TODO: Parameters
 
 
 
-## [swagger/summary](handlebars/partials/swagger/summary.hbs)
+## [swagger/summary](https://github.com/nknapp/bootprint-swagger/blob/master/handlebars/partials/swagger/summary.hbs#L6)
 
 Renders a summary of this services, containing references to all operations and paths
 
