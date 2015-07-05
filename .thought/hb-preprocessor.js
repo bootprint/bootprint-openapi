@@ -23,14 +23,16 @@ module.exports = function (input) {
             var result = _.pairs(result.handlebars.partials).map(function (partial) {
                 var contents = partial[1].contents;
                 var filePath = partial[1].path;
-                var name = partial[0];
+                var name = partial[0].replace(/\.hbs$/, '');
                 return {
-                    "partialName": name.replace(/\.hbs$/, ''),
+                    "partialName": name,
                     "contents": contents,
                     "path": filePath,
                     "apidocs": apidocs(contents, {
                         filename: filePath,
-                        name: name,
+                        defaults: {
+                            name: name,
+                        },
                         filter: {
                             showWithoutApiTag: true
                         }

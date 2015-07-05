@@ -1,1 +1,7 @@
-{{{apidocs 'handlebars/**/*.hbs'}}}
+# Partial reference
+
+{{#each partials}}
+{{#each apidocs}}
+{{{.}}}
+{{/each}}
+{{/each}}
