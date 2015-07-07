@@ -72,14 +72,15 @@ var hbDocs = function (files) {
 function createPartialTree(currentFile, partials, visitedFiles) {
     if (visitedFiles[currentFile.name]) {
         return {
-            name: '*' + currentFile.name + '*'
+            label: '*' + currentFile.name + '*',
+            name: currentFile.name
         }
     }
     visitedFiles[currentFile.name] = true;
 
     var result = {
-        name: currentFile.name,
-        href: '#'+currentFile.name // Anchors are generated in handlebars-partials.md.hbs (it's not nice to have these should change TODO)
+        label: currentFile.name,
+        name: currentFile.name
     };
     if (currentFile.children.length>0) {
         _.merge(result,{
