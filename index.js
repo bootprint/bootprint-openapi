@@ -14,15 +14,15 @@ module.exports = function bootprintSwagger(builder) {
         .merge({
             "handlebars": {
                 "partials": path.join(__dirname, "handlebars/partials"),
-                "helpers": require.resolve("./handlebars/helpers.js")
+                "helpers": require.resolve("./handlebars/helpers.js"),
+                "preprocessor": require("./lib/preprocessor.js")
             },
             "less": {
                 "main": [
                     require.resolve("./less/theme.less"),
                     require.resolve("./less/variables.less")
                 ]
-            },
-            "preprocessor": require("./lib/preprocessor.js")
+            }
         });
 };
 
