@@ -1,45 +1,59 @@
 # Template structure
 
-<pre><code><a href="#index.html">index.html</a>
-├── <a href="#base/title">base/title</a>
-├── <a href="#base/header">base/header</a>
-├── <a href="#base/body">base/body</a>
-│   ├── <a href="#swagger/summary">swagger/summary</a>
-│   ├── <a href="#swagger/securityDefinitions">swagger/securityDefinitions</a>
-│   ├── <a href="#swagger/paths">swagger/paths</a>
-│   │   └── <a href="#swagger/path">swagger/path</a>
-│   │       └── <a href="#swagger/operation">swagger/operation</a>
-│   │           ├── <a href="#swagger/request-body">swagger/request-body</a>
-│   │           │   └── <a href="#swagger/model">swagger/model</a>
-│   │           │       └── <a href="#json-schema/main-panel">json-schema/main-panel</a>
-│   │           │           ├── <a href="#json-schema/datatype">json-schema/datatype</a>
-│   │           │           │   └── <a href="#json-schema/reference">json-schema/reference</a>
-│   │           │           └── <a href="#json-schema/body">json-schema/body</a>
-│   │           │               ├── <a href="#json-schema/reference">*json-schema/reference*</a>
-│   │           │               ├── <a href="#json-schema/properties">json-schema/properties</a>
-│   │           │               │   ├── <a href="#json-schema/datatype">*json-schema/datatype*</a>
-│   │           │               │   └── <a href="#json-schema/body">*json-schema/body*</a>
-│   │           │               ├── <a href="#json-schema/additionalProperties">json-schema/additionalProperties</a>
-│   │           │               │   ├── <a href="#json-schema/datatype">*json-schema/datatype*</a>
-│   │           │               │   └── <a href="#json-schema/body">*json-schema/body*</a>
-│   │           │               ├── <a href="#json-schema/array-items">json-schema/array-items</a>
-│   │           │               │   └── <a href="#json-schema/body">*json-schema/body*</a>
-│   │           │               ├── <a href="#json-schema/allOf">json-schema/allOf</a>
-│   │           │               │   ├── <a href="#json-schema/reference">*json-schema/reference*</a>
-│   │           │               │   └── <a href="#json-schema/body">*json-schema/body*</a>
-│   │           │               └── <a href="#json-schema/anyOf">json-schema/anyOf</a>
-│   │           │                   ├── <a href="#json-schema/datatype">*json-schema/datatype*</a>
-│   │           │                   └── <a href="#json-schema/body">*json-schema/body*</a>
-│   │           ├── <a href="#swagger/parameters">swagger/parameters</a>
-│   │           │   ├── <a href="#json-schema/datatype">*json-schema/datatype*</a>
-│   │           │   └── <a href="#json-schema/datatype">*json-schema/datatype*</a>
-│   │           ├── <a href="#swagger/responses">swagger/responses</a>
-│   │           │   ├── <a href="#swagger/model">*swagger/model*</a>
-│   │           │   └── <a href="#swagger/model">*swagger/model*</a>
-│   │           └── <a href="#swagger/security">swagger/security</a>
-│   └── <a href="#swagger/definitions">swagger/definitions</a>
-│       └── <a href="#swagger/model">*swagger/model*</a>
-└── <a href="#base/footer">base/footer</a></code></pre>
+<pre><code><b><a href="#index.html">index.html</a></b><br/>
+├── <b><a href="#base/title">base/title</a></b><br/>
+│   <i>Renders the page title</i>
+├── <b><a href="#base/header">base/header</a></b><br/>
+├── <b><a href="#base/body">base/body</a></b><br/>
+│   <i>This partial renders the <body> of the HTML page.</i>
+│   ├── <b><a href="#swagger/summary">swagger/summary</a></b><br/>
+│   │   <i>Renders a summary of this services, containing...</i>
+│   ├── <b><a href="#swagger/securityDefinitions">swagger/securityDefinitions</a></b><br/>
+│   │   <i>Renders the security-section of the...</i>
+│   ├── <b><a href="#swagger/paths">swagger/paths</a></b><br/>
+│   │   <i>Renders the paths-section of the Rest-Service...</i>
+│   │   └── <b><a href="#swagger/path">swagger/path</a></b><br/>
+│   │       <i>Renders a single path definition with all its...</i>
+│   │       └── <b><a href="#swagger/operation">swagger/operation</a></b><br/>
+│   │           <i>This partial renders a box containing...</i>
+│   │           ├── <b><a href="#swagger/request-body">swagger/request-body</a></b><br/>
+│   │           │   <i>Renders the request-body section of an operation.</i>
+│   │           │   └── <b><a href="#swagger/model">swagger/model</a></b><br/>
+│   │           │       <i>Renders a json-schema model within swagger...</i>
+│   │           │       └── <b><a href="#json-schema/main-panel">json-schema/main-panel</a></b><br/>
+│   │           │           ├── <b><a href="#json-schema/datatype">json-schema/datatype</a></b><br/>
+│   │           │           │   <i>Enum values</i>
+│   │           │           │   └── <b><a href="#json-schema/reference">json-schema/reference</a></b><br/>
+│   │           │           └── <b><a href="#json-schema/body">json-schema/body</a></b><br/>
+│   │           │               ├── <b><a href="#json-schema/reference">*json-schema/reference*</a></b><br/>
+│   │           │               ├── <b><a href="#json-schema/properties">json-schema/properties</a></b><br/>
+│   │           │               │   ├── <b><a href="#json-schema/datatype">*json-schema/datatype*</a></b><br/>
+│   │           │               │   └── <b><a href="#json-schema/body">*json-schema/body*</a></b><br/>
+│   │           │               ├── <b><a href="#json-schema/additionalProperties">json-schema/additionalProperties</a></b><br/>
+│   │           │               │   ├── <b><a href="#json-schema/datatype">*json-schema/datatype*</a></b><br/>
+│   │           │               │   └── <b><a href="#json-schema/body">*json-schema/body*</a></b><br/>
+│   │           │               ├── <b><a href="#json-schema/array-items">json-schema/array-items</a></b><br/>
+│   │           │               │   └── <b><a href="#json-schema/body">*json-schema/body*</a></b><br/>
+│   │           │               ├── <b><a href="#json-schema/allOf">json-schema/allOf</a></b><br/>
+│   │           │               │   ├── <b><a href="#json-schema/reference">*json-schema/reference*</a></b><br/>
+│   │           │               │   └── <b><a href="#json-schema/body">*json-schema/body*</a></b><br/>
+│   │           │               └── <b><a href="#json-schema/anyOf">json-schema/anyOf</a></b><br/>
+│   │           │                   ├── <b><a href="#json-schema/datatype">*json-schema/datatype*</a></b><br/>
+│   │           │                   └── <b><a href="#json-schema/body">*json-schema/body*</a></b><br/>
+│   │           ├── <b><a href="#swagger/parameters">swagger/parameters</a></b><br/>
+│   │           │   <i>Renders the parameter table within a operation...</i>
+│   │           │   ├── <b><a href="#json-schema/datatype">*json-schema/datatype*</a></b><br/>
+│   │           │   └── <b><a href="#json-schema/datatype">*json-schema/datatype*</a></b><br/>
+│   │           ├── <b><a href="#swagger/responses">swagger/responses</a></b><br/>
+│   │           │   <i>Renders the responses section of an operation</i>
+│   │           │   ├── <b><a href="#swagger/model">*swagger/model*</a></b><br/>
+│   │           │   └── <b><a href="#swagger/model">*swagger/model*</a></b><br/>
+│   │           └── <b><a href="#swagger/security">swagger/security</a></b><br/>
+│   │               <i>Renders the security definitions of the...</i>
+│   └── <b><a href="#swagger/definitions">swagger/definitions</a></b><br/>
+│       <i>Renders the definition-section of the HTML-page.</i>
+│       └── <b><a href="#swagger/model">*swagger/model*</a></b><br/>
+└── <b><a href="#base/footer">base/footer</a></b><br/></code></pre>
 # Partial reference
 
 ## <a name="base/body">base/body</a>

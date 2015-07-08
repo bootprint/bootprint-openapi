@@ -1,8 +1,9 @@
 # Template structure
 
 {{#renderTree partialTree}}
-    {{! Display each node as link to the anchor with the same name.}}
-    <a href="#{{{name}}}">{{{label}}}</a>
+{{! Display each node as link to the anchor with the same name.}}
+<b><a href="#{{{name}}}">{{{label}}}</a></b><br/>
+{{#if summary}}<i>{{{summary}}}</i>{{/if}}
 {{/renderTree}}
 
 # Partial reference
@@ -10,7 +11,7 @@
 {{#each partials}}
 ## <a name="{{name}}">{{name}}</a>
 {{#each apidocs}}
-{{{.}}}
+{{{markdown}}}
 {{/each}}
 
 {{#if children}}
