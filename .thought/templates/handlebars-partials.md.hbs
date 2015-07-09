@@ -9,7 +9,7 @@
 # Partial reference
 
 {{#each partials}}
-## <a name="{{name}}">{{name}}</a>
+## <a name="{{name}}">{{name}}</a> {{#if apidocs.0.parsed}}({{apidocs.0.parsed.moduleName}}){{/if}}
 {{#each apidocs}}
 {{{markdown}}}
 {{/each}}

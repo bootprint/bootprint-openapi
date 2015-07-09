@@ -54,19 +54,10 @@ var bootprint = require('bootprint')
    .done(console.log);
 ```
 
-##  API-reference
+## API
 
-## [index](https://github.com/nknapp/bootprint-swagger/blob/master/index.js#L11)
-
-Create a bootprint template-module that can be loaded via `Bootprint#load`:
-
-* Parameters:
-  * builder: **BootprintBuilder** - the current bootprint builder    
-
-* Returns:
-  * **BootprintBuilder** - a bootprint-builder containing the template and Less settings for `bootprint-swagger`
-
-
+The API of Bootprint-Swagger consists of Handlebars-partials that can be overridden and
+LessCss-Definitions, that can be adapted.
 
 ### Handlebars partials
 
