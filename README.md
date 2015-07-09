@@ -5,7 +5,7 @@
 ## Overview
 
 This package contains a template, partials and styles for [bootprint](http://npmjs.com/bootprint) to convert
-JSON-schema files into a static HTML-page.
+Swagger-Specifications into a static HTML-page.
 
 ## Installation
 
