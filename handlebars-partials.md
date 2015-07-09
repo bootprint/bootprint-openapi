@@ -1,65 +1,68 @@
 # Template structure
 
-<pre><code><b><a href="#index.html">index.html</a></b><br/>
+<pre><code><b><a href="#index.html">index.html</a></b>
 <i>Default template for rendering the...</i>
-├── <b><a href="#base/title">base/title</a></b><br/>
+├── <b><a href="#base/title">base/title</a></b>
 │   <i>Renders the page title</i>
-├── <b><a href="#base/header">base/header</a></b><br/>
+├── <b><a href="#base/header">base/header</a></b>
 │   <i>This partial is displayed at the top of the...</i>
-├── <b><a href="#base/body">base/body</a></b><br/>
+├── <b><a href="#base/body">base/body</a></b>
 │   <i>This partial renders the <body> of the HTML page.</i>
-│   ├── <b><a href="#swagger/summary">swagger/summary</a></b><br/>
+│   ├── <b><a href="#swagger/summary">swagger/summary</a></b>
 │   │   <i>Renders a summary of this services, containing...</i>
-│   ├── <b><a href="#swagger/securityDefinitions">swagger/securityDefinitions</a></b><br/>
+│   ├── <b><a href="#swagger/securityDefinitions">swagger/securityDefinitions</a></b>
 │   │   <i>Renders the security-section of the...</i>
-│   ├── <b><a href="#swagger/paths">swagger/paths</a></b><br/>
+│   ├── <b><a href="#swagger/paths">swagger/paths</a></b>
 │   │   <i>Renders the paths-section of the Rest-Service...</i>
-│   │   └── <b><a href="#swagger/path">swagger/path</a></b><br/>
+│   │   └── <b><a href="#swagger/path">swagger/path</a></b>
 │   │       <i>Renders a single path definition with all its...</i>
-│   │       └── <b><a href="#swagger/operation">swagger/operation</a></b><br/>
+│   │       └── <b><a href="#swagger/operation">swagger/operation</a></b>
 │   │           <i>This partial renders a box containing...</i>
-│   │           ├── <b><a href="#swagger/request-body">swagger/request-body</a></b><br/>
+│   │           ├── <b><a href="#swagger/request-body">swagger/request-body</a></b>
 │   │           │   <i>Renders the request-body section of an operation.</i>
-│   │           │   └── <b><a href="#swagger/model">swagger/model</a></b><br/>
+│   │           │   └── <b><a href="#swagger/model">swagger/model</a></b>
 │   │           │       <i>Renders a json-schema model within swagger...</i>
-│   │           │       └── <b><a href="#json-schema/main-panel">json-schema/main-panel</a></b><br/>
-│   │           │           ├── <b><a href="#json-schema/datatype">json-schema/datatype</a></b><br/>
+│   │           │       └── <b><a href="#json-schema/main-panel">json-schema/main-panel</a></b>
+│   │           │           ├── <b><a href="#json-schema/datatype">json-schema/datatype</a></b>
 │   │           │           │   <i>Enum values</i>
-│   │           │           │   └── <b><a href="#json-schema/reference">json-schema/reference</a></b><br/>
-│   │           │           └── <b><a href="#json-schema/body">json-schema/body</a></b><br/>
-│   │           │               ├── <b><a href="#json-schema/reference">*json-schema/reference*</a></b><br/>
-│   │           │               ├── <b><a href="#json-schema/properties">json-schema/properties</a></b><br/>
-│   │           │               │   ├── <b><a href="#json-schema/datatype">*json-schema/datatype*</a></b><br/>
-│   │           │               │   └── <b><a href="#json-schema/body">*json-schema/body*</a></b><br/>
-│   │           │               ├── <b><a href="#json-schema/additionalProperties">json-schema/additionalProperties</a></b><br/>
-│   │           │               │   ├── <b><a href="#json-schema/datatype">*json-schema/datatype*</a></b><br/>
-│   │           │               │   └── <b><a href="#json-schema/body">*json-schema/body*</a></b><br/>
-│   │           │               ├── <b><a href="#json-schema/array-items">json-schema/array-items</a></b><br/>
-│   │           │               │   └── <b><a href="#json-schema/body">*json-schema/body*</a></b><br/>
-│   │           │               ├── <b><a href="#json-schema/allOf">json-schema/allOf</a></b><br/>
-│   │           │               │   ├── <b><a href="#json-schema/reference">*json-schema/reference*</a></b><br/>
-│   │           │               │   └── <b><a href="#json-schema/body">*json-schema/body*</a></b><br/>
-│   │           │               └── <b><a href="#json-schema/anyOf">json-schema/anyOf</a></b><br/>
-│   │           │                   ├── <b><a href="#json-schema/datatype">*json-schema/datatype*</a></b><br/>
-│   │           │                   └── <b><a href="#json-schema/body">*json-schema/body*</a></b><br/>
-│   │           ├── <b><a href="#swagger/parameters">swagger/parameters</a></b><br/>
+│   │           │           │   └── <b><a href="#json-schema/reference">json-schema/reference</a></b>
+│   │           │           └── <b><a href="#json-schema/body">json-schema/body</a></b>
+│   │           │               ├── <b><a href="#json-schema/reference">*json-schema/reference*</a></b>
+│   │           │               ├── <b><a href="#json-schema/properties">json-schema/properties</a></b>
+│   │           │               │   ├── <b><a href="#json-schema/datatype">*json-schema/datatype*</a></b>
+│   │           │               │   └── <b><a href="#json-schema/body">*json-schema/body*</a></b>
+│   │           │               ├── <b><a href="#json-schema/additionalProperties">json-schema/additionalProperties</a></b>
+│   │           │               │   ├── <b><a href="#json-schema/datatype">*json-schema/datatype*</a></b>
+│   │           │               │   └── <b><a href="#json-schema/body">*json-schema/body*</a></b>
+│   │           │               ├── <b><a href="#json-schema/array-items">json-schema/array-items</a></b>
+│   │           │               │   └── <b><a href="#json-schema/body">*json-schema/body*</a></b>
+│   │           │               ├── <b><a href="#json-schema/allOf">json-schema/allOf</a></b>
+│   │           │               │   ├── <b><a href="#json-schema/reference">*json-schema/reference*</a></b>
+│   │           │               │   └── <b><a href="#json-schema/body">*json-schema/body*</a></b>
+│   │           │               └── <b><a href="#json-schema/anyOf">json-schema/anyOf</a></b>
+│   │           │                   ├── <b><a href="#json-schema/datatype">*json-schema/datatype*</a></b>
+│   │           │                   └── <b><a href="#json-schema/body">*json-schema/body*</a></b>
+│   │           ├── <b><a href="#swagger/parameters">swagger/parameters</a></b>
 │   │           │   <i>Renders the parameter table within a operation...</i>
-│   │           │   ├── <b><a href="#json-schema/datatype">*json-schema/datatype*</a></b><br/>
-│   │           │   └── <b><a href="#json-schema/datatype">*json-schema/datatype*</a></b><br/>
-│   │           ├── <b><a href="#swagger/responses">swagger/responses</a></b><br/>
+│   │           │   ├── <b><a href="#json-schema/datatype">*json-schema/datatype*</a></b>
+│   │           │   └── <b><a href="#json-schema/datatype">*json-schema/datatype*</a></b>
+│   │           ├── <b><a href="#swagger/responses">swagger/responses</a></b>
 │   │           │   <i>Renders the responses section of an operation</i>
-│   │           │   ├── <b><a href="#swagger/model">*swagger/model*</a></b><br/>
-│   │           │   └── <b><a href="#swagger/model">*swagger/model*</a></b><br/>
-│   │           └── <b><a href="#swagger/security">swagger/security</a></b><br/>
+│   │           │   ├── <b><a href="#swagger/model">*swagger/model*</a></b>
+│   │           │   └── <b><a href="#swagger/model">*swagger/model*</a></b>
+│   │           └── <b><a href="#swagger/security">swagger/security</a></b>
 │   │               <i>Renders the security definitions of the...</i>
-│   └── <b><a href="#swagger/definitions">swagger/definitions</a></b><br/>
+│   └── <b><a href="#swagger/definitions">swagger/definitions</a></b>
 │       <i>Renders the definition-section of the HTML-page.</i>
-│       └── <b><a href="#swagger/model">*swagger/model*</a></b><br/>
-└── <b><a href="#base/footer">base/footer</a></b><br/>
+│       └── <b><a href="#swagger/model">*swagger/model*</a></b>
+└── <b><a href="#base/footer">base/footer</a></b>
     <i>This partial is displayed at the bottom of the...</i></code></pre>
 # Partial reference
 
-## <a name="base/body">base/body</a> (bootprint-swagger)
+## base/body
+
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.0/handlebars/partials/base/body.hbs">jump to source in <code>bootprint-swagger@0.6.0</code></a>)
+
 
 This partial renders the <body> of the HTML page.
 
@@ -73,7 +76,10 @@ Uses the following partials:
 * [swagger/paths](#swagger/paths)
 * [swagger/definitions](#swagger/definitions)
 
-## <a name="base/footer">base/footer</a> (bootprint-base)
+## base/footer
+
+(<a href="https://github.com/nknapp/bootprint-base/blob/v0.4.0/handlebars/partials/base/footer.hbs">jump to source in <code>bootprint-base@0.4.0</code></a>)
+
 
 This partial is displayed at the bottom of the HTML-body.
 It is empty and can be overridden to include custom content in
@@ -86,7 +92,10 @@ the Bootprint-result.
 
 
 
-## <a name="base/header">base/header</a> (bootprint-base)
+## base/header
+
+(<a href="https://github.com/nknapp/bootprint-base/blob/v0.4.0/handlebars/partials/base/header.hbs">jump to source in <code>bootprint-base@0.4.0</code></a>)
+
 
 This partial is displayed at the top of the HTML-body.
 It is empty and can be overridden to include custom content in
@@ -99,7 +108,10 @@ the Bootprint-result.
 
 
 
-## <a name="base/title">base/title</a> (bootprint-swagger)
+## base/title
+
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.0/handlebars/partials/base/title.hbs">jump to source in <code>bootprint-swagger@0.6.0</code></a>)
+
 
 Renders the page title
 
@@ -110,30 +122,45 @@ Renders the page title
 
 
 
-## <a name="json-schema/additionalProperties">json-schema/additionalProperties</a> 
+## json-schema/additionalProperties
+
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/additionalProperties.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
+
 
 Uses the following partials:
 * [json-schema/datatype](#json-schema/datatype)
 * [json-schema/body](#json-schema/body)
 
-## <a name="json-schema/allOf">json-schema/allOf</a> 
+## json-schema/allOf
+
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/allOf.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
+
 
 Uses the following partials:
 * [json-schema/reference](#json-schema/reference)
 * [json-schema/body](#json-schema/body)
 
-## <a name="json-schema/anyOf">json-schema/anyOf</a> 
+## json-schema/anyOf
+
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/anyOf.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
+
 
 Uses the following partials:
 * [json-schema/datatype](#json-schema/datatype)
 * [json-schema/body](#json-schema/body)
 
-## <a name="json-schema/array-items">json-schema/array-items</a> 
+## json-schema/array-items
+
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/array-items.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
+
 
 Uses the following partials:
 * [json-schema/body](#json-schema/body)
 
-## <a name="json-schema/body">json-schema/body</a> 
+## json-schema/body
+
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/body.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
+
 
 Uses the following partials:
 * [json-schema/reference](#json-schema/reference)
@@ -143,7 +170,10 @@ Uses the following partials:
 * [json-schema/allOf](#json-schema/allOf)
 * [json-schema/anyOf](#json-schema/anyOf)
 
-## <a name="json-schema/datatype">json-schema/datatype</a> (bootprint-json-schema)
+## json-schema/datatype
+
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/datatype.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
+
 
 Enum values
 
@@ -160,27 +190,42 @@ Default values (for non-enum types)
 Uses the following partials:
 * [json-schema/reference](#json-schema/reference)
 
-## <a name="json-schema/definitions">json-schema/definitions</a> 
+## json-schema/definitions
+
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/definitions.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
+
 
 Uses the following partials:
 * [json-schema/main-panel](#json-schema/main-panel)
 
-## <a name="json-schema/main-panel">json-schema/main-panel</a> 
+## json-schema/main-panel
+
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/main-panel.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
+
 
 Uses the following partials:
 * [json-schema/datatype](#json-schema/datatype)
 * [json-schema/body](#json-schema/body)
 
-## <a name="json-schema/properties">json-schema/properties</a> 
+## json-schema/properties
+
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/properties.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
+
 
 Uses the following partials:
 * [json-schema/datatype](#json-schema/datatype)
 * [json-schema/body](#json-schema/body)
 
-## <a name="json-schema/reference">json-schema/reference</a> 
+## json-schema/reference
+
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/reference.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
 
 
-## <a name="swagger/definitions">swagger/definitions</a> (bootprint-swagger)
+
+## swagger/definitions
+
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.0/handlebars/partials/swagger/definitions.hbs">jump to source in <code>bootprint-swagger@0.6.0</code></a>)
+
 
 Renders the definition-section of the HTML-page.
 
@@ -193,7 +238,10 @@ Renders the definition-section of the HTML-page.
 Uses the following partials:
 * [swagger/model](#swagger/model)
 
-## <a name="swagger/model">swagger/model</a> (bootprint-swagger)
+## swagger/model
+
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.0/handlebars/partials/swagger/model.hbs">jump to source in <code>bootprint-swagger@0.6.0</code></a>)
+
 
 Renders a json-schema model within swagger (calls json-schema-partials).
 
@@ -207,7 +255,10 @@ Renders a json-schema model within swagger (calls json-schema-partials).
 Uses the following partials:
 * [json-schema/main-panel](#json-schema/main-panel)
 
-## <a name="swagger/operation">swagger/operation</a> (bootprint-swagger)
+## swagger/operation
+
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.0/handlebars/partials/swagger/operation.hbs">jump to source in <code>bootprint-swagger@0.6.0</code></a>)
+
 
 This partial renders a box containing information about a single operation of the service
 (such as calling a POST on the "/pets" resource).
@@ -222,7 +273,10 @@ Uses the following partials:
 * [swagger/responses](#swagger/responses)
 * [swagger/security](#swagger/security)
 
-## <a name="swagger/parameters">swagger/parameters</a> (bootprint-swagger)
+## swagger/parameters
+
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.0/handlebars/partials/swagger/parameters.hbs">jump to source in <code>bootprint-swagger@0.6.0</code></a>)
+
 
 Renders the parameter table within a operation definition.
 
@@ -236,7 +290,10 @@ Uses the following partials:
 * [json-schema/datatype](#json-schema/datatype)
 * [json-schema/datatype](#json-schema/datatype)
 
-## <a name="swagger/path">swagger/path</a> (bootprint-swagger)
+## swagger/path
+
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.0/handlebars/partials/swagger/path.hbs">jump to source in <code>bootprint-swagger@0.6.0</code></a>)
+
 
 Renders a single path definition with all its methods (GET, POST).
 
@@ -247,7 +304,10 @@ Renders a single path definition with all its methods (GET, POST).
 Uses the following partials:
 * [swagger/operation](#swagger/operation)
 
-## <a name="swagger/paths">swagger/paths</a> (bootprint-swagger)
+## swagger/paths
+
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.0/handlebars/partials/swagger/paths.hbs">jump to source in <code>bootprint-swagger@0.6.0</code></a>)
+
 
 Renders the paths-section of the Rest-Service definition
 
@@ -258,7 +318,10 @@ Renders the paths-section of the Rest-Service definition
 Uses the following partials:
 * [swagger/path](#swagger/path)
 
-## <a name="swagger/request-body">swagger/request-body</a> (bootprint-swagger)
+## swagger/request-body
+
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.0/handlebars/partials/swagger/request-body.hbs">jump to source in <code>bootprint-swagger@0.6.0</code></a>)
+
 
 Renders the request-body section of an operation.
 
@@ -272,7 +335,10 @@ Renders the request-body section of an operation.
 Uses the following partials:
 * [swagger/model](#swagger/model)
 
-## <a name="swagger/responses">swagger/responses</a> (bootprint-swagger)
+## swagger/responses
+
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.0/handlebars/partials/swagger/responses.hbs">jump to source in <code>bootprint-swagger@0.6.0</code></a>)
+
 
 Renders the responses section of an operation
 
@@ -287,7 +353,10 @@ Uses the following partials:
 * [swagger/model](#swagger/model)
 * [swagger/model](#swagger/model)
 
-## <a name="swagger/security">swagger/security</a> (bootprint-swagger)
+## swagger/security
+
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.0/handlebars/partials/swagger/security.hbs">jump to source in <code>bootprint-swagger@0.6.0</code></a>)
+
 
 Renders the security definitions of the Rest-service.
 
@@ -298,7 +367,10 @@ Renders the security definitions of the Rest-service.
 
 
 
-## <a name="swagger/securityDefinitions">swagger/securityDefinitions</a> (bootprint-swagger)
+## swagger/securityDefinitions
+
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.0/handlebars/partials/swagger/securityDefinitions.hbs">jump to source in <code>bootprint-swagger@0.6.0</code></a>)
+
 
 Renders the security-section of the HTML-page
 TODO: Parameters
@@ -308,7 +380,10 @@ TODO: Parameters
 
 
 
-## <a name="swagger/summary">swagger/summary</a> (bootprint-swagger)
+## swagger/summary
+
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.0/handlebars/partials/swagger/summary.hbs">jump to source in <code>bootprint-swagger@0.6.0</code></a>)
+
 
 Renders a summary of this services, containing references to all operations and paths
 

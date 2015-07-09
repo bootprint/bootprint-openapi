@@ -2,14 +2,19 @@
 
 {{#renderTree partialTree}}
 {{! Display each node as link to the anchor with the same name.}}
-<b><a href="#{{{name}}}">{{{label}}}</a></b><br/>
+<b><a href="#{{{name}}}">{{{label}}}</a></b>
 {{#if summary}}<i>{{{summary}}}</i>{{/if}}
 {{/renderTree}}
 
 # Partial reference
 
 {{#each partials}}
-## <a name="{{name}}">{{name}}</a> {{#if apidocs.0.parsed}}({{apidocs.0.parsed.moduleName}}){{/if}}
+## {{name}}
+
+{{#withPackageOf path}}
+(<a href="{{@url}}">jump to source in <code>{{@package.name}}@{{@package.version}}</code></a>)
+{{/withPackageOf}}
+
 {{#each apidocs}}
 {{{markdown}}}
 {{/each}}

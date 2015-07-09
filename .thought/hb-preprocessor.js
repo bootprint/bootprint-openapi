@@ -3,6 +3,8 @@
 var _ = require('lodash')
 var customize = require('customize')
 var apidocs = require('multilang-apidocs')
+var findPackage = require('find-package')
+var path = require('path')
 
 module.exports = function (input) {
   // Prepare partial apidocs and include them into the data object
@@ -47,6 +49,7 @@ var hbDocs = function (files) {
       'name': name,
       'contents': contents,
       'path': filePath,
+      'package': findPackage(path.resolve(filePath)),
       'apidocs': apidocs(contents, {
         filename: filePath,
         filter: {
