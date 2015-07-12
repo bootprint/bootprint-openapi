@@ -7,7 +7,12 @@
   "author": "Nils Knappmeier",
   "license": "MIT",
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "thought": "thought run -a",
+    "prethoughtcheck": "npm list --depth=0 -g thought || npm -g install thought",
+    "thoughtcheck": "thought check-engines",
+    "version": "npm run thought",
+    "preversion": "npm run thoughtcheck"
   },
   "dependencies": {
     "bootprint-json-schema": "<1.0.0",
@@ -32,5 +37,9 @@
   },
   "keywords": [
     "swagger-to-html"
-  ]
+  ],
+  "paths": {
+    "relative": "package.json",
+    "absolute": "/home/nknappmeier/privat/node-libraries/bootprint-swagger/package.json"
+  }
 }
