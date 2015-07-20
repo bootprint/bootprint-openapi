@@ -1,6 +1,6 @@
 # Release notes
 
-## Upcoming
+## v0.6.1 - 2015-07-20
 ### Fix
 
 - Correct use of swagger/model partial (@karlvr)
