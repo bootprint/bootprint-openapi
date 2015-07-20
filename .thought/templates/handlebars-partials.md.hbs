@@ -2,7 +2,7 @@
 
 {{#renderTree partialTree}}
 {{! Display each node as link to the anchor with the same name.}}
-<b><a href="#{{{name}}}">{{{label}}}</a></b>
+<b><a href="#{{{htmlId name}}}">{{{label}}}</a></b>
 {{#if summary}}<i>{{{summary}}}</i>{{/if}}
 {{/renderTree}}
 

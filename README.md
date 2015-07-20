@@ -61,7 +61,7 @@ LessCss-Definitions, that can be adapted.
 
 ### Handlebars partials
                                                
-About 40 Handlebars partials are used to render this project.
+About 26 Handlebars partials are used to render this swagger-html-page.
 The following documentation is not final yet and there are a lot of partials without real documentation, but you may already have a look
 at it: The [partials documentation](handlebars-partials.md) describes the partials in use
 and the order in which they are called. You can override these partials in a
