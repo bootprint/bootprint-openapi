@@ -26,10 +26,10 @@
                             {{md description}}
                         </div>
                         <section class="visible-xs visible-sm">
-                            {{>swagger/model schema}}
+                            {{>swagger/model model=schema}}
                         </section>
                     </td>
-                    <td class="hidden-xs hidden-sm">{{>swagger/model schema}}</td>
+                    <td class="hidden-xs hidden-sm">{{>swagger/model model=schema}}</td>
                 </tr>
             {{/each}}
             </tbody>
