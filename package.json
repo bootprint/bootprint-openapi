@@ -7,7 +7,8 @@
   "author": "Nils Knappmeier",
   "license": "MIT",
   "scripts": {
-    "test": "jasmine",
+    "pretest": "npm list --depth=0 -g standard || npm -g install standard",
+    "test": "jasmine && standard",
     "thought": "thought run -a",
     "prethoughtcheck": "npm list --depth=0 -g thought || npm -g install thought",
     "thoughtcheck": "thought check-engines",
