@@ -7,6 +7,8 @@
   "author": "Nils Knappmeier",
   "license": "MIT",
   "scripts": {
+    "preformat": "npm list --depth=0 -g standard || npm -g install standard",
+    "format": "standard --format",
     "pretest": "npm list --depth=0 -g standard || npm -g install standard",
     "test": "jasmine && standard",
     "thought": "thought run -a",
