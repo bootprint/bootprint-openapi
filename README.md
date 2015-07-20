@@ -42,16 +42,16 @@ The does essentially the same, just in a the above command line, just in JavaScr
 
 ```js
 // Load bootprint
-var bootprint = require('bootprint')
-    // Load bootprint-swagger
-   .load(require('bootprint-swagger'))
-    // Customize configuration, override any options
-   .merge({ /* Any other configuration */ })
-    // Specify build source and target
-   .build('http://petstore.swagger.io/v2/swagger.json','target')
-    // Generate swagger-documentation into "target" directory
-   .generate()
-   .done(console.log);
+require('bootprint')
+  // Load bootprint-swagger
+  .load(require('bootprint-swagger'))
+  // Customize configuration, override any options
+  .merge({ /* Any other configuration */})
+  // Specify build source and target
+  .build('http://petstore.swagger.io/v2/swagger.json', 'target')
+  // Generate swagger-documentation into "target" directory
+  .generate()
+  .done(console.log)
 ```
 
 ## API
@@ -60,7 +60,7 @@ The API of Bootprint-Swagger consists of Handlebars-partials that can be overrid
 LessCss-Definitions, that can be adapted.
 
 ### Handlebars partials
-
+                                               
 About 40 Handlebars partials are used to render this project.
 The following documentation is not final yet and there are a lot of partials without real documentation, but you may already have a look
 at it: The [partials documentation](handlebars-partials.md) describes the partials in use
