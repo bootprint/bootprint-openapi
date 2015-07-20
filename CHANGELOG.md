@@ -1,5 +1,13 @@
 # Release notes
 
+## Upcoming
+### Fix
+
+- Correct use of swagger/model partial (@karlvr)
+- Model should pass on anchor value to (@karlvr)
+- Compute anchor of `path` section with `htmlId` to match 
+  the href in `summary.hbs`
+
 ## v0.6.0 - 2015-06-28
 ### Update
 
