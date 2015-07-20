@@ -6,7 +6,7 @@
     @api public
 --}}
 
-<span id="path-{{path}}"></span>
+<span id="path-{{htmlId path}}"></span>
 {{#eachSorted pathItems}}
     {{>swagger/operation . operation=. method=@key path=../path}}
 {{/eachSorted}}
