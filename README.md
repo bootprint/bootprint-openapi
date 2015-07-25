@@ -67,6 +67,7 @@ at it: The [partials documentation](handlebars-partials.md) describes the partia
 and the order in which they are called. You can override these partials in a
 [Bootprint configuration file](https://github.com/nknapp/bootprint/blob/master/doc/config.md#overriding-and-adding-partials).
 
+
 ## License
 
 `bootprint-swagger` is published under the MIT-license. 

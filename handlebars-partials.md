@@ -71,10 +71,10 @@ This partial renders the <body> of the HTML page.
 
 
 Uses the following partials:
-* [swagger/summary](#swagger/summary)
-* [swagger/securityDefinitions](#swagger/securityDefinitions)
-* [swagger/paths](#swagger/paths)
-* [swagger/definitions](#swagger/definitions)
+* [swagger/summary](#swaggersummary)
+* [swagger/securityDefinitions](#swaggersecurityDefinitions)
+* [swagger/paths](#swaggerpaths)
+* [swagger/definitions](#swaggerdefinitions)
 
 ## base/footer
 
@@ -128,8 +128,8 @@ Renders the page title
 
 
 Uses the following partials:
-* [json-schema/datatype](#json-schema/datatype)
-* [json-schema/body](#json-schema/body)
+* [json-schema/datatype](#json-schemadatatype)
+* [json-schema/body](#json-schemabody)
 
 ## json-schema/allOf
 
@@ -137,8 +137,8 @@ Uses the following partials:
 
 
 Uses the following partials:
-* [json-schema/reference](#json-schema/reference)
-* [json-schema/body](#json-schema/body)
+* [json-schema/reference](#json-schemareference)
+* [json-schema/body](#json-schemabody)
 
 ## json-schema/anyOf
 
@@ -146,8 +146,8 @@ Uses the following partials:
 
 
 Uses the following partials:
-* [json-schema/datatype](#json-schema/datatype)
-* [json-schema/body](#json-schema/body)
+* [json-schema/datatype](#json-schemadatatype)
+* [json-schema/body](#json-schemabody)
 
 ## json-schema/array-items
 
@@ -155,7 +155,7 @@ Uses the following partials:
 
 
 Uses the following partials:
-* [json-schema/body](#json-schema/body)
+* [json-schema/body](#json-schemabody)
 
 ## json-schema/body
 
@@ -163,12 +163,12 @@ Uses the following partials:
 
 
 Uses the following partials:
-* [json-schema/reference](#json-schema/reference)
-* [json-schema/properties](#json-schema/properties)
-* [json-schema/additionalProperties](#json-schema/additionalProperties)
-* [json-schema/array-items](#json-schema/array-items)
-* [json-schema/allOf](#json-schema/allOf)
-* [json-schema/anyOf](#json-schema/anyOf)
+* [json-schema/reference](#json-schemareference)
+* [json-schema/properties](#json-schemaproperties)
+* [json-schema/additionalProperties](#json-schemaadditionalProperties)
+* [json-schema/array-items](#json-schemaarray-items)
+* [json-schema/allOf](#json-schemaallOf)
+* [json-schema/anyOf](#json-schemaanyOf)
 
 ## json-schema/datatype
 
@@ -188,7 +188,7 @@ Default values (for non-enum types)
 
 
 Uses the following partials:
-* [json-schema/reference](#json-schema/reference)
+* [json-schema/reference](#json-schemareference)
 
 ## json-schema/definitions
 
@@ -196,7 +196,7 @@ Uses the following partials:
 
 
 Uses the following partials:
-* [json-schema/main-panel](#json-schema/main-panel)
+* [json-schema/main-panel](#json-schemamain-panel)
 
 ## json-schema/main-panel
 
@@ -204,8 +204,8 @@ Uses the following partials:
 
 
 Uses the following partials:
-* [json-schema/datatype](#json-schema/datatype)
-* [json-schema/body](#json-schema/body)
+* [json-schema/datatype](#json-schemadatatype)
+* [json-schema/body](#json-schemabody)
 
 ## json-schema/properties
 
@@ -213,8 +213,8 @@ Uses the following partials:
 
 
 Uses the following partials:
-* [json-schema/datatype](#json-schema/datatype)
-* [json-schema/body](#json-schema/body)
+* [json-schema/datatype](#json-schemadatatype)
+* [json-schema/body](#json-schemabody)
 
 ## json-schema/reference
 
@@ -236,7 +236,7 @@ Renders the definition-section of the HTML-page.
 
 
 Uses the following partials:
-* [swagger/model](#swagger/model)
+* [swagger/model](#swaggermodel)
 
 ## swagger/model
 
@@ -253,7 +253,7 @@ Renders a json-schema model within swagger (calls json-schema-partials).
 
 
 Uses the following partials:
-* [json-schema/main-panel](#json-schema/main-panel)
+* [json-schema/main-panel](#json-schemamain-panel)
 
 ## swagger/operation
 
@@ -268,10 +268,10 @@ This partial renders a box containing information about a single operation of th
 
 
 Uses the following partials:
-* [swagger/request-body](#swagger/request-body)
-* [swagger/parameters](#swagger/parameters)
-* [swagger/responses](#swagger/responses)
-* [swagger/security](#swagger/security)
+* [swagger/request-body](#swaggerrequest-body)
+* [swagger/parameters](#swaggerparameters)
+* [swagger/responses](#swaggerresponses)
+* [swagger/security](#swaggersecurity)
 
 ## swagger/parameters
 
@@ -287,8 +287,8 @@ Renders the parameter table within a operation definition.
 
 
 Uses the following partials:
-* [json-schema/datatype](#json-schema/datatype)
-* [json-schema/datatype](#json-schema/datatype)
+* [json-schema/datatype](#json-schemadatatype)
+* [json-schema/datatype](#json-schemadatatype)
 
 ## swagger/path
 
@@ -302,7 +302,7 @@ Renders a single path definition with all its methods (GET, POST).
 
 
 Uses the following partials:
-* [swagger/operation](#swagger/operation)
+* [swagger/operation](#swaggeroperation)
 
 ## swagger/paths
 
@@ -316,7 +316,7 @@ Renders the paths-section of the Rest-Service definition
 
 
 Uses the following partials:
-* [swagger/path](#swagger/path)
+* [swagger/path](#swaggerpath)
 
 ## swagger/request-body
 
@@ -333,7 +333,7 @@ Renders the request-body section of an operation.
 
 
 Uses the following partials:
-* [swagger/model](#swagger/model)
+* [swagger/model](#swaggermodel)
 
 ## swagger/responses
 
@@ -350,8 +350,8 @@ Renders the responses section of an operation
 
 
 Uses the following partials:
-* [swagger/model](#swagger/model)
-* [swagger/model](#swagger/model)
+* [swagger/model](#swaggermodel)
+* [swagger/model](#swaggermodel)
 
 ## swagger/security
 
