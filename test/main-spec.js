@@ -6,16 +6,16 @@
  */
 /* global describe */
 /* global it */
-/* global beforeAll */
+/* global before */
 var qfs = require('q-io/fs')
 var cheerio = require('cheerio')
 var path = require('path')
-var expect = require("chai").expect;
+var expect = require('chai').expect
 
 describe('The petstore example', function () {
   var context = {}
   before(function () {
-    return runBootprint('petstore.json',context)
+    return runBootprint('petstore.json', context)
   })
 
   it("should contain 'Pet' as request body spec for /pet-POST", function () {
@@ -35,20 +35,20 @@ describe('The petstore example', function () {
 describe('The preformatted fixture', function () {
   var context = {}
   before(function () {
-    return runBootprint('preformatted-block.json',context)
+    return runBootprint('preformatted-block.json', context)
   })
 
-  it("should contain the whole description, even if multiple tags are generate by marked", function () {
+  it('should contain the whole description, even if multiple tags are generate by marked', function () {
     expect(context.$('#operation--foo-bar-get .panel-body .sw-operation-description pre').text())
       .to.contain('xxx')
   })
 
-  it("should contain the whole summary, even if multiple tags are generate by marked", function () {
+  it('should contain the whole summary, even if multiple tags are generate by marked', function () {
     expect(context.$('#operation--foo-bar-get .panel-heading .operation-summary pre').text())
       .to.contain('abc')
   })
 
-  it("should strip the surrounding p-tag if this is the only top-level-tag marked creates", function () {
+  it('should strip the surrounding p-tag if this is the only top-level-tag marked creates', function () {
     expect(context.$('#operation--foo-bar2-get .panel-heading .operation-summary').html())
       .to.equal('Foo bar2')
   })
@@ -60,7 +60,7 @@ describe('The preformatted fixture', function () {
  * @param context the test context to store cheerio in
  * @returns {*}
  */
-function runBootprint (fixture,context) {
+function runBootprint (fixture, context) {
   var targetDir = path.join('test-output', fixture)
   return require('bootprint')
     .load(require('../'))
