@@ -19,7 +19,6 @@ describe('The petstore example', function () {
   })
 
   it("should contain 'Pet' as request body spec for /pet-POST", function () {
-    console.log()
     expect(context.$('#operation--pet-post div.sw-request-model a.json-schema-ref').text())
       .to.equal('Pet')
   })
