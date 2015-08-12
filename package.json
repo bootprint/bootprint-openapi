@@ -10,7 +10,7 @@
     "preformat": "npm list --depth=0 -g standard || npm -g install standard",
     "format": "standard --format",
     "pretest": "npm list --depth=0 -g standard || npm -g install standard",
-    "test": "jasmine && standard",
+    "test": "mocha && standard",
     "thought": "thought run -a",
     "prethoughtcheck": "npm list --depth=0 -g thought || npm -g install thought",
     "thoughtcheck": "thought check-engines",
@@ -34,9 +34,12 @@
   },
   "devDependencies": {
     "bootprint": "<1.0.0",
+    "chai": "^3.2.0",
     "cheerio": "^0.19.0",
     "find-package": "^1.0.0",
-    "jasmine": "^2.3.1"
+    "mocha": "^2.2.5",
+    "q": "^1.4.1",
+    "q-io": "^1.13.1"
   },
   "keywords": [
     "swagger-to-html"
