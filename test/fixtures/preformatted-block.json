@@ -1,0 +1,29 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "XXX",
+    "description": "XXX",
+    "version": "0.1"
+  },
+  "host": "api.xxx.org",
+  "schemes": [
+    "https"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/foo/bar": {
+      "get": {
+        "summary": "Foo bar\n```\nabc\n```\n",
+        "description": "Lorem ipsum dolor sit amet\n```\n{\nid   : \"xxx\",\nxxx:[\"xxx\"\nname : {\nen:\" xxxx\",\nfr:\"\"\n}\n```\n"
+      }                   
+    },
+    "/foo/bar2": {
+      "get": {
+        "summary": "Foo bar2"
+      }
+    }
+
+  }
+}
