@@ -43,9 +43,5 @@
   },
   "keywords": [
     "swagger-to-html"
-  ],
-  "paths": {
-    "relative": "package.json",
-    "absolute": "/home/nknappmeier/privat/node-libraries/bootprint-swagger/package.json"
-  }
+  ]
 }
