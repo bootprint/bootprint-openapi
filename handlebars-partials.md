@@ -1,5 +1,4 @@
 # Template structure
-
 <pre><code><b><a href="#index.html">index.html</a></b>
 <i>Default template for rendering the...</i>
 ├── <b><a href="#basetitle">base/title</a></b>

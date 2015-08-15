@@ -75,7 +75,7 @@ See []() for details.
 
 ## Release-Notes
  
-For release notes, see the [changelog](CHANGELOG.md)
+For release notes, see [CHANGELOG.md](CHANGELOG.md)
  
 ## Contributing guidelines
 
