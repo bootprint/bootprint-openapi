@@ -59,10 +59,7 @@
     <i>This partial is displayed at the bottom of the...</i></code></pre>
 # Partial reference
 
-
-
 ## base/body
-
 
 (<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.3/handlebars/partials/base/body.hbs">jump to source in <code>bootprint-swagger@0.6.3</code></a>)
 
@@ -81,7 +78,6 @@ Uses the following partials:
 
 ## base/footer
 
-
 (<a href="https://github.com/nknapp/bootprint-base/blob/v0.5.1/handlebars/partials/base/footer.hbs">jump to source in <code>bootprint-base@0.5.1</code></a>)
 
 
@@ -97,7 +93,6 @@ the Bootprint-result.
 
 
 ## base/header
-
 
 (<a href="https://github.com/nknapp/bootprint-base/blob/v0.5.1/handlebars/partials/base/header.hbs">jump to source in <code>bootprint-base@0.5.1</code></a>)
 
@@ -115,7 +110,6 @@ the Bootprint-result.
 
 ## base/title
 
-
 (<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.3/handlebars/partials/base/title.hbs">jump to source in <code>bootprint-swagger@0.6.3</code></a>)
 
 
@@ -130,7 +124,6 @@ Renders the page title
 
 ## json-schema/additionalProperties
 
-
 (<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/additionalProperties.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
 
 
@@ -139,7 +132,6 @@ Uses the following partials:
 * [json-schema/body](#json-schemabody)
 
 ## json-schema/allOf
-
 
 (<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/allOf.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
 
@@ -150,7 +142,6 @@ Uses the following partials:
 
 ## json-schema/anyOf
 
-
 (<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/anyOf.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
 
 
@@ -160,7 +151,6 @@ Uses the following partials:
 
 ## json-schema/array-items
 
-
 (<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/array-items.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
 
 
@@ -168,7 +158,6 @@ Uses the following partials:
 * [json-schema/body](#json-schemabody)
 
 ## json-schema/body
-
 
 (<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/body.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
 
@@ -182,7 +171,6 @@ Uses the following partials:
 * [json-schema/anyOf](#json-schemaanyof)
 
 ## json-schema/datatype
-
 
 (<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/datatype.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
 
@@ -204,7 +192,6 @@ Uses the following partials:
 
 ## json-schema/definitions
 
-
 (<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/definitions.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
 
 
@@ -212,7 +199,6 @@ Uses the following partials:
 * [json-schema/main-panel](#json-schemamain-panel)
 
 ## json-schema/main-panel
-
 
 (<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/main-panel.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
 
@@ -223,7 +209,6 @@ Uses the following partials:
 
 ## json-schema/properties
 
-
 (<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/properties.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
 
 
@@ -233,13 +218,11 @@ Uses the following partials:
 
 ## json-schema/reference
 
-
 (<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.0/handlebars/partials/json-schema/reference.hbs">jump to source in <code>bootprint-json-schema@0.5.0</code></a>)
 
 
 
 ## swagger/definitions
-
 
 (<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.3/handlebars/partials/swagger/definitions.hbs">jump to source in <code>bootprint-swagger@0.6.3</code></a>)
 
@@ -256,7 +239,6 @@ Uses the following partials:
 * [swagger/model](#swaggermodel)
 
 ## swagger/model
-
 
 (<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.3/handlebars/partials/swagger/model.hbs">jump to source in <code>bootprint-swagger@0.6.3</code></a>)
 
@@ -275,13 +257,15 @@ Uses the following partials:
 
 ## swagger/operation
 
-
 (<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.3/handlebars/partials/swagger/operation.hbs">jump to source in <code>bootprint-swagger@0.6.3</code></a>)
 
 
 This partial renders a box containing information about a single operation of the service
 (such as calling a POST on the "/pets" resource).
 
+* Parameters:
+  * operation: **Operation** - a Swagger-Operation object.    
+  * method: **string** - the http-method (GET, POST, DELETE, PUT, PATCH)    
 
 
 
@@ -293,7 +277,6 @@ Uses the following partials:
 * [swagger/security](#swaggersecurity)
 
 ## swagger/parameters
-
 
 (<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.3/handlebars/partials/swagger/parameters.hbs">jump to source in <code>bootprint-swagger@0.6.3</code></a>)
 
@@ -312,12 +295,14 @@ Uses the following partials:
 
 ## swagger/path
 
-
 (<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.3/handlebars/partials/swagger/path.hbs">jump to source in <code>bootprint-swagger@0.6.3</code></a>)
 
 
 Renders a single path definition with all its methods (GET, POST).
 
+* Parameters:
+  * path: **string** - the request path    
+  * pathItems: **object<Operation>** - a swagger [path-item-object](http://swagger.io/specification/#pathItemObject)    
 
 
 
@@ -326,7 +311,6 @@ Uses the following partials:
 * [swagger/operation](#swaggeroperation)
 
 ## swagger/paths
-
 
 (<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.3/handlebars/partials/swagger/paths.hbs">jump to source in <code>bootprint-swagger@0.6.3</code></a>)
 
@@ -341,7 +325,6 @@ Uses the following partials:
 * [swagger/path](#swaggerpath)
 
 ## swagger/request-body
-
 
 (<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.3/handlebars/partials/swagger/request-body.hbs">jump to source in <code>bootprint-swagger@0.6.3</code></a>)
 
@@ -359,7 +342,6 @@ Uses the following partials:
 * [swagger/model](#swaggermodel)
 
 ## swagger/responses
-
 
 (<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.3/handlebars/partials/swagger/responses.hbs">jump to source in <code>bootprint-swagger@0.6.3</code></a>)
 
@@ -379,7 +361,6 @@ Uses the following partials:
 
 ## swagger/security
 
-
 (<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.3/handlebars/partials/swagger/security.hbs">jump to source in <code>bootprint-swagger@0.6.3</code></a>)
 
 
@@ -394,7 +375,6 @@ Renders the security definitions of the Rest-service.
 
 ## swagger/securityDefinitions
 
-
 (<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.3/handlebars/partials/swagger/securityDefinitions.hbs">jump to source in <code>bootprint-swagger@0.6.3</code></a>)
 
 
@@ -407,7 +387,6 @@ TODO: Parameters
 
 
 ## swagger/summary
-
 
 (<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.3/handlebars/partials/swagger/summary.hbs">jump to source in <code>bootprint-swagger@0.6.3</code></a>)
 
