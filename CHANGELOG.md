@@ -1,6 +1,6 @@
 # Release notes
 
-## Upcoming
+## v0.6.4 - 2015-08-31
 ### Fix
 
 * `bootprint-swagger#19: Parameters of type `body` not being displayed 
