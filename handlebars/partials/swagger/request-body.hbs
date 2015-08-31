@@ -5,16 +5,18 @@
     @api public
 --}}
 
-{{#if consumes}}
     <section class="sw-request-body">
-        <p>{{#each consumes}}<span class="label label-default">{{.}}</span> {{/each}}</p>
-        {{#with body}}
-            <div class="row">
-                <div class="col-md-6">
-                    <p>{{md description}}</p>
+        {{#if consumes}}
+            <p>{{#each consumes}}<span class="label label-default">{{.}}</span> {{/each}}</p>
+        {{/if}}
+        {{#if body}}
+            {{#with body}}
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>{{md description}}</p>
+                    </div>
+                    <div class="col-md-6 sw-request-model">{{>swagger/model model=schema}}</div>
                 </div>
-                <div class="col-md-6 sw-request-model">{{>swagger/model model=schema}}</div>
-            </div>
-        {{/with}}
+            {{/with}}
+        {{/if}}
     </section>
-{{/if}}

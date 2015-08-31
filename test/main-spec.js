@@ -52,8 +52,20 @@ describe('The preformatted fixture', function () {
     expect(context.$('#operation--foo-bar2-get .panel-heading .operation-summary').html())
       .to.equal('Foo bar2')
   })
-
 })
+
+describe('The missing-body fixture', function () {
+  var context = {}
+  before(function () {
+    return runBootprint('body-without-consume.json', context)
+  })
+
+  it('should contain a body (because a body-parameter is present, even though the consumes-property is missing', function () {
+    expect(context.$('#operation--thingy-post .panel-body section.sw-request-body').html())
+      .to.contain('Thingy')
+  })
+})
+
 /**
  * Run bootprint with a fixture and return a cheerio wrapper for the index.html
  * @param fixture
