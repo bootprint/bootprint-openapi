@@ -6,8 +6,13 @@
 --}}
 
     <section class="sw-request-body">
+        {{json $root}}
         {{#if consumes}}
-            <p>{{#each consumes}}<span class="label label-default">{{.}}</span> {{/each}}</p>
+            <p>{{>swagger/list-of-labels values=consumes}}</p>
+        {{else if @root.consumes}}
+            <p><a href="#sw-default-consumes">Uses default content-types: </a>
+            {{>swagger/list-of-labels values=@root.consumes}}
+            </p>
         {{/if}}
         {{#if body}}
             {{#with body}}
