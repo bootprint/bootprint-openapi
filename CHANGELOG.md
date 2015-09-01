@@ -1,6 +1,6 @@
 # Release notes
 
-## Upcoming
+## v0.6.5 - 2015-09-01
 ### Added
 
 * Response table-rows now have a css-class containing their response code (e.g. `sw-response-code-200`)
