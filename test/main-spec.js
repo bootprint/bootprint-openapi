@@ -54,7 +54,7 @@ describe('The preformatted fixture', function () {
   })
 })
 
-describe('The missing-body fixture', function () {
+describe('The body-without-consume fixture', function () {
   var context = {}
   before(function () {
     return runBootprint('body-without-consume.json', context)
@@ -63,6 +63,18 @@ describe('The missing-body fixture', function () {
   it('should contain a body (because a body-parameter is present, even though the consumes-property is missing', function () {
     expect(context.$('#operation--thingy-post .panel-body section.sw-request-body').html())
       .to.contain('Thingy')
+  })
+})
+
+describe('The missing-items fixture', function () {
+  var context = {}
+  before(function () {
+    return runBootprint('missing-items.json', context)
+  })
+
+  it('should contain a body (because a body-parameter is present, even though the consumes-property is missing', function () {
+    expect(context.$('#operation--tagged_things-get > div.panel-body > section.sw-response-body > table > tbody > tr.sw-response-code-200').html())
+      .to.contain('option1.blah')
   })
 })
 
