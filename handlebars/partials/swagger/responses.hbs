@@ -1,13 +1,19 @@
 {{!--
     Renders the responses section of an operation
     @param {Response[]} responses a list of Swagger-Response definitions
-    @param {string[]} produces a list of response content types produces by the operation
+    @param {string[]} produces a list of response content types produced by the operation
     @api public
 --}}
 
 {{#if responses}}
     <section class="sw-response-body">
-        <p>{{#each produces}}<span class="label label-default">{{.}}</span> {{/each}}</p>
+        {{#if produces}}
+            <p>{{>swagger/list-of-labels values=produces}}</p>
+        {{else if @root.produces}}
+            <p><a href="#sw-default-produces">Uses default content-types: </a>
+                {{>swagger/list-of-labels values=@root.produces}}
+            </p>
+        {{/if}}
 
         <table class="table">
             <thead>

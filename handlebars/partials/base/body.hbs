@@ -6,6 +6,20 @@
 <h1>{{info.title}}</h1>
 <p>{{md info.description}}</p>
 
+<div id="sw-default-consumes" class="sw-default-value">
+    <span class="sw-default-value-header">Default request content-types:</span>
+    {{#each consumes}}{{.}}{{#unless @last}}, {{/unless}}{{/each}}
+</div>
+<div id="sw-default-produces" class="sw-default-value">
+    <span class="sw-default-value-header">Default response content-types:</span>
+    {{#each consumes}}{{.}}{{#unless @last}}, {{/unless}}{{/each}}
+</div>
+<div id="sw-schemes" class="sw-default-value">
+    <span class="sw-default-value-header">Schemes:</span>
+    {{#each schemes}}{{.}}{{#unless @last}}, {{/unless}}{{/each}}
+</div>
+
+
 {{>swagger/summary}}
 
 {{>swagger/securityDefinitions}}

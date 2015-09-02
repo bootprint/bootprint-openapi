@@ -1,0 +1,55 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Lorem ipsum dolor sit amet",
+    "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+    "version": "0.1"
+  },
+  "host": "api.xxx.org",
+  "schemes": [
+    "https",
+    "ws",
+    "http"
+  ],
+  "produces": [
+    "application/json",
+    "application/xml"
+  ],
+  "consumes": [
+    "application/json",
+    "application/xml"
+  ],
+  "paths": {
+    "/foo/bar": {
+      "get": {
+        "summary": "Lorem",
+        "description": "Lorem ipsum",
+        "responses": {
+          "200": {
+            "description": "Lorem ipsum"
+          }
+        }
+      },
+      "post": {
+        "summary": "Lorem",
+        "description": "Lorem ipsum",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Pet object that needs to be added to the store",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Pet"
+            }
+          }
+        ]
+      }
+    },
+    "/foo/bar2": {
+      "get": {
+        "summary": "Foo bar2"
+      }
+    }
+  }
+}
