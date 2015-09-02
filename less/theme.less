@@ -82,6 +82,12 @@ table.table {
   th.sw-response-code {
     .table-header(@msg-sw-response-code,10em);
   }
+  
+  // Name of a global response
+  th.sw-response-name {
+    .table-header(@msg-sw-response-name,10em);
+  }
+
   th.sw-response-description {
     .table-header(@msg-sw-response-description);
   }
@@ -109,6 +115,10 @@ table.table {
   th.sw-request-security-scopes {
     .table-header(@msg-sw-request-security-scopes, 50%);
   }
+}
+
+.sw-response-name-value {
+  font-weight: bold;
 }
 
 .sw-param-collection-format {

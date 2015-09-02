@@ -15,31 +15,6 @@
             </p>
         {{/if}}
 
-        <table class="table">
-            <thead>
-            <tr>
-                <th class="sw-response-code"></th>
-                <th class="sw-response-description"></th>
-                <th class="sw-response-data-type hidden-xs hidden-sm"></th>
-            </tr>
-            </thead>
-            <tbody>
-            {{#each responses}}
-                <tr class="sw-response-code-{{@key}}">
-                    <td>{{@key}}</td>
-                    <td>
-                        <div class="sw-response-description-text">
-                            {{md description}}
-                        </div>
-                        <section class="visible-xs visible-sm">
-                            {{>swagger/model model=schema}}
-                        </section>
-                    </td>
-                    <td class="hidden-xs hidden-sm">{{>swagger/model model=schema}}</td>
-                </tr>
-            {{/each}}
-            </tbody>
-        </table>
+        {{> swagger/response-list responses=responses}}
     </section>
-
 {{/if}}
