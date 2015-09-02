@@ -19,6 +19,11 @@
     {{#each schemes}}{{.}}{{#unless @last}}, {{/unless}}{{/each}}
 </div>
 
+<h2>Global responses</h2>
+<div id="sw-global-responses">
+    {{>swagger/response-list responses=responses global="true"}}
+</div>
+
 
 {{>swagger/summary}}
 

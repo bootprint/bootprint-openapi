@@ -1,0 +1,93 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Lorem ipsum dolor sit amet",
+    "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+    "version": "0.1"
+  },
+  "host": "api.xxx.org",
+  "schemes": [
+    "https",
+    "ws",
+    "http"
+  ],
+  "host": "api.contoso.com",
+  "schemes": [
+    "https"
+  ],
+  "basePath": "/api/v1-beta",
+  "securityDefinitions": {
+    "api_key": {
+      "name": "X-API-KEY",
+      "type": "apiKey",
+      "in": "header"
+    }
+  },
+  "security": [
+    {
+      "api_key": []
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/tagged_things": {
+      "get": {
+        "summary": "List tagged things.",
+        "tags": [
+          "Alerts"
+        ],
+        "description": "Lists all tagged things accessible to the API key owner.\n",
+        "responses": {
+          "200": {
+            "description": "An array of tagged things",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "tags"
+                ],
+                "properties": {
+                  "tags": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "option1.blah",
+                        "option2.bleh"
+                      ],
+                      "minLength": 1,
+                      "maxLength": 64
+                    },
+                    "uniqueItems": true,
+                    "description": "Array containing one or more tags.\n"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/responses/bad_request"
+          },
+          "403": {
+            "$ref": "#/responses/unauthorized"
+          }
+        }
+      }
+    }
+  },
+  "responses": {
+    "bad_request": {
+      "description": "The request violated the specification and was rejected. The reason string should contain more details on the specific error."
+    },
+    "unauthorized": {
+      "description": "Operation was not allowed due to an invalid API key, insufficient privileges or trying to reference an entity that does not exist. We have purposedfully combined non-existance and lack of privileges into this error code to avoid enumeration attacks."
+    }
+  }
+}
+  
