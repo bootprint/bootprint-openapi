@@ -1,5 +1,11 @@
 # Release notes
 
+## Upcoming
+
+### Added
+* Support for global responses
+* Support for default parameters (#20) 
+
 ## v0.6.5 - 2015-09-01
 ### Added
 
