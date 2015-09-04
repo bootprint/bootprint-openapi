@@ -124,7 +124,6 @@ describe('The global-responses fixture', function () {
     expect(context.$('#operation--tagged_things-get section.sw-response-body tr.sw-response-400 a').attr('href'))
       .to.equal('#/responses/bad_request')
   })
-
 })
 
 describe('The definition-without-type fixture', function () {
@@ -138,7 +137,6 @@ describe('The definition-without-type fixture', function () {
     expect(context.$('#definition-no-type').html())
       .to.contain('aPropertyName')
   })
-
 })
 
 /**
