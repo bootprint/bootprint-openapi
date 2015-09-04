@@ -13,6 +13,7 @@ var path = require('path')
 var expect = require('chai').expect
 
 describe('The petstore example', function () {
+  this.timeout(10000)
   var context = {}
   before(function () {
     return runBootprint('petstore.json', context)
@@ -33,6 +34,7 @@ describe('The petstore example', function () {
 })
 
 describe('The preformatted fixture', function () {
+  this.timeout(10000)
   var context = {}
   before(function () {
     return runBootprint('preformatted-block.json', context)
@@ -55,6 +57,7 @@ describe('The preformatted fixture', function () {
 })
 
 describe('The body-without-consume fixture', function () {
+  this.timeout(10000)
   var context = {}
   before(function () {
     return runBootprint('body-without-consume.json', context)
@@ -67,6 +70,7 @@ describe('The body-without-consume fixture', function () {
 })
 
 describe('The missing-items fixture', function () {
+  this.timeout(10000)
   var context = {}
   before(function () {
     return runBootprint('missing-items.json', context)
@@ -79,6 +83,7 @@ describe('The missing-items fixture', function () {
 })
 
 describe('The default-values fixture', function () {
+  this.timeout(10000)
   var context = {}
   before(function () {
     return runBootprint('default-values.json', context)
@@ -104,6 +109,7 @@ describe('The default-values fixture', function () {
 })
 
 describe('The global-responses fixture', function () {
+  this.timeout(10000)
   var context = {}
   before(function () {
     return runBootprint('global-responses.json', context)
@@ -117,6 +123,20 @@ describe('The global-responses fixture', function () {
   it('should contain a reference to the "bad_request" responses', function () {
     expect(context.$('#operation--tagged_things-get section.sw-response-body tr.sw-response-400 a').attr('href'))
       .to.equal('#/responses/bad_request')
+  })
+
+})
+
+describe('The definition-without-type fixture', function () {
+  this.timeout(10000)
+  var context = {}
+  before(function () {
+    return runBootprint('definition-without-type.json', context)
+  })
+
+  it('should contain a reference the property "aPropertyName"', function () {
+    expect(context.$('#definition-no-type').html())
+      .to.contain('aPropertyName')
   })
 
 })
