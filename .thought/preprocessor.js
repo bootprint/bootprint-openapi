@@ -39,7 +39,7 @@ var hbDocs = function (files) {
 
     // Compute partials that are called from this file
     var children = []
-    var regex = /\{\{>(\S*)( .*?)?}}/g
+    var regex = /\{\{> *(\S*)( .*?)?}}/g
     var nextMatch
     while ((nextMatch = regex.exec(contents)) !== null) {
       children.push(nextMatch[1])
@@ -68,6 +68,7 @@ var hbDocs = function (files) {
  * @param partials
  */
 function createPartialTree (currentFile, partials, visitedFiles) {
+  console.log(currentFile);
   if (visitedFiles[currentFile.name]) {
     return {
       label: '*' + currentFile.name + '*',

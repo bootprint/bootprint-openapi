@@ -8,6 +8,36 @@
 │   <i>This partial is displayed at the top of the...</i>
 ├── <b><a href="#basebody">base/body</a></b>
 │   <i>This partial renders the <body> of the HTML page.</i>
+│   ├── <b><a href="#swaggerresponse-list">swagger/response-list</a></b>
+│   │   <i>A table containing details for response...</i>
+│   │   ├── <b><a href="#json-schemareference">json-schema/reference</a></b>
+│   │   ├── <b><a href="#swaggermodel">swagger/model</a></b>
+│   │   │   <i>Renders a json-schema model within swagger...</i>
+│   │   │   └── <b><a href="#json-schemamain-panel">json-schema/main-panel</a></b>
+│   │   │       ├── <b><a href="#json-schemadatatype">json-schema/datatype</a></b>
+│   │   │       │   <i>Enum values</i>
+│   │   │       │   └── <b><a href="#json-schemareference">*json-schema/reference*</a></b>
+│   │   │       ├── <b><a href="#json-schemareference">*json-schema/reference*</a></b>
+│   │   │       └── <b><a href="#json-schemabody">json-schema/body</a></b>
+│   │   │           ├── <b><a href="#json-schematype-object">json-schema/type-object</a></b>
+│   │   │           │   <i>Renders the properties of an `object`</i>
+│   │   │           │   ├── <b><a href="#json-schemaproperties">json-schema/properties</a></b>
+│   │   │           │   │   ├── <b><a href="#json-schemadatatype">*json-schema/datatype*</a></b>
+│   │   │           │   │   └── <b><a href="#json-schemabody">*json-schema/body*</a></b>
+│   │   │           │   └── <b><a href="#json-schemaadditionalproperties">json-schema/additionalProperties</a></b>
+│   │   │           │       ├── <b><a href="#json-schemadatatype">*json-schema/datatype*</a></b>
+│   │   │           │       └── <b><a href="#json-schemabody">*json-schema/body*</a></b>
+│   │   │           ├── <b><a href="#json-schemaarray-items">json-schema/array-items</a></b>
+│   │   │           │   ├── <b><a href="#json-schemadatatype">*json-schema/datatype*</a></b>
+│   │   │           │   └── <b><a href="#json-schemabody">*json-schema/body*</a></b>
+│   │   │           ├── <b><a href="#json-schemaallof">json-schema/allOf</a></b>
+│   │   │           │   ├── <b><a href="#json-schemareference">*json-schema/reference*</a></b>
+│   │   │           │   └── <b><a href="#json-schemabody">*json-schema/body*</a></b>
+│   │   │           ├── <b><a href="#json-schemaanyof">json-schema/anyOf</a></b>
+│   │   │           │   ├── <b><a href="#json-schemadatatype">*json-schema/datatype*</a></b>
+│   │   │           │   └── <b><a href="#json-schemabody">*json-schema/body*</a></b>
+│   │   │           └── <b><a href="#json-schematype-object">*json-schema/type-object*</a></b>
+│   │   └── <b><a href="#swaggermodel">*swagger/model*</a></b>
 │   ├── <b><a href="#swaggersummary">swagger/summary</a></b>
 │   │   <i>Renders a summary of this services, containing...</i>
 │   ├── <b><a href="#swaggersecuritydefinitions">swagger/securityDefinitions</a></b>
@@ -20,37 +50,19 @@
 │   │           <i>This partial renders a box containing...</i>
 │   │           ├── <b><a href="#swaggerrequest-body">swagger/request-body</a></b>
 │   │           │   <i>Renders the request-body section of an operation.</i>
-│   │           │   └── <b><a href="#swaggermodel">swagger/model</a></b>
-│   │           │       <i>Renders a json-schema model within swagger...</i>
-│   │           │       └── <b><a href="#json-schemamain-panel">json-schema/main-panel</a></b>
-│   │           │           ├── <b><a href="#json-schemadatatype">json-schema/datatype</a></b>
-│   │           │           │   <i>Enum values</i>
-│   │           │           │   └── <b><a href="#json-schemareference">json-schema/reference</a></b>
-│   │           │           └── <b><a href="#json-schemabody">json-schema/body</a></b>
-│   │           │               ├── <b><a href="#json-schemareference">*json-schema/reference*</a></b>
-│   │           │               ├── <b><a href="#json-schemaproperties">json-schema/properties</a></b>
-│   │           │               │   ├── <b><a href="#json-schemadatatype">*json-schema/datatype*</a></b>
-│   │           │               │   └── <b><a href="#json-schemabody">*json-schema/body*</a></b>
-│   │           │               ├── <b><a href="#json-schemaadditionalproperties">json-schema/additionalProperties</a></b>
-│   │           │               │   ├── <b><a href="#json-schemadatatype">*json-schema/datatype*</a></b>
-│   │           │               │   └── <b><a href="#json-schemabody">*json-schema/body*</a></b>
-│   │           │               ├── <b><a href="#json-schemaarray-items">json-schema/array-items</a></b>
-│   │           │               │   └── <b><a href="#json-schemabody">*json-schema/body*</a></b>
-│   │           │               ├── <b><a href="#json-schemadatatype">*json-schema/datatype*</a></b>
-│   │           │               ├── <b><a href="#json-schemaallof">json-schema/allOf</a></b>
-│   │           │               │   ├── <b><a href="#json-schemareference">*json-schema/reference*</a></b>
-│   │           │               │   └── <b><a href="#json-schemabody">*json-schema/body*</a></b>
-│   │           │               └── <b><a href="#json-schemaanyof">json-schema/anyOf</a></b>
-│   │           │                   ├── <b><a href="#json-schemadatatype">*json-schema/datatype*</a></b>
-│   │           │                   └── <b><a href="#json-schemabody">*json-schema/body*</a></b>
+│   │           │   ├── <b><a href="#swaggerlist-of-labels">swagger/list-of-labels</a></b>
+│   │           │   │   <i>Renders an array of strings as list of labels</i>
+│   │           │   ├── <b><a href="#swaggerlist-of-labels">*swagger/list-of-labels*</a></b>
+│   │           │   └── <b><a href="#swaggermodel">*swagger/model*</a></b>
 │   │           ├── <b><a href="#swaggerparameters">swagger/parameters</a></b>
 │   │           │   <i>Renders the parameter table within a operation...</i>
 │   │           │   ├── <b><a href="#json-schemadatatype">*json-schema/datatype*</a></b>
 │   │           │   └── <b><a href="#json-schemadatatype">*json-schema/datatype*</a></b>
 │   │           ├── <b><a href="#swaggerresponses">swagger/responses</a></b>
 │   │           │   <i>Renders the responses section of an operation</i>
-│   │           │   ├── <b><a href="#swaggermodel">*swagger/model*</a></b>
-│   │           │   └── <b><a href="#swaggermodel">*swagger/model*</a></b>
+│   │           │   ├── <b><a href="#swaggerlist-of-labels">*swagger/list-of-labels*</a></b>
+│   │           │   ├── <b><a href="#swaggerlist-of-labels">*swagger/list-of-labels*</a></b>
+│   │           │   └── <b><a href="#swaggerresponse-list">*swagger/response-list*</a></b>
 │   │           └── <b><a href="#swaggersecurity">swagger/security</a></b>
 │   │               <i>Renders the security definitions of the...</i>
 │   └── <b><a href="#swaggerdefinitions">swagger/definitions</a></b>
@@ -72,6 +84,7 @@ This partial renders the <body> of the HTML page.
 
 
 Uses the following partials:
+* [swagger/response-list](#swaggerresponse-list)
 * [swagger/summary](#swaggersummary)
 * [swagger/securityDefinitions](#swaggersecuritydefinitions)
 * [swagger/paths](#swaggerpaths)
@@ -125,7 +138,7 @@ Renders the page title
 
 ## json-schema/additionalProperties
 
-(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.1/handlebars/partials/json-schema/additionalProperties.hbs">jump to source in <code>bootprint-json-schema@0.5.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.2/handlebars/partials/json-schema/additionalProperties.hbs">jump to source in <code>bootprint-json-schema@0.5.2</code></a>)
 
 
 Uses the following partials:
@@ -134,7 +147,7 @@ Uses the following partials:
 
 ## json-schema/allOf
 
-(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.1/handlebars/partials/json-schema/allOf.hbs">jump to source in <code>bootprint-json-schema@0.5.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.2/handlebars/partials/json-schema/allOf.hbs">jump to source in <code>bootprint-json-schema@0.5.2</code></a>)
 
 
 Uses the following partials:
@@ -143,7 +156,7 @@ Uses the following partials:
 
 ## json-schema/anyOf
 
-(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.1/handlebars/partials/json-schema/anyOf.hbs">jump to source in <code>bootprint-json-schema@0.5.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.2/handlebars/partials/json-schema/anyOf.hbs">jump to source in <code>bootprint-json-schema@0.5.2</code></a>)
 
 
 Uses the following partials:
@@ -152,29 +165,28 @@ Uses the following partials:
 
 ## json-schema/array-items
 
-(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.1/handlebars/partials/json-schema/array-items.hbs">jump to source in <code>bootprint-json-schema@0.5.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.2/handlebars/partials/json-schema/array-items.hbs">jump to source in <code>bootprint-json-schema@0.5.2</code></a>)
 
 
 Uses the following partials:
+* [json-schema/datatype](#json-schemadatatype)
 * [json-schema/body](#json-schemabody)
 
 ## json-schema/body
 
-(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.1/handlebars/partials/json-schema/body.hbs">jump to source in <code>bootprint-json-schema@0.5.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.2/handlebars/partials/json-schema/body.hbs">jump to source in <code>bootprint-json-schema@0.5.2</code></a>)
 
 
 Uses the following partials:
-* [json-schema/reference](#json-schemareference)
-* [json-schema/properties](#json-schemaproperties)
-* [json-schema/additionalProperties](#json-schemaadditionalproperties)
+* [json-schema/type-object](#json-schematype-object)
 * [json-schema/array-items](#json-schemaarray-items)
-* [json-schema/datatype](#json-schemadatatype)
 * [json-schema/allOf](#json-schemaallof)
 * [json-schema/anyOf](#json-schemaanyof)
+* [json-schema/type-object](#json-schematype-object)
 
 ## json-schema/datatype
 
-(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.1/handlebars/partials/json-schema/datatype.hbs">jump to source in <code>bootprint-json-schema@0.5.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.2/handlebars/partials/json-schema/datatype.hbs">jump to source in <code>bootprint-json-schema@0.5.2</code></a>)
 
 
 Enum values
@@ -194,7 +206,7 @@ Uses the following partials:
 
 ## json-schema/definitions
 
-(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.1/handlebars/partials/json-schema/definitions.hbs">jump to source in <code>bootprint-json-schema@0.5.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.2/handlebars/partials/json-schema/definitions.hbs">jump to source in <code>bootprint-json-schema@0.5.2</code></a>)
 
 
 Uses the following partials:
@@ -202,16 +214,17 @@ Uses the following partials:
 
 ## json-schema/main-panel
 
-(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.1/handlebars/partials/json-schema/main-panel.hbs">jump to source in <code>bootprint-json-schema@0.5.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.2/handlebars/partials/json-schema/main-panel.hbs">jump to source in <code>bootprint-json-schema@0.5.2</code></a>)
 
 
 Uses the following partials:
 * [json-schema/datatype](#json-schemadatatype)
+* [json-schema/reference](#json-schemareference)
 * [json-schema/body](#json-schemabody)
 
 ## json-schema/properties
 
-(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.1/handlebars/partials/json-schema/properties.hbs">jump to source in <code>bootprint-json-schema@0.5.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.2/handlebars/partials/json-schema/properties.hbs">jump to source in <code>bootprint-json-schema@0.5.2</code></a>)
 
 
 Uses the following partials:
@@ -220,9 +233,24 @@ Uses the following partials:
 
 ## json-schema/reference
 
-(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.1/handlebars/partials/json-schema/reference.hbs">jump to source in <code>bootprint-json-schema@0.5.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.2/handlebars/partials/json-schema/reference.hbs">jump to source in <code>bootprint-json-schema@0.5.2</code></a>)
 
 
+
+## json-schema/type-object
+
+(<a href="https://github.com/nknapp/bootprint-json-schema/blob/v0.5.2/handlebars/partials/json-schema/type-object.hbs">jump to source in <code>bootprint-json-schema@0.5.2</code></a>)
+
+
+Renders the properties of an `object`
+
+
+
+
+
+Uses the following partials:
+* [json-schema/properties](#json-schemaproperties)
+* [json-schema/additionalProperties](#json-schemaadditionalproperties)
 
 ## swagger/definitions
 
@@ -239,6 +267,20 @@ Renders the definition-section of the HTML-page.
 
 Uses the following partials:
 * [swagger/model](#swaggermodel)
+
+## swagger/list-of-labels
+
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.5/handlebars/partials/swagger/list-of-labels.hbs">jump to source in <code>bootprint-swagger@0.6.5</code></a>)
+
+
+Renders an array of strings as list of labels
+
+* Parameters:
+  * values: **Array<string>**     
+
+
+
+
 
 ## swagger/model
 
@@ -341,6 +383,28 @@ Renders the request-body section of an operation.
 
 
 Uses the following partials:
+* [swagger/list-of-labels](#swaggerlist-of-labels)
+* [swagger/list-of-labels](#swaggerlist-of-labels)
+* [swagger/model](#swaggermodel)
+
+## swagger/response-list
+
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.6.5/handlebars/partials/swagger/response-list.hbs">jump to source in <code>bootprint-swagger@0.6.5</code></a>)
+
+
+A table containing details for response definitions. This partial is used inside 
+ operations and for the global responses-field
+
+* Parameters:
+  * global: **boolean** - if this value is set to true, the global responses are rendered. This 
+      attaches css-ids as anchors to the response definitions    
+
+
+
+
+Uses the following partials:
+* [json-schema/reference](#json-schemareference)
+* [swagger/model](#swaggermodel)
 * [swagger/model](#swaggermodel)
 
 ## swagger/responses
@@ -352,14 +416,15 @@ Renders the responses section of an operation
 
 * Parameters:
   * responses: **Array<Response>** - a list of Swagger-Response definitions    
-  * produces: **Array<string>** - a list of response content types produces by the operation    
+  * produces: **Array<string>** - a list of response content types produced by the operation    
 
 
 
 
 Uses the following partials:
-* [swagger/model](#swaggermodel)
-* [swagger/model](#swaggermodel)
+* [swagger/list-of-labels](#swaggerlist-of-labels)
+* [swagger/list-of-labels](#swaggerlist-of-labels)
+* [swagger/response-list](#swaggerresponse-list)
 
 ## swagger/security
 
