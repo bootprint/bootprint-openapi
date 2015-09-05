@@ -1,6 +1,6 @@
 # Release notes
 
-## Upcoming
+## v0.6.6 - 2015-09-05
 
 ### Added
 * Support for global responses
