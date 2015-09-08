@@ -1,0 +1,101 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Test API",
+    "version": "v1-beta"
+  },
+  "host": "api.contoso.com",
+  "schemes": [
+    "https"
+  ],
+  "basePath": "/api/v1-beta",
+  "securityDefinitions": {
+    "api_key": {
+      "name": "X-API-KEY",
+      "type": "apiKey",
+      "in": "header"
+    }
+  },
+  "security": [
+    {
+      "api_key": []
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/things/": {
+      "post": {
+        "summary": "Create new things.",
+        "parameters": [
+          {
+            "name": "things",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "description"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "readOnly": true,
+                    "description": "Unique identifier of this thing"
+                  },
+                  "name": {
+                    "description": "The name of the thing",
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 64
+                  },
+                  "description": {
+                    "type": "string",
+                    "maxLength": 164,
+                    "description": "Human-readable description of this thing."
+                  }
+                },
+                "minItems": 1
+              },
+              "description": "An array of things to add to the database."
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Things successfully inserted"
+          },
+          "400": {
+            "description": "The request violated the specification and was rejected.",
+            "schema": {
+              "type": "string",
+              "description": "Human-readable description of the validation failure that led to the error. Only the first error found is reported."
+            }
+          },
+          "403": {
+            "description": "Operation was not allowed due to an invalid API key, insufficient privileges or trying to reference an entity that does not exist. We have purposedfully combined non-existance and lack of privileges into this error code to avoid enumeration attacks.",
+            "schema": {
+              "type": "string",
+              "description": "Human-readable description of the causes of the error."
+            }
+          },
+          "415": {
+            "description": "Operation failed because the content-type of the data submitted in the request body is not application/json.",
+            "schema": {
+              "type": "string",
+              "description": "Human-readable description of the causes of the error."
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -126,6 +126,19 @@ describe('The global-responses fixture', function () {
   })
 })
 
+describe('The read-only-property fixture', function () {
+  this.timeout(10000)
+  var context = {}
+  before(function () {
+    return runBootprint('read-only-property.json', context)
+  })
+
+  it('should contain a reference the property "aPropertyName"', function () {
+    expect(context.$('#definition-no-type').html())
+      .to.contain('aPropertyName')
+  })
+})
+
 describe('The definition-without-type fixture', function () {
   this.timeout(10000)
   var context = {}
