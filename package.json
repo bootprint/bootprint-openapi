@@ -1,6 +1,6 @@
 {
   "name": "bootprint-swagger",
-  "version": "0.6.6",
+  "version": "0.6.7",
   "description": "Converts a swagger-definition into a static html page",
   "main": "index.js",
   "preferGlobal": true,
