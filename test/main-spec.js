@@ -24,12 +24,16 @@ describe('The petstore example', function () {
       .to.equal('Pet')
   })
 
-  it("should contain an summary item '/pet' linking to '#path--pet'", function () {
-    expect(context.$(".swagger--summary-path a[href='#path--pet']").text()).to.equal('/pet')
+  it("should contain a summary item '/pet' linking to '#operation--pet-post'", function () {
+    expect(context.$(".swagger--summary a[href='#operation--pet-post']").text()).to.equal('POST /pet')
   })
 
   it("should contain an path item '/pet' with id 'path--pet'", function () {
     expect(context.$('#path--pet').length).to.equal(1)
+  })
+
+  it("should contain a tag-based summary for the tag 'pet'", function () {
+    expect(context.$('#tag-pet').length).to.equal(1)
   })
 })
 
@@ -149,6 +153,46 @@ describe('The definition-without-type fixture', function () {
   it('should contain a reference the property "aPropertyName"', function () {
     expect(context.$('#definition-no-type').html())
       .to.contain('aPropertyName')
+  })
+})
+
+describe('The tags fixture', function () {
+  this.timeout(10000)
+  var context = {}
+  before(function () {
+    return runBootprint('tags.json', context)
+  })
+
+  it('contains a tag-summary "Thingys" with a link to the operation "POST /thingy"', function () {
+    var ref = context.$('#tag-Thingys').nextUntil('.swagger--summary-tag').find('a[href="#operation--thingy-post"]')
+    expect(ref.html())
+      .to.contain('POST /thingy')
+  })
+
+  it('contains a tag-summary "default" with a link to the operation "POST /notag"', function () {
+    var ref = context.$('#tag-default').nextUntil('.swagger--summary-tag').find('a[href="#operation--notag-post"]')
+    expect(ref.html())
+      .to.contain('POST /notag')
+  })
+})
+
+describe('The notags fixture', function () {
+  this.timeout(10000)
+  var context = {}
+  before(function () {
+    return runBootprint('notags.json', context)
+  })
+
+  it('should contain a summary without tags', function () {
+    expect(context.$('#swagger--summary-no-tags').length).to.equal(1)
+  })
+
+  it('should not contain a tag-based summary', function () {
+    expect(context.$('#swagger--summary-tags').length).to.equal(0)
+  })
+
+  it("should contain a summary item '/notag' linking to '#path--notag'", function () {
+    expect(context.$(".swagger--summary-path a[href='#path--notag']").text()).to.equal('/notag')
   })
 })
 

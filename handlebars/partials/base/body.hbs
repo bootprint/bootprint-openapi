@@ -24,11 +24,16 @@
     {{>swagger/response-list responses=responses global="true"}}
 </div>
 
-
-{{>swagger/summary}}
+{{#if showTagSummary}}
+    {{>swagger/tags}}
+{{else}}
+    {{>swagger/summary}}
+{{/if}}
 
 {{>swagger/securityDefinitions}}
 
 {{>swagger/paths paths=paths}}
+
+
 
 {{>swagger/definitions definitions=definitions}}

@@ -1,0 +1,29 @@
+{{!--
+    Renders a summary based on the tags of this services, containing references to all operations and paths
+    @param {Array<{name:string, summary:string, operations: object}>} tags a list of tags
+    @api public
+--}}
+
+<h2 id="swagger--summary-tags">Summary</h2>
+{{#eachSorted tags}}
+    <h3 id="tag-{{htmlId name}}" class="swagger-summary-tag">Tag: {{name}}</h3>
+    <p>{{description}}</p>
+
+    <table class="table table-bordered table-condensed swagger--summary">
+        <thead>
+        <tr>
+            <th>Operation</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+            {{#each operations}}
+            <tr>
+                <td><a href="#operation-{{htmlId path}}-{{htmlId method}}">{{toUpperCase method}} {{path}}</a></td>
+                <td>{{md summary}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{/eachSorted}}
+

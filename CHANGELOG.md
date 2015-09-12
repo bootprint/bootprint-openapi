@@ -1,5 +1,12 @@
 # Release notes
 
+## Upcoming 
+
+### Added
+
+* Support for tags (#6): If the swagger-specification contains a tag-element, the summary
+  at the top is based on the tags instead of displaying a complete table of contents.
+
 ## v0.6.6 - 2015-09-05
 
 ### Added
