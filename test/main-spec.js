@@ -137,9 +137,9 @@ describe('The read-only-property fixture', function () {
     return runBootprint('read-only-property.json', context)
   })
 
-  it('should contain a reference the property "aPropertyName"', function () {
-    expect(context.$('#definition-no-type').html())
-      .to.contain('aPropertyName')
+  it('should contain a read-only badge in its request model', function () {
+    expect(context.$('#operation--things--post .json-property-read-only').length)
+      .to.equal(1)
   })
 })
 
