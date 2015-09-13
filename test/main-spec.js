@@ -204,13 +204,12 @@ describe('The global-params fixture', function () {
   })
 
   it('should contain a global parameters definition for "p1"', function () {
-    expect(context.$('#table-parameter-definitions').html()).to.contain('p1');
+    expect(context.$('#table-parameter-definitions').html()).to.contain('p1')
   })
 
   it('should contain reference to "p1" in the POST-thingy operation', function () {
-    expect(context.$('#operation--thingy-post').text()).to.contain('#/parameters/p1');
+    expect(context.$('#operation--thingy-post').text()).to.contain('#/parameters/p1')
   })
-
 })
 
 /**
