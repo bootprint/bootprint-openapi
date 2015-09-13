@@ -1,5 +1,11 @@
 # Release notes
 
+## Upcoming
+### Added
+
+* Support for global parameter definitions (#10)
+
+
 ## v0.6.8 - 2015-09-12 
 
 ### Added

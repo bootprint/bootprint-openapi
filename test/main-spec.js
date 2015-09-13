@@ -196,6 +196,23 @@ describe('The notags fixture', function () {
   })
 })
 
+describe('The global-params fixture', function () {
+  this.timeout(10000)
+  var context = {}
+  before(function () {
+    return runBootprint('global-params.json', context)
+  })
+
+  it('should contain a global parameters definition for "p1"', function () {
+    expect(context.$('#table-parameter-definitions').html()).to.contain('p1');
+  })
+
+  it('should contain reference to "p1" in the POST-thingy operation', function () {
+    expect(context.$('#operation--thingy-post').text()).to.contain('#/parameters/p1');
+  })
+
+})
+
 /**
  * Run bootprint with a fixture and return a cheerio wrapper for the index.html
  * @param fixture

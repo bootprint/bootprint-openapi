@@ -1,6 +1,9 @@
 {{!--
     Renders the parameter table within a operation definition.
-    @param {Parameter[]} parameters a list of Swagger-Parameter objects
+    @param {Array<Parameter>|Object<Parameter>} parameters a list of Swagger-Parameter objects
+       If this is an object, an it is expected to be the global parameter list 
+       https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md#parametersDefinitionsObject
+       and the key of each entry is display in a column in front of the other columns.
     @api public
 --}}
 
@@ -17,23 +20,13 @@
             </thead>
             <tbody>
             {{#each parameters}}
-                <tr>
-                    <td>{{name}}
-                        {{#if required}}
-                            <span class="json-property-required"></span>
-                        {{/if}}</td>
-                    <td>{{md description}}</td>
-                    <td>{{in}}</td>
-                    <td>
-                        {{>json-schema/datatype .}}
-                        {{#if items}}
-                            ,{{>json-schema/datatype items}}
-                        {{/if}}
-                        {{#if collectionFormat}}
-                            <div class="sw-param-collection-format">{{md (swagger--collection-format collectionFormat)}}</div>
-                        {{/if}}
-                    </td>
-                </tr>
+                {{#if $ref}}
+                    <tr>
+                        <td colspan="4">Global parameter: <a href="{{$ref}}">{{$ref}}</a></td>
+                    </tr>
+                {{else}}
+                    {{> swagger/parameterRow parameter=.}}
+                {{/if}}
             {{/each}}
             </tbody>
         </table>

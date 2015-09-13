@@ -1,0 +1,27 @@
+{{!--
+    Display a single parameter in a table row.
+    @param {Parameter} parameter a parameter object
+    @param {string=} key a reference key (if present, this is display in an additional 
+        column in front of the other columns
+    @api public
+--}}
+<tr>
+    {{#if key}}
+        <td><a name="/parameters/{{key}}"></a>{{key}}</td>
+    {{/if}}
+    <td>{{name}}
+        {{#if required}}
+            <span class="json-property-required"></span>
+        {{/if}}</td>
+    <td>{{md description}}</td>
+    <td>{{in}}</td>
+    <td>
+        {{>json-schema/datatype .}}
+        {{#if items}}
+            ,{{>json-schema/datatype items}}
+        {{/if}}
+        {{#if collectionFormat}}
+            <div class="sw-param-collection-format">{{md (swagger--collection-format collectionFormat)}}</div>
+        {{/if}}
+    </td>
+</tr>

@@ -1,0 +1,25 @@
+{{!--
+    Global parameter definitions (see https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md#parametersDefinitionsObject)
+    @param {object<Parameter>} parameters the parameter-definitions object
+    @api public
+--}}
+{{#if parameters}}
+    <h2>Parameter definitions</h2>
+    <table id="table-parameter-definitions" class="table">
+        <thead>
+        <tr>
+            <th class="sw-param-key"></th>
+            <th class="sw-param-name"></th>
+            <th class="sw-param-description"></th>
+            <th class="sw-param-type"></th>
+            <th class="sw-param-data-type"></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each parameters}}
+            {{> swagger/parameterRow key=@key parameter=.}}
+        {{/each}}
+        </tbody>
+    </table>
+{{/if}}
+ 
