@@ -1,0 +1,31 @@
+{{!--
+    Display a single parameter in a table row.
+    @param {url} url a url string
+    @api public
+--}}
+<tr>
+    <td>
+        {{json-schema--parameter-properties parameters=@root.parameters parameterName=url key='name'}}
+            {{#if (json-schema--parameter-properties parameters=@root.parameters parameterName=url key='required')}}
+                <span class="json-property-required"></span>
+            {{/if}}
+    </td>
+    <td> {{json-schema--parameter-properties parameters=@root.parameters parameterName=url key='description'}} </td>
+    <td> {{json-schema--parameter-properties parameters=@root.parameters parameterName=url key='in'}} </td>
+    <td> 
+        {{json-schema--parameter-properties parameters=@root.parameters parameterName=url key='type'}} 
+            {{#if (json-schema--parameter-properties parameters=@root.parameters parameterName=url key='enum')}}
+                <span class="json-property-enum" title="Possible values">&isin; {
+                    {{#each (json-schema--parameter-properties parameters=@root.parameters parameterName=url key='enum')}}
+                        <span class="json-property-enum-item">{{.}}</span>
+                        {{#ifeq ../default .}}
+                            (default)
+                        {{/ifeq}}
+                        {{#unless @last}},{{/unless}}
+
+                    {{/each}}
+                    }
+                    </span>
+            {{/if}}
+    </td>
+</tr>

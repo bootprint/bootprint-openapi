@@ -21,9 +21,7 @@
             <tbody>
             {{#each parameters}}
                 {{#if $ref}}
-                    <tr>
-                        <td colspan="4">Global parameter: <a href="{{$ref}}">{{$ref}}</a></td>
-                    </tr>
+                    {{> swagger/parameterReferences url=$ref}}
                 {{else}}
                     {{> swagger/parameterRow parameter=.}}
                 {{/if}}
