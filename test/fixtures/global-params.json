@@ -20,9 +20,9 @@
   ],
   "parameters": {
     "p1": {
-      "name": "p1",
+      "name": "pglobal",
       "in": "query",
-      "description": "ID of the order that needs to be deleted",
+      "description": "This is a global parameter",
       "required": false,
       "type": "string"
     }

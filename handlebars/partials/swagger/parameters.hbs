@@ -16,14 +16,13 @@
                 <th class="sw-param-description"></th>
                 <th class="sw-param-type"></th>
                 <th class="sw-param-data-type"></th>
+                <th class="sw-param-annotation"></th>
             </tr>
             </thead>
             <tbody>
             {{#each parameters}}
                 {{#if $ref}}
-                    <tr>
-                        <td colspan="4">Global parameter: <a href="{{$ref}}">{{$ref}}</a></td>
-                    </tr>
+                    {{> swagger/parameterRow parameter=(json-schema--resolve-ref $ref) $ref=$ref}}
                 {{else}}
                     {{> swagger/parameterRow parameter=.}}
                 {{/if}}
