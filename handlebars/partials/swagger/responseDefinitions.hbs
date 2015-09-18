@@ -1,11 +1,10 @@
 {{!--
     Renders the response definitions
 --}}
+{{#if responses}}
 <h2>Response definitions</h2>
 
-
-
-<dl>
+<dl id="sw-response-definitions">
     {{#each responses}}
         <dt><a name="{{key}}"></a>{{@key}}</dt>
         <dd>
@@ -13,3 +12,4 @@
         </dd>
     {{/each}}
 </dl>
+{{/if}}

@@ -81,7 +81,7 @@ describe('The missing-items fixture', function () {
   })
 
   it('should contain a body (because a body-parameter is present, even though the consumes-property is missing', function () {
-    expect(context.$('#operation--tagged_things-get > div.panel-body > section.sw-response-body > table > tbody > tr.sw-response-200').html())
+    expect(context.$('#operation--tagged_things-get dd.sw-response-200').html())
       .to.contain('option1.blah')
   })
 })
@@ -104,10 +104,10 @@ describe('The default-values fixture', function () {
         .to.contain('application/xml')
     })
     it('the  "GET /foo/bar" operation should implicitly show "' + contentType + '" as response body', function () {
-      expect(context.$('#operation--foo-bar-get section.sw-response-body').html()).to.contain(contentType)
+      expect(context.$('#operation--foo-bar-get .sw-responses').html()).to.contain(contentType)
     })
     it('the  "POST /foo/bar" operation should implicitly show "' + contentType + '" as request body', function () {
-      expect(context.$('#operation--foo-bar-post section.sw-request-body').html()).to.contain(contentType)
+      expect(context.$('#operation--foo-bar-post .sw-request-body').html()).to.contain(contentType)
     })
   })
 })
@@ -120,12 +120,12 @@ describe('The global-responses fixture', function () {
   })
 
   it('should contain a two global responses', function () {
-    expect(context.$('#sw-global-responses > table >  tbody > tr ').length)
+    expect(context.$('#sw-response-definitions > dt').length)
       .to.equal(2)
   })
 
   it('should contain a reference to the "bad_request" responses', function () {
-    expect(context.$('#operation--tagged_things-get section.sw-response-body tr.sw-response-400 a').attr('href'))
+    expect(context.$('#operation--tagged_things-get section.sw-responses dt.sw-response-400 a').attr('href'))
       .to.equal('#/responses/bad_request')
   })
 })

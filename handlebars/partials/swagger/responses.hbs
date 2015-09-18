@@ -17,7 +17,7 @@
 
         <dl>
             {{#each responses}}
-                <dt>
+                <dt class="sw-response-{{@key}}">
                     {{! Use response-code and http-name as text}}
                     {{@key}} {{swagger--response-code @key}}
                     {{#if $ref}}
@@ -25,12 +25,13 @@
                     {{/if}}
                 
                 </dt>
-                {{#if $ref}}
-                    <dd>{{>swagger/response response=(json-schema--resolve-ref $ref)}}</dd>
-                {{else}}
-                    <dd>{{>swagger/response response=.}}</dd>
-                {{/if}}
-
+                <dd class="sw-response-{{@key}}">
+                    {{#if $ref}}
+                        {{>swagger/response response=(json-schema--resolve-ref $ref)}}
+                    {{else}}
+                        {{>swagger/response response=.}}
+                    {{/if}}
+                </dd>
             {{/each}}
         </dl>
     </section>
