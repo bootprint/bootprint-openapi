@@ -1,0 +1,11 @@
+{{!--
+    Renders details about a single response
+    @param {Response} response a swagger response-object
+--}}
+{{! If global is set, attach an id to the table row }}
+<div class="row">
+    <div class="col-md-6">
+        {{md response.description}}
+    </div>
+    <div class="col-md-6 sw-request-model">{{>swagger/model model=response.schema}}</div>
+</div>

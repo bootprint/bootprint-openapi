@@ -31,12 +31,7 @@
 
 {{>swagger/parameterDefinitions parameters=parameters}}
 
-{{#if responses}}
-    <h2>Global responses</h2>
-    <div id="sw-global-responses">
-        {{>swagger/response-list responses=responses global="true"}}
-    </div>
-{{/if}}
+{{>swagger/responseDefinitions responses=responses}}
 
 {{>swagger/definitions definitions=definitions}}
 

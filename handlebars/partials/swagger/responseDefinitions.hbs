@@ -1,0 +1,15 @@
+{{!--
+    Renders the response definitions
+--}}
+<h2>Response definitions</h2>
+
+
+
+<dl>
+    {{#each responses}}
+        <dt><a name="{{key}}"></a>{{@key}}</dt>
+        <dd>
+            {{> swagger/response response=.}}
+        </dd>
+    {{/each}}
+</dl>

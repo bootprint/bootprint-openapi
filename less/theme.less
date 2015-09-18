@@ -55,8 +55,6 @@
   }
 }
 
-
-
 .sw-operation-description {
   .named-section(@msg-sw-section-operation-description);
 }
@@ -69,8 +67,8 @@
   .named-section(@msg-sw-section-request-body);
 }
 
-.sw-response-body {
-  .named-section(@msg-sw-section-response-body);
+.sw-responses {
+  .named-section(@msg-sw-section-responses);
 }
 
 .table-header(@label,@width: auto) {
@@ -88,23 +86,6 @@
 
 // Tables
 table.table {
-
-  th.sw-response-code {
-    .table-header(@msg-sw-response-code,10em);
-  }
-  
-  // Name of a global response
-  th.sw-response-name {
-    .table-header(@msg-sw-response-name,10em);
-  }
-
-  th.sw-response-description {
-    .table-header(@msg-sw-response-description);
-  }
-  th.sw-response-data-type {
-    .table-header(@msg-sw-response-data-type, 40%);
-  }
-
 
   th.sw-param-key {
     .table-header(@msg-sw-param-key, 10%);

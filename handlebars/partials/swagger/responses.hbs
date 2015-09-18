@@ -6,7 +6,7 @@
 --}}
 
 {{#if responses}}
-    <section class="sw-response-body">
+    <section class="sw-responses">
         {{#if produces}}
             <p>{{>swagger/list-of-labels values=produces}}</p>
         {{else if @root.produces}}
@@ -15,6 +15,23 @@
             </p>
         {{/if}}
 
-        {{>swagger/response-list responses=responses}}
+        <dl>
+            {{#each responses}}
+                <dt>
+                    {{! Use response-code and http-name as text}}
+                    {{@key}} {{swagger--response-code @key}}
+                    {{#if $ref}}
+                        <span class="swagger--global"></span> <span class="json-schema--reference"><a href="{{$ref}}">{{$ref}}</a></span>
+                    {{/if}}
+                
+                </dt>
+                {{#if $ref}}
+                    <dd>{{>swagger/response response=(json-schema--resolve-ref $ref)}}</dd>
+                {{else}}
+                    <dd>{{>swagger/response response=.}}</dd>
+                {{/if}}
+
+            {{/each}}
+        </dl>
     </section>
 {{/if}}
