@@ -15,6 +15,17 @@ For details about command line parameters, please refer to the
 [preprocessor](lib/preprocessor.js) that converts
 [a Swagger-Specification](http://swagger.io) into the JSON actually needed by the templates.
 
+### Create a single file.
+
+If you want to have a single HTML-file, not one HTML and one CSS, you can use substack's [html-inline](https://github.com/substack/html-inline)
+package to generate a self-cotnained file:
+
+```
+npm -g install html-inline
+html-inline target/index.html
+```
+
+
 
 ### Javascript-Usage
 
