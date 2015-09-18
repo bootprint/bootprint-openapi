@@ -9,19 +9,19 @@
     {{#if key}}
         <td><a name="/parameters/{{key}}"></a>{{key}}</td>
     {{/if}}
-    <td>{{name}}
-        {{#if required}}
+    <td>{{parameter.name}}
+        {{#if parameter.required}}
             <span class="json-property-required"></span>
         {{/if}}</td>
-    <td>{{md description}}</td>
-    <td>{{in}}</td>
+    <td>{{md parameter.description}}</td>
+    <td>{{parameter.in}}</td>
     <td>
-        {{>json-schema/datatype .}}
-        {{#if items}}
-            ,{{>json-schema/datatype items}}
+        {{>json-schema/datatype parameter}}
+        {{#if parameter.items}}
+            ,{{>json-schema/datatype parameter.items}}
         {{/if}}
-        {{#if collectionFormat}}
-            <div class="sw-param-collection-format">{{md (swagger--collection-format collectionFormat)}}</div>
+        {{#if parameter.collectionFormat}}
+            <div class="sw-param-collection-format">{{md (swagger--collection-format parameter.collectionFormat)}}</div>
         {{/if}}
     </td>
 </tr>
