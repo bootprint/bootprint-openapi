@@ -1,5 +1,10 @@
 # Release notes
 
+## Upcoming
+### Update 
+
+* Inline global parameter definitions (#32)
+
 ## v0.6.9 - 2015-09-13
 ### Added
 
