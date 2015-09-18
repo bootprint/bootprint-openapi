@@ -1,5 +1,10 @@
 # Release notes
 
+## Upcoming
+### Fix 
+
+* Fix tests failing due to the new HTML-structure.
+
 ## v0.7.0 - 2015-09-18
 ### Update 
 
