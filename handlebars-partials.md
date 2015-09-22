@@ -64,7 +64,12 @@
 │   │           │   ├── <b><a href="#swaggerlist-of-labels">*swagger/list-of-labels*</a></b>
 │   │           │   ├── <b><a href="#swaggerresponse">swagger/response</a></b>
 │   │           │   │   <i>Renders details about a single response</i>
-│   │           │   │   └── <b><a href="#swaggermodel">*swagger/model*</a></b>
+│   │           │   │   ├── <b><a href="#swaggermodel">*swagger/model*</a></b>
+│   │           │   │   ├── <b><a href="#swaggerresponseheaderrow">swagger/responseHeaderRow</a></b>
+│   │           │   │   │   <i>Display a single parameter in a table row.</i>
+│   │           │   │   │   ├── <b><a href="#json-schemadatatype">*json-schema/datatype*</a></b>
+│   │           │   │   │   └── <b><a href="#json-schemadatatype">*json-schema/datatype*</a></b>
+│   │           │   │   └── <b><a href="#swaggerresponseheaderrow">*swagger/responseHeaderRow*</a></b>
 │   │           │   └── <b><a href="#swaggerresponse">*swagger/response*</a></b>
 │   │           └── <b><a href="#swaggersecurity">swagger/security</a></b>
 │   │               <i>Renders the security definitions of the...</i>
@@ -83,7 +88,7 @@
 
 ## base/body
 
-(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.7.1/handlebars/partials/base/body.hbs">jump to source in <code>bootprint-swagger@0.7.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/base/body.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
 
 
 This partial renders the <body> of the HTML page.
@@ -135,7 +140,7 @@ the Bootprint-result.
 
 ## base/title
 
-(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.7.1/handlebars/partials/base/title.hbs">jump to source in <code>bootprint-swagger@0.7.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/base/title.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
 
 
 Renders the page title
@@ -265,7 +270,7 @@ Uses the following partials:
 
 ## swagger/definitions
 
-(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.7.1/handlebars/partials/swagger/definitions.hbs">jump to source in <code>bootprint-swagger@0.7.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/swagger/definitions.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
 
 
 Renders the definition-section of the HTML-page.
@@ -281,7 +286,7 @@ Uses the following partials:
 
 ## swagger/list-of-labels
 
-(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.7.1/handlebars/partials/swagger/list-of-labels.hbs">jump to source in <code>bootprint-swagger@0.7.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/swagger/list-of-labels.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
 
 
 Renders an array of strings as list of labels
@@ -295,7 +300,7 @@ Renders an array of strings as list of labels
 
 ## swagger/model
 
-(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.7.1/handlebars/partials/swagger/model.hbs">jump to source in <code>bootprint-swagger@0.7.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/swagger/model.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
 
 
 Renders a json-schema model within swagger (calls json-schema-partials).
@@ -312,7 +317,7 @@ Uses the following partials:
 
 ## swagger/operation
 
-(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.7.1/handlebars/partials/swagger/operation.hbs">jump to source in <code>bootprint-swagger@0.7.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/swagger/operation.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
 
 
 This partial renders a box containing information about a single operation of the service
@@ -333,7 +338,7 @@ Uses the following partials:
 
 ## swagger/parameterDefinitions
 
-(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.7.1/handlebars/partials/swagger/parameterDefinitions.hbs">jump to source in <code>bootprint-swagger@0.7.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/swagger/parameterDefinitions.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
 
 
 Global parameter definitions (see https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md#parametersDefinitionsObject)
@@ -349,7 +354,7 @@ Uses the following partials:
 
 ## swagger/parameterRow
 
-(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.7.1/handlebars/partials/swagger/parameterRow.hbs">jump to source in <code>bootprint-swagger@0.7.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/swagger/parameterRow.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
 
 
 Display a single parameter in a table row.
@@ -369,7 +374,7 @@ Uses the following partials:
 
 ## swagger/parameters
 
-(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.7.1/handlebars/partials/swagger/parameters.hbs">jump to source in <code>bootprint-swagger@0.7.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/swagger/parameters.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
 
 
 Renders the parameter table within a operation definition.
@@ -389,7 +394,7 @@ Uses the following partials:
 
 ## swagger/path
 
-(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.7.1/handlebars/partials/swagger/path.hbs">jump to source in <code>bootprint-swagger@0.7.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/swagger/path.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
 
 
 Renders a single path definition with all its methods (GET, POST).
@@ -406,7 +411,7 @@ Uses the following partials:
 
 ## swagger/paths
 
-(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.7.1/handlebars/partials/swagger/paths.hbs">jump to source in <code>bootprint-swagger@0.7.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/swagger/paths.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
 
 
 Renders the paths-section of the Rest-Service definition
@@ -420,7 +425,7 @@ Uses the following partials:
 
 ## swagger/request-body
 
-(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.7.1/handlebars/partials/swagger/request-body.hbs">jump to source in <code>bootprint-swagger@0.7.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/swagger/request-body.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
 
 
 Renders the request-body section of an operation.
@@ -439,7 +444,7 @@ Uses the following partials:
 
 ## swagger/response
 
-(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.7.1/handlebars/partials/swagger/response.hbs">jump to source in <code>bootprint-swagger@0.7.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/swagger/response.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
 
 
 Renders details about a single response
@@ -452,10 +457,12 @@ Renders details about a single response
 
 Uses the following partials:
 * [swagger/model](#swaggermodel)
+* [swagger/responseHeaderRow](#swaggerresponseheaderrow)
+* [swagger/responseHeaderRow](#swaggerresponseheaderrow)
 
 ## swagger/responseDefinitions
 
-(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.7.1/handlebars/partials/swagger/responseDefinitions.hbs">jump to source in <code>bootprint-swagger@0.7.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/swagger/responseDefinitions.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
 
 
 Renders the response definitions
@@ -467,9 +474,27 @@ Renders the response definitions
 Uses the following partials:
 * [swagger/response](#swaggerresponse)
 
+## swagger/responseHeaderRow
+
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/swagger/responseHeaderRow.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
+
+
+Display a single parameter in a table row.
+
+* Parameters:
+  * header: **Header** - a (Header)[https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md#headerObject] object    
+  * name: **string** - the name of  the response header    
+
+
+
+
+Uses the following partials:
+* [json-schema/datatype](#json-schemadatatype)
+* [json-schema/datatype](#json-schemadatatype)
+
 ## swagger/responses
 
-(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.7.1/handlebars/partials/swagger/responses.hbs">jump to source in <code>bootprint-swagger@0.7.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/swagger/responses.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
 
 
 Renders the responses section of an operation
@@ -489,7 +514,7 @@ Uses the following partials:
 
 ## swagger/security
 
-(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.7.1/handlebars/partials/swagger/security.hbs">jump to source in <code>bootprint-swagger@0.7.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/swagger/security.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
 
 
 Renders the security definitions of the Rest-service.
@@ -503,7 +528,7 @@ Renders the security definitions of the Rest-service.
 
 ## swagger/securityDefinitions
 
-(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.7.1/handlebars/partials/swagger/securityDefinitions.hbs">jump to source in <code>bootprint-swagger@0.7.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/swagger/securityDefinitions.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
 
 
 Renders the security-section of the HTML-page
@@ -516,7 +541,7 @@ TODO: Parameters
 
 ## swagger/summary
 
-(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.7.1/handlebars/partials/swagger/summary.hbs">jump to source in <code>bootprint-swagger@0.7.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/swagger/summary.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
 
 
 Renders a summary of this services ignoring tags, containing references to all operations and paths
@@ -528,7 +553,7 @@ Renders a summary of this services ignoring tags, containing references to all o
 
 ## swagger/tags
 
-(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.7.1/handlebars/partials/swagger/tags.hbs">jump to source in <code>bootprint-swagger@0.7.1</code></a>)
+(<a href="https://github.com/nknapp/bootprint-swagger/blob/v0.8.0/handlebars/partials/swagger/tags.hbs">jump to source in <code>bootprint-swagger@0.8.0</code></a>)
 
 
 Renders a summary based on the tags of this services, containing references to all operations and paths
