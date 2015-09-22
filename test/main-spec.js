@@ -35,6 +35,32 @@ describe('The petstore example', function () {
   it("should contain a tag-based summary for the tag 'pet'", function () {
     expect(context.$('#tag-pet').length).to.equal(1)
   })
+
+  function responseHeader () {
+    return context.$('#operation--user-login-get .sw-response-200 .sw-response-header-X-Rate-Limit')
+  }
+
+  describe("should contain a response-header X-Rate-Limit in the operation GET /user/login/' that ", function () {
+    /**
+     * Response hedare or user .login
+     * @returns {*}
+     */
+
+    it('exists', function () {
+      expect(responseHeader().length).to.equal(1)
+    })
+
+    it('has the correct name', function () {
+      expect(responseHeader().text()).to.contain('X-Rate-Limit')
+    })
+
+    it('has the correct description', function () {
+      expect(responseHeader().text()).to.contain('calls per hour allowed by the user')
+    })
+    it('has the correct datatype', function () {
+      expect(responseHeader().text()).to.match(/integer\s+\(int32\)/)
+    })
+  })
 })
 
 describe('The preformatted fixture', function () {

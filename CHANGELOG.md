@@ -1,5 +1,11 @@
 # Release notes
 
+## Upcoming
+
+### Added
+
+* Support for response-headers
+
 ## v0.7.1 - 2015-09-19
 ### Fix 
 

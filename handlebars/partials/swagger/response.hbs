@@ -8,4 +8,29 @@
         {{md response.description}}
     </div>
     <div class="col-md-6 sw-response-model">{{>swagger/model model=response.schema}}</div>
+
+    {{#if response.headers}}
+        <div class="col-md-12">
+            <section class="sw-response-headers">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th class="sw-response-header-name"></th>
+                        <th class="sw-response-header-description"></th>
+                        <th class="sw-response-header-data-type"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each response.headers}}
+                        {{#if $ref}}
+                            {{> swagger/responseHeaderRow header=(json-schema--resolve-ref $ref) name=@key}}
+                        {{else}}
+                            {{> swagger/responseHeaderRow header=. name=@key}}
+                        {{/if}}
+                    {{/each}}
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    {{/if}}
 </div>
