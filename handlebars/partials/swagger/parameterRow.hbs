@@ -15,13 +15,12 @@
     <td>{{md parameter.description}}</td>
     <td>{{parameter.in}}</td>
     <td>
-        {{>json-schema/datatype parameter}}
-        {{#if parameter.items}}
-            ,{{>json-schema/datatype parameter.items}}
-        {{/if}}
-        {{#if parameter.collectionFormat}}
-            <div class="sw-param-collection-format">{{md (swagger--collection-format parameter.collectionFormat)}}</div>
-        {{/if}}
+        {{~>json-schema/datatype parameter ~}}
+        {{~#if parameter.collectionFormat ~}}
+            <span class="sw-param-collection-format">, 
+                {{md (swagger--collection-format parameter.collectionFormat) stripParagraph=true}}
+            </span>
+        {{~/if}}
     </td>
     <td>
         {{#if parameter.required}}
