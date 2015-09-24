@@ -10,7 +10,7 @@
     "preformat": "npm list --depth=0 -g standard || npm -g install standard",
     "format": "standard --format",
     "pretest": "npm list --depth=0 -g standard || npm -g install standard",
-    "test": "mocha && standard",
+    "test": "mocha --recursive && standard",
     "thought": "thought run -a",
     "prethoughtcheck": "npm list --depth=0 -g thought || npm -g install thought",
     "thoughtcheck": "thought check-engines",
