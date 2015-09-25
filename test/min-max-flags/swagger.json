@@ -1,0 +1,61 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Test API",
+    "version": "v1-beta"
+  },
+  "host": "api.example.com",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/tagged_things": {
+      "get": {
+        "summary": "List tagged things.",
+        "tags": [
+          "Alerts"
+        ],
+        "description": "Lists all tagged things accessible to the API key owner.\n",
+        "responses": {
+          "200": {
+            "description": "An array of tagged things",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "tags"
+                ],
+                "properties": {
+                  "limited-string": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 64,
+                    "description": "Limited string\n"
+                  },
+                  "inclusive-interval": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 5,
+                    "description": "Interval with included bounds\n"
+                  },
+                  "exclusive-interval": {
+                    "type": "number",
+                    "minimum": 1,
+                    "maximum": 5,
+                    "minimumExclusive": true,
+                    "maximumExclusive": true,
+                    "description": "Interval with excluded bounds\n"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
