@@ -11,7 +11,6 @@
 var expect = require('chai').expect
 var core = require('../core')
 
-
 describe('The read-only-property fixture', function () {
   this.timeout(10000)
   var context = {}
