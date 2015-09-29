@@ -52,12 +52,12 @@
 ## v0.6.4 - 2015-08-31
 ### Fix
 
-* `bootprint-swagger#19: Parameters of type `body` not being displayed 
+* `bootprint-swagger#19`: Parameters of type `body` not being displayed 
 
 ## v0.6.3 - 2015-08-13
 ### Fix
 
-* `bootprint-swagger#62`: md-helper is not loosing html-tags anymore
+* `bootprint-swagger#16`: md-helper is not loosing html-tags anymore
 
 ## v0.6.1 - 2015-07-20
 ### Fix
