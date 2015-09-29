@@ -68,7 +68,6 @@ var hbDocs = function (files) {
  * @param partials
  */
 function createPartialTree (currentFile, partials, visitedFiles) {
-  console.log(currentFile);
   if (visitedFiles[currentFile.name]) {
     return {
       label: '*' + currentFile.name + '*',
