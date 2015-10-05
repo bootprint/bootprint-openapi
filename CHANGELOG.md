@@ -1,5 +1,9 @@
 # Release notes
 
+## v0.9.2 - 2015-10-05
+
+* bootprint-swagger#40: Wrong default request / response content-types
+
 ## v0.9.1 - 2015-09-27
 
 * Testcase for bootprint-swagger#35: "allOf" renders incorrect HTML doc
