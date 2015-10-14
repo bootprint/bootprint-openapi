@@ -64,15 +64,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "The thingys successfully inserted, complete with IDs and last modification fields.\n",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Thingy"
-              },
-              "minItems": 1
-            }
+          "400": {
+            "$ref": "#/responses/bad_request"
           }
         }
       }
