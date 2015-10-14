@@ -7,7 +7,7 @@
 {{#if definitions}}
     <h2>Schema definitions</h2>
 
-    {{#each definitions}}
+    {{#eachSorted definitions}}
         {{>swagger/model model=. title=@key anchor="/definitions" }}
-    {{/each}}
-{{/if}}
+    {{/eachSorted}}
+{{/if}}    

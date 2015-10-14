@@ -1,10 +1,20 @@
 # Release notes
 
+## Upcoming
+
+### Change
+
+* JSON-schema definitions are now sorted by name. 
+
 ## v0.9.2 - 2015-10-05
+
+### Fix
 
 * bootprint-swagger#40: Wrong default request / response content-types
 
 ## v0.9.1 - 2015-09-27
+
+### Fix
 
 * Testcase for bootprint-swagger#35: "allOf" renders incorrect HTML doc
   The fix was done in bootprint-swagger v0.7.1 
