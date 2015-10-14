@@ -18,7 +18,7 @@
         {{~>json-schema/datatype parameter ~}}
         {{~#if parameter.collectionFormat ~}}
             <span class="sw-param-collection-format">, 
-                {{md (swagger--collection-format parameter.collectionFormat) stripParagraph=true}}
+                {{md (swagger--collection-format parameter.collectionFormat parameter.name) stripParagraph=true}}
             </span>
         {{~/if}}
     </td>
