@@ -4,9 +4,18 @@
 --}}
 {{! If global is set, attach an id to the table row }}
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
         {{md response.description}}
     </div>
+</div>
+<div class="row">
+    {{#each response.examples}}
+        <div class="col-md-6 sw-response-examples">
+            <div class="label label-default">Example for {{@key}}</div>
+            {{json .}}
+        </div>
+    {{/each}}
+    
     <div class="col-md-6 sw-response-model">{{>swagger/model model=response.schema}}</div>
 
     {{#if response.headers}}
