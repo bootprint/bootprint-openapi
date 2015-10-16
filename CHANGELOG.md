@@ -1,6 +1,6 @@
 # Release notes
 
-## Upcoming
+## v0.10.0 - 2015-10-17
 
 ### Change
 
