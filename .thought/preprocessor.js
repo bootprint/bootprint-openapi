@@ -17,7 +17,7 @@ module.exports = function (input) {
       defaultConfig: {}, run: function () {}
     })
     .load(require('../'))
-    .build()
+    .buildConfig()
     .then(function (bootprintConfig) {
       var partials = hbDocs(bootprintConfig.handlebars.partials)
       var template = hbDocs(bootprintConfig.handlebars.templates)
