@@ -1,3 +1,10 @@
 *.iml
 node_modules
 target
+test-output
+test
+handlebars-partials.md
+.editorconfig
+.travis.yml
+.gitignore
+.thought
