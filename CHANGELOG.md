@@ -1,5 +1,9 @@
 # Release notes
 
+## Upcoming
+
+* Support for response-examples
+
 ## v0.10.0 - 2015-10-17
 
 ### Change
