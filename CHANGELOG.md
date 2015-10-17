@@ -1,6 +1,6 @@
 # Release notes
 
-## Upcoming
+## v0.11.0 - 2015-10-17
 
 * Support for response-examples
 
