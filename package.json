@@ -45,5 +45,11 @@
   },
   "keywords": [
     "swagger-to-html"
+  ],
+  "files": [
+    "index.js",
+    "handlebars",
+    "less",
+    "lib"
   ]
 }

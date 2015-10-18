@@ -1,5 +1,11 @@
 # Release notes
 
+## Upcoming
+
+# Fix
+
+* Add `files`-property to package.json
+
 ## v0.11.1 - 2015-10-17
 
 * Ignore unneeded files
