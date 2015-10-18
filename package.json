@@ -7,12 +7,12 @@
   "author": "Nils Knappmeier",
   "license": "MIT",
   "scripts": {
-    "preformat": "npm list --depth=0 -g standard || npm -g install standard",
+    "preformat": "standard --version || npm -g install standard",
     "format": "standard --format",
-    "pretest": "npm list --depth=0 -g standard || npm -g install standard",
+    "pretest": "standard --version || npm -g install standard",
     "test": "mocha --recursive && standard",
     "thought": "thought run -a",
-    "prethoughtcheck": "npm list --depth=0 -g thought || npm -g install thought",
+    "prethoughtcheck": "thought --version || npm -g install thought",
     "thoughtcheck": "thought check-engines",
     "version": "npm run thought",
     "preversion": "npm run thoughtcheck"
