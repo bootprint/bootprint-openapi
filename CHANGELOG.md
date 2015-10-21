@@ -1,5 +1,10 @@
 # Release notes
 
+## Upcoming
+
+* Remove `bootprint` as peer-dependency, because `npm` versions 1 and 2 download it needlessly.
+
+
 ## v0.11.1 - 2015-10-19
 
 # Fix

@@ -29,9 +29,6 @@
     "url": "https://github.com/nknapp/bootprint-swagger/issues"
   },
   "homepage": "https://github.com/nknapp/bootprint-swagger",
-  "peerDependencies": {
-    "bootprint": "<1.0.0"
-  },
   "devDependencies": {
     "bootprint": "<1.0.0",
     "chai": "^3.3.0",
