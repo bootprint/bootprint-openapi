@@ -10,6 +10,7 @@ module.exports = {
   },
   'swagger--response-code': function (code) {
     // Comments refer to the section number in rfc2616
+    // If no section number specified, it's documented in other rfcs.
     return {
       '100': 'Continue', // 10.1.1
       '101': 'Switching Protocols', // 10.1.2
@@ -20,6 +21,9 @@ module.exports = {
       '204': 'No Content', // 10.2.5
       '205': 'Reset Content', // 10.2.6
       '206': 'Partial Content', // 10.2.7
+      '207': 'Multi-status',
+      '208': 'Already Reported',
+      '226': 'IM Used',
       '300': 'Multiple Choices', // 10.3.1
       '301': 'Moved Permanently', // 10.3.2
       '302': 'Found', // 10.3.3
@@ -46,12 +50,25 @@ module.exports = {
       '415': 'Unsupported Media Type', // 10.4.16
       '416': 'Requested Range Not Satisfiable', // 10.4.17
       '417': 'Expectation Failed', // 10.4.18
+      '421': 'Misdirected Request',
+      '422': 'Unprocessable Entity',
+      '423': 'Locked',
+      '424': 'Failed Dependency',
+      '426': 'Upgrade Required',
+      '428': 'Precondition Required',
+      '429': 'Too Many Requests',
+      '431': 'Request Header Fields Too Large',
       '500': 'Internal Server Error', // 10.5.1
       '501': 'Not Implemented', // 10.5.2
       '502': 'Bad Gateway', // 10.5.3
       '503': 'Service Unavailable', // 10.5.4
       '504': 'Gateway Timeout', // 10.5.5
-      '505': 'HTTP Version Not Supported' // 10.5.6
+      '505': 'HTTP Version Not Supported', // 10.5.6
+      '506': 'Variant Also Negotiates',
+      '507': 'Insufficient Storage',
+      '508': 'Loop Detected',
+      '510': 'Not Extended',
+      '511': 'Network Authentication Required'
     }[code]
   }
 }
