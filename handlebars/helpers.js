@@ -10,7 +10,7 @@ module.exports = {
   },
   'swagger--response-code': function (code) {
     // Comments refer to the section number in rfc2616
-    // If an rfc number is specified, the code is 
+    // If an rfc number is specified, the code is
     // documented in the specified rfc.
     return {
       '100': 'Continue', // 10.1.1
