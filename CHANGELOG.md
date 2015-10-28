@@ -1,5 +1,11 @@
 # Release notes
 
+## Upcoming
+
+### Add
+
+* Add more http-response-code (thanks to [@Klamath233](https://github.com/Klamath233))
+
 ## v0.11.2 - 2015-10-21
 
 * Remove `bootprint` as peer-dependency, because `npm` versions 1 and 2 download it needlessly.
@@ -7,7 +13,7 @@
 
 ## v0.11.1 - 2015-10-19
 
-# Fix
+### Fix
 
 * Add `files`-property to package.json
 
