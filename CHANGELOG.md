@@ -1,5 +1,12 @@
 # Release notes
 
+## Upcoming
+
+### Fix
+
+* bootprint-swagger#44: Path Item `parameters' rendered as an Operation Object
+  (thanks to [@yewton](https://github.com/yewton) for the test-fixture)
+
 ## v0.13.0 - 2015-10-28
 
 ### Add
