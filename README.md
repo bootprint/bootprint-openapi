@@ -92,10 +92,10 @@ See []() for details.
 Some of the example specs have been provided by contributors who opened issues on github,
 those files are in the `test/*`-directories.
 
-    **test/all-of/swagger.json** [msh321](https://github.com/msh321) (issue #35)
-    **test/missing-items/swagger.json** [yewton](https://github.com/yewton) (issue #44)
-    **test/path-parameters/swagger.json** [asieira](https://github.com/asieira) (issue #18)
-    **test/read-only-property/swagger.json** [asieira](https://github.com/asieira) (issue #28)
+* **test/all-of/swagger.json** [msh321](https://github.com/msh321) (issue #35)
+* **test/missing-items/swagger.json** [yewton](https://github.com/yewton) (issue #44)
+* **test/path-parameters/swagger.json** [asieira](https://github.com/asieira) (issue #18)
+* **test/read-only-property/swagger.json** [asieira](https://github.com/asieira) (issue #28)
 
 ## Release-Notes
  
