@@ -19,7 +19,7 @@ npm install -g bootprint
 npm install -g bootprint-swagger
 ```
 
-**Check this out:** You can now [try out the new bootprint-swagger playground](http://bootprint.knappi.org/).
+**Check this out:** You can now [try out the new bootprint-swagger playground](http://bootprint.knappmeier.de/).
 Just paste a Swagger-specification and make it readable. 
 
 
