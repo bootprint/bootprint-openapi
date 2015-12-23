@@ -29,4 +29,9 @@ describe('The tags fixture', function () {
     expect(ref.html())
       .to.contain('POST /notag')
   })
+
+  it('should have that tag description converted to HTML', function () {
+    var ref = context.$('#tag-pet').next('p')
+    expect(ref.html()).to.contain('<strong>')
+  })
 })
