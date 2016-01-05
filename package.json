@@ -37,6 +37,7 @@
     "customize": "^0.6.0",
     "customize-engine-handlebars": "^0.5.2",
     "find-package": "^1.0.0",
+    "ghooks": "^1.0.1",
     "mocha": "^2.3.3",
     "multilang-apidocs": "^0.2.1",
     "q": "^1.4.1",
@@ -51,5 +52,10 @@
     "handlebars",
     "less",
     "lib"
-  ]
+  ],
+  "config": {
+    "ghooks": {
+      "pre-commit": "thoughtful precommit && standard --format"
+    }
+  }
 }
