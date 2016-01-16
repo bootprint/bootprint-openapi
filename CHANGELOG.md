@@ -1,10 +1,17 @@
 # Release notes
 
+## Upcoming
+
+### Rename
+
+* Swagger has been renamed to "OpenAPI", so `bootprint-swagger` has been renamed to `bootprint-openapi`.
+  the `bootprint-swagger`-module will still be in place and depend on this module for updates.
+
 ## v0.13.1 - 2015-11-01
 
 ### Fix
 
-* bootprint-swagger#44: Path Item `parameters' rendered as an Operation Object
+* #44: Path Item `parameters' rendered as an Operation Object
   (thanks to [@yewton](https://github.com/yewton) for the test-fixture)
 
 ## v0.13.0 - 2015-10-28
@@ -44,13 +51,13 @@
 
 ### Fix
 
-* bootprint-swagger#40: Wrong default request / response content-types
+* #40: Wrong default request / response content-types
 
 ## v0.9.1 - 2015-09-27
 
 ### Fix
 
-* Testcase for bootprint-swagger#35: "allOf" renders incorrect HTML doc
+* Testcase for #35: "allOf" renders incorrect HTML doc
   The fix was done in bootprint-swagger v0.7.1 
 
 ## v0.8.0 - 2015-09-22
@@ -100,12 +107,12 @@
 ## v0.6.4 - 2015-08-31
 ### Fix
 
-* `bootprint-swagger#19`: Parameters of type `body` not being displayed 
+* `#19`: Parameters of type `body` not being displayed 
 
 ## v0.6.3 - 2015-08-13
 ### Fix
 
-* `bootprint-swagger#16`: md-helper is not loosing html-tags anymore
+* `#16`: md-helper is not loosing html-tags anymore
 
 ## v0.6.1 - 2015-07-20
 ### Fix
