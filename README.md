@@ -11,7 +11,7 @@
 [![Build Status](https://travis-ci.org/nknapp/bootprint-openapi.svg?branch=master)](https://travis-ci.org/nknapp/bootprint-openapi)
 
 This package contains a template, partials and styles for [bootprint](http://npmjs.com/bootprint) to convert
-Swagger-Specifications into a static HTML-page.
+OpenAPI-Specifications into a static HTML-page.
 
 ## Installation
 
@@ -24,7 +24,7 @@ npm install -g bootprint-openapi
 ```
 
 **Check this out:** You can now [try out the new bootprint-openapi playground](http://bootprint.knappmeier.de/).
-Just paste a Swagger-specification and make it readable. 
+Just paste a OpenAPI-specification and make it readable. 
 
 
 ## Usage
@@ -37,12 +37,12 @@ The directory "target" should now contain a file `index.html` and `main.css` whi
 form of the [Swagger-Petstore-Example](http://petstore.swagger.io/).
 
 For details about command line parameters, please refer to the
-[documentation of the Bootprint](https://github.com/nknapp/bootprint)
+[documentation of Bootprint](https://github.com/nknapp/bootprint)
 
 `bootprint-openapi` is just a template-module for `bootprint`. That means, it contains
 [LessCss-file](less), [Handlebars-partials](handlebars/partials) and a
 [preprocessor](lib/preprocessor.js) that converts
-[a Swagger-Specification](http://swagger.io) into the JSON actually needed by the templates.
+[an OpenAPI-Specification](http://openapis.org) into the JSON actually needed by the templates.
 
 ### Create a single file.
 
@@ -76,7 +76,7 @@ require('bootprint')
 
 ## API
 
-The API of Bootprint-Swagger consists of Handlebars-partials that can be overridden and
+The API of `bootprint-openapi` consists of Handlebars-partials that can be overridden and
 LessCss-Definitions, that can be adapted.
 
 ### Handlebars partials

@@ -1,6 +1,6 @@
 # Release notes
 
-## Upcoming
+## v0.14.0 - 2016-01-16
 
 ### Rename
 
