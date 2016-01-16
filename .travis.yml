@@ -11,7 +11,7 @@ before_script:
   - standard
 script:
   - npm install istanbul
-  - istanbul cover ./node_modules/.bin/_mocha --report lcovonly
+  - istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- --recursive
 after_script:
   - npm install coveralls
   - cat ./coverage/lcov.info | coveralls
