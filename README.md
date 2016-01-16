@@ -1,41 +1,45 @@
-# bootprint-swagger
+# bootprint-openapi 
 
-> Converts a swagger-definition into a static html page
+[![NPM version](https://badge.fury.io/js/bootprint-openapi.svg)](http://badge.fury.io/js/bootprint-openapi)
+[![Build Status](https://travis-ci.org/nknapp/bootprint-openapi.svg)](https://travis-ci.org/nknapp/bootprint-openapi)
+[![Coverage Status](https://img.shields.io/coveralls/nknapp/bootprint-openapi.svg)](https://coveralls.io/r/nknapp/bootprint-openapi)
+
+> Converts a openapi-definition into a static html page
 
 ## Overview
 
-[![Build Status](https://travis-ci.org/nknapp/bootprint-swagger.svg?branch=master)](https://travis-ci.org/nknapp/bootprint-swagger)
+[![Build Status](https://travis-ci.org/nknapp/bootprint-openapi.svg?branch=master)](https://travis-ci.org/nknapp/bootprint-openapi)
 
 This package contains a template, partials and styles for [bootprint](http://npmjs.com/bootprint) to convert
 Swagger-Specifications into a static HTML-page.
 
 ## Installation
 
-In order to use `bootprint-swagger` from the command line
-you have to install `bootprint` and `bootprint-swagger` globally:
+In order to use `bootprint-openapi` from the command line
+you have to install `bootprint` and `bootprint-openapi` globally:
 
 ```bash
 npm install -g bootprint
-npm install -g bootprint-swagger
+npm install -g bootprint-openapi
 ```
 
-**Check this out:** You can now [try out the new bootprint-swagger playground](http://bootprint.knappmeier.de/).
+**Check this out:** You can now [try out the new bootprint-openapi playground](http://bootprint.knappmeier.de/).
 Just paste a Swagger-specification and make it readable. 
 
 
 ## Usage
 
 ```
-bootprint swagger http://petstore.swagger.io/v2/swagger.json target
+bootprint openapi http://petstore.swagger.io/v2/swagger.json target
 ```
 
-The directory "target" should now contain a file `index.html` and `main.css` which contain a readble
+The directory "target" should now contain a file `index.html` and `main.css` which contain a readable
 form of the [Swagger-Petstore-Example](http://petstore.swagger.io/).
 
 For details about command line parameters, please refer to the
 [documentation of the Bootprint](https://github.com/nknapp/bootprint)
 
-`bootprint-swagger` is just a template-module for `bootprint`. That means, it contains
+`bootprint-openapi` is just a template-module for `bootprint`. That means, it contains
 [LessCss-file](less), [Handlebars-partials](handlebars/partials) and a
 [preprocessor](lib/preprocessor.js) that converts
 [a Swagger-Specification](http://swagger.io) into the JSON actually needed by the templates.
@@ -60,7 +64,7 @@ The does essentially the same, just in a the above command line, just in JavaScr
 // Load bootprint
 require('bootprint')
   // Load bootprint-swagger
-  .load(require('bootprint-swagger'))
+  .load(require('bootprint-openapi'))
   // Customize configuration, override any options
   .merge({ /* Any other configuration */})
   // Specify build source and target
@@ -77,7 +81,7 @@ LessCss-Definitions, that can be adapted.
 
 ### Handlebars partials
                                                
-About 26 Handlebars partials are used to render this swagger-html-page.
+About 26 Handlebars partials are used to render this openapi-html-page.
 The following documentation is not final yet and there are a lot of partials without real documentation, but you may already have a look
 at it: The [partials documentation](handlebars-partials.md) describes the partials in use
 and the order in which they are called. You can override these partials in a
@@ -86,7 +90,7 @@ and the order in which they are called. You can override these partials in a
 
 ## License
 
-`bootprint-swagger` is published under the MIT-license.
+`bootprint-openapi` is published under the MIT-license.
 See []() for details.
 
 Some of the example specs have been provided by contributors who opened issues on github,

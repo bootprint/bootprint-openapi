@@ -46,6 +46,7 @@ of each of your projects.
 Instead, the `pretest`- and `preformat`-scripts ensure that `standard` and `thought` are installed globally.
 If you are not allowed to install packages globally, please raise an issue, so that we can try to find a solution.
 
+
 ### About this text
 
 This text is part of the [Thought](https://github.com/nknapp/thought)-project. If you have any suggestions or wishes
