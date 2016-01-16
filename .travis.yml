@@ -6,3 +6,12 @@ node_js:
   - "4.2"
   - "5.0"
   - "iojs"
+before_script:
+  - npm install standard
+  - standard
+script:
+  - npm install istanbul
+  - istanbul cover ./node_modules/.bin/_mocha --report lcovonly
+after_script:
+  - npm install coveralls
+  - cat ./coverage/lcov.info | coveralls
