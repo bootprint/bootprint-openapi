@@ -18,12 +18,12 @@ describe('The all-of fixture', function () {
     return core.run(require('./swagger.json'), __dirname, context)
   })
 
-  it('should have an inreheritance block for definition AAA', function () {
+  it('should have an inheritance block for definition AAA', function () {
     expect(context.$('#definition-AAA').text())
       .to.contain('BBB')
   })
 
-  it('should have an inreheritance block for definition BBB', function () {
+  it('should have an inheritance block for definition BBB', function () {
     expect(context.$('#definition-BBB').text())
       .to.contain('CCC')
   })
