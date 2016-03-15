@@ -1,11 +1,6 @@
 # Release notes
 
-## Upcoming
-
-### Doc
-
-* Slight readme changes
-
+<a name="current-release"></a>
 ## v0.14.0 - 2016-01-16
 
 ### Rename
