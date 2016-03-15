@@ -138,7 +138,7 @@ Uses the following partials:
 
 ## base/footer
 
-(<a href="https://github.com/nknapp/bootprint-base/blob/v0.6.3/handlebars/partials/base/footer.hbs">jump to source in <code>bootprint-base@0.6.3</code></a>)
+(<a href="https://github.com/nknapp/bootprint-base/blob/v0.7.1/handlebars/partials/base/footer.hbs">jump to source in <code>bootprint-base@0.7.1</code></a>)
 
 
 This partial is displayed at the bottom of the HTML-body.
@@ -154,7 +154,7 @@ the Bootprint-result.
 
 ## base/header
 
-(<a href="https://github.com/nknapp/bootprint-base/blob/v0.6.3/handlebars/partials/base/header.hbs">jump to source in <code>bootprint-base@0.6.3</code></a>)
+(<a href="https://github.com/nknapp/bootprint-base/blob/v0.7.1/handlebars/partials/base/header.hbs">jump to source in <code>bootprint-base@0.7.1</code></a>)
 
 
 This partial is displayed at the top of the HTML-body.
