@@ -1,6 +1,6 @@
 {
   "name": "bootprint-openapi",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "description": "Converts a openapi-definition into a static html page",
   "main": "index.js",
   "preferGlobal": true,
