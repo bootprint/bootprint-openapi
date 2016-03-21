@@ -1,6 +1,6 @@
 {
   "name": "bootprint-openapi",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "description": "Converts a openapi-definition into a static html page",
   "main": "index.js",
   "preferGlobal": true,
@@ -14,7 +14,7 @@
     "thought": "thought run -a",
     "prethoughtcheck": "thought --version || npm -g install thought",
     "thoughtcheck": "thought check-engines",
-    "version": "npm run thought",
+    "version": "thoughtful changelog -o -a && npm run thought",
     "preversion": "npm run thoughtcheck"
   },
   "dependencies": {
@@ -23,12 +23,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nknapp/bootprint-openapi"
+    "url": "https://github.com/bootprint/bootprint-openapi"
   },
   "bugs": {
-    "url": "https://github.com/nknapp/bootprint-openapi/issues"
+    "url": "https://github.com/bootprint/bootprint-openapi/issues"
   },
-  "homepage": "https://github.com/nknapp/bootprint-openapi",
+  "homepage": "https://github.com/bootprint/bootprint-openapi",
   "devDependencies": {
     "bootprint": "<1.0.0",
     "chai": "^3.3.0",
@@ -37,17 +37,24 @@
     "customize": "^0.6.0",
     "customize-engine-handlebars": "^0.5.2",
     "find-package": "^1.0.0",
+    "ghooks": "^1.0.3",
     "mocha": "^2.3.3",
     "multilang-apidocs": "^0.2.1",
     "q": "^1.4.1",
     "q-deep": "^1.0.1",
-    "q-io": "^1.13.1"
+    "q-io": "^1.13.1",
+    "thoughtful-release": "^0.3.0"
   },
   "keywords": [
     "openapi-to-html",
     "swagger-to-html",
     "swagger"
   ],
+  "config": {
+    "ghooks": {
+      "pre-commit": "standard"
+    }
+  },
   "files": [
     "index.js",
     "handlebars",

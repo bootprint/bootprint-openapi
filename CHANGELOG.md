@@ -1,10 +1,16 @@
 # Release notes
 
-## Upcoming
+<a name="current-release"></a>
+# Version 0.14.1 (Tue, 15 Mar 2016 14:29:44 GMT)
 
-### Doc
+* [5478346](https://github.com/bootprint/bootprint-openapi/commit/5478346) Adjust travis-configuration - Nils Knappmeier
+* [f154097](https://github.com/bootprint/bootprint-openapi/commit/f154097) Move to bootprint-organization and enable ghook for StandardJS - Nils Knappmeier
+* [1bcac94](https://github.com/bootprint/bootprint-openapi/commit/1bcac94) "Maintainers wanted" notice in the README - Nils Knappmeier
+* [a116faf](https://github.com/bootprint/bootprint-openapi/commit/a116faf) Typo in test-spec - Nils Knappmeier
+* [0fb4577](https://github.com/bootprint/bootprint-openapi/commit/0fb4577) Create borders around markdown-tables - Nils Knappmeier
+* [ff51859](https://github.com/bootprint/bootprint-openapi/commit/ff51859) Fix mocha-call for coverage tests in TravisCI - Nils Knappmeier
+* [1876285](https://github.com/bootprint/bootprint-openapi/commit/1876285) Slight readme changes - Nils Knappmeier
 
-* Slight readme changes
 
 ## v0.14.0 - 2016-01-16
 
