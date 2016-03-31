@@ -1,0 +1,19 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Description is present.",
+    "version": "1.0.0",
+    "title": "API title"
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
