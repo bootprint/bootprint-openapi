@@ -1,6 +1,10 @@
 # Release notes
 
 <a name="current-release"></a>
+# Version 0.15.0 (Mon, 11 Apr 2016 20:30:20 GMT)
+
+* [4206c7f](https://github.com/bootprint/bootprint-openapi/commit/4206c7f) Added info.version to the generated output - mada4586
+
 # Version 0.14.1 (Tue, 15 Mar 2016 14:29:44 GMT)
 
 * [5478346](https://github.com/bootprint/bootprint-openapi/commit/5478346) Adjust travis-configuration - Nils Knappmeier
