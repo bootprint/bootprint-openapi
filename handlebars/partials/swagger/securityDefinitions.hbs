@@ -14,55 +14,72 @@
                 Type: {{type}}
             </div>
             <div class="panel-body">                
-                <section class="sw-security-properties">                    
+                <section class="sw-security-properties">
+                    <dl>                
                     {{#ifeq type 'apiKey'}}
-                        {{#if name}}
-                        <dl>                        
+                        {{#if name}}                    
                             <dt class="security-property-name">Name:</dt>
-                            <dd class="security-property-type">{{name}}</dd>                        
-                        </dl>
+                            <dd class="security-property-type">
+                                <div class="row">
+                                    <div class="col-md-12"><p>{{name}}</p></div>
+                                </div>
+                            </dd>
                         {{/if}}
-                        {{#if in}}
-                        <dl>                        
+                        {{#if in}}                                        
                             <dt class="security-property-name">In:</dt>
-                            <dd class="security-property-type">{{in}}</dd>                        
-                        </dl>                    
+                            <dd class="security-property-type">
+                                <div class="row">
+                                    <div class="col-md-12"><p>{{in}}</p></div>
+                                </div>
+                            </dd>
                         {{/if}}
                     {{/ifeq}}
                     {{#ifeq type 'oauth2'}}
-                        {{#if flow}}
-                        <dl>                        
+                        {{#if flow}}                                          
                             <dt class="security-property-name">Flow:</dt>
-                            <dd class="security-property-type">{{flow}}</dd>                        
-                        </dl>
+                            <dd class="security-property-type">
+                                <div class="row">
+                                    <div class="col-md-12"><p>{{flow}}</p></div>
+                                </div>
+                            </dd>
                         {{/if}}
                         {{#if authorizationUrl}}
-                        <dl>                        
                             <dt class="security-property-name">AuthorizationUrl:</dt>
-                            <dd class="security-property-type">{{authorizationUrl}}</dd>                        
-                        </dl>
+                            <dd class="security-property-type">
+                                <div class="row">
+                                    <div class="col-md-12"><p>{{authorizationUrl}}</p></div>
+                                </div>
+                            </dd>
                         {{/if}}
                         {{#if tokenUrl}}
-                        <dl>                        
                             <dt class="security-property-name">TokenUrl:</dt>
-                            <dd class="security-property-type">{{tokenUrl}}</dd>                        
-                        </dl>
+                            <dd class="security-property-type">
+                                <div class="row">
+                                    <div class="col-md-12"><p>{{tokenUrl}}</p></div>
+                                </div>
+                            </dd>
                         {{/if}}
-                        {{#if scopes}}
-                        <dl>                        
+                        {{#if scopes}}                        
                             <dt class="security-property-name">Scopes:</dt>                                                        
                             {{#each scopes}}
-                                <dd class="security-property-type"><strong>{{@key}}:</strong> {{this}}</dd>
+                                <dd class="security-property-type">
+                                    <div class="row">
+                                        <div class="col-md-12"><strong>{{@key}}:</strong> {{this}}</div>
+                                    </div>
+                                </dd>
                             {{/each}}
-                        </dl>
+                            <p>                        
                         {{/if}}
                     {{/ifeq}}
-                    {{#if description}}
-                        <dl>
-                            <dt class="security-property-name">Description:</dt>
-                            <dd class="security-property-type">{{md description}}</dd>
-                        </dl>
+                    {{#if description}}                        
+                        <dt class="security-property-name">Description:</dt>
+                        <dd class="security-property-type">
+                            <div class="row">
+                                <div class="col-md-12"><p>{{md description}}</p></div>
+                            </div>
+                        </dd>
                     {{/if}}
+                    </dl>
                 </section>                
             </div>
         </div>        
