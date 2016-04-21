@@ -16,6 +16,7 @@ produces:
   - application/json
 securityDefinitions:
   apiKey:
+    type: apiKey
     description: |
       This is a security definition **with Markdown**
 paths: []
