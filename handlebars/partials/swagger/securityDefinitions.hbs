@@ -10,21 +10,78 @@
     {{#each securityDefinitions}}
         <div id="security-definition-{{@key}}" class="panel panel-security-definition panel-security-definition-{{type}}">
             <div class="panel-heading">
-                <h3 class="panel-title"><span class="security-name">{{@key}}</span> <strong><span class="sw-security-definition-{{type}}"></span></strong></h3>
+                <h3 class="panel-title"><span class="security-name">{{@key}}</span></h3>
+                Type: {{type}}
             </div>
-            <div class="panel-body">
+            <div class="panel-body">                
                 <section class="sw-security-properties">
-                    {{#each this}}
-                        <dt>
-                            {{#ifeq @key 'type'}}
-                            {{else}}
-                                <span class="security-property-name">{{@key}}:</span>
-                                <span class="security-property-type">{{this}}</span>
-                            {{/ifeq}}
-                        </dt>
-                    {{/each}}
-                </section>
+                    <dl>                
+                    {{#ifeq type 'apiKey'}}
+                        {{#if name}}                    
+                            <dt class="security-property-name">Name:</dt>
+                            <dd class="security-property-type">
+                                <div class="row">
+                                    <div class="col-md-12"><p>{{name}}</p></div>
+                                </div>
+                            </dd>
+                        {{/if}}
+                        {{#if in}}                                        
+                            <dt class="security-property-name">In:</dt>
+                            <dd class="security-property-type">
+                                <div class="row">
+                                    <div class="col-md-12"><p>{{in}}</p></div>
+                                </div>
+                            </dd>
+                        {{/if}}
+                    {{/ifeq}}
+                    {{#ifeq type 'oauth2'}}
+                        {{#if flow}}                                          
+                            <dt class="security-property-name">Flow:</dt>
+                            <dd class="security-property-type">
+                                <div class="row">
+                                    <div class="col-md-12"><p>{{flow}}</p></div>
+                                </div>
+                            </dd>
+                        {{/if}}
+                        {{#if authorizationUrl}}
+                            <dt class="security-property-name">AuthorizationUrl:</dt>
+                            <dd class="security-property-type">
+                                <div class="row">
+                                    <div class="col-md-12"><p>{{authorizationUrl}}</p></div>
+                                </div>
+                            </dd>
+                        {{/if}}
+                        {{#if tokenUrl}}
+                            <dt class="security-property-name">TokenUrl:</dt>
+                            <dd class="security-property-type">
+                                <div class="row">
+                                    <div class="col-md-12"><p>{{tokenUrl}}</p></div>
+                                </div>
+                            </dd>
+                        {{/if}}
+                        {{#if scopes}}                        
+                            <dt class="security-property-name">Scopes:</dt>                                                        
+                            {{#each scopes}}
+                                <dd class="security-property-type">
+                                    <div class="row">
+                                        <div class="col-md-12"><strong>{{@key}}:</strong> {{this}}</div>
+                                    </div>
+                                </dd>
+                            {{/each}}
+                            <p>                        
+                        {{/if}}
+                    {{/ifeq}}
+                    {{#if description}}                        
+                        <dt class="security-property-name">Description:</dt>
+                        <dd class="security-property-type">
+                            <div class="row">
+                                <div class="col-md-12"><p>{{md description}}</p></div>
+                            </div>
+                        </dd>
+                    {{/if}}
+                    </dl>
+                </section>                
             </div>
-        </div>
+        </div>        
     {{/each}}
 {{/if}}
