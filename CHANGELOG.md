@@ -1,6 +1,10 @@
 # Release notes
 
 <a name="current-release"></a>
+# Version 0.16.0 (Fri, 22 Apr 2016 04:45:01 GMT)
+
+* [31de1ba](https://github.com/bootprint/bootprint-openapi/commit/31de1ba) Improved the look of the security definitions which now properly converts markdown to HTML in the description field. - aberman
+
 # Version 0.15.0 (Mon, 11 Apr 2016 20:30:20 GMT)
 
 * [4206c7f](https://github.com/bootprint/bootprint-openapi/commit/4206c7f) Added info.version to the generated output - mada4586
