@@ -23,11 +23,16 @@ describe('The info object should', function () {
   })
 
   it('cause to render the API version.', function () {
-    expect(context.$('p.sw-info-version').text()).to.contain('Version:')
-    expect(context.$('p.sw-info-version > span').text()).to.contain('1.0.0')
+    expect(context.$('p.sw-info').text()).to.contain('Version:')
+    expect(context.$('p.sw-info > span.sw-info-version').text()).to.contain('1.0.0')
+  })
+
+  it('cause to render the Base URL.', function () {
+    expect(context.$('p.sw-info').text()).to.contain('Base URL:')
+    expect(context.$('p.sw-info > span.sw-info-basePath').text()).to.contain('/v1')
   })
 
   it('cause to render a description.', function () {
-    expect(context.$('p.sw-info-version + p + p').html()).to.contain('Description is present.')
+    expect(context.$('p.sw-info + p + p').html()).to.contain('Description is present.')
   })
 })
