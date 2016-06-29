@@ -5,6 +5,7 @@
     "version": "1.0.0",
     "title": "API title"
   },
+  "basePath": "/v1",
   "paths": {
     "/": {
       "get": {
