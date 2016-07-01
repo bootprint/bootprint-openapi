@@ -1,6 +1,10 @@
 # Release notes
 
 <a name="current-release"></a>
+# Version 0.17.0 (Fri, 01 Jul 2016 07:53:44 GMT)
+
+* [cc65bcb](https://github.com/bootprint/bootprint-openapi/commit/cc65bcb) Add baseUrl property to generated output body (#71) - Taylor Hicks
+
 # Version 0.16.0 (Fri, 22 Apr 2016 04:45:01 GMT)
 
 * [31de1ba](https://github.com/bootprint/bootprint-openapi/commit/31de1ba) Improved the look of the security definitions which now properly converts markdown to HTML in the description field. - aberman

@@ -26,91 +26,60 @@
 │ │     │ ├── <b><a href="#swaggerlist-of-labels">swagger/list-of-labels</a></b>
 │ │     │ │   <i>Renders an array of strings as list of labels</i>
 │ │     │ ├── <b><a href="#swaggerlist-of-labels">*swagger/list-of-labels*</a></b>
-│ │     │ │   
 │ │     │ └─┬ <b><a href="#swaggermodel">swagger/model</a></b>
 │ │     │   │ <i>Renders a json-schema model within swagger...</i>
 │ │     │   └─┬ <b><a href="#json-schemamain-panel">json-schema/main-panel</a></b>
-│ │     │     │ 
 │ │     │     ├── <b><a href="#json-schemadatatype">json-schema/datatype</a></b>
 │ │     │     │   <i>Enum values</i>
 │ │     │     ├── <b><a href="#json-schemareference">json-schema/reference</a></b>
-│ │     │     │   
 │ │     │     └─┬ <b><a href="#json-schemabody">json-schema/body</a></b>
-│ │     │       │ 
 │ │     │       ├─┬ <b><a href="#json-schematype-object">json-schema/type-object</a></b>
 │ │     │       │ │ <i>Renders the properties of an `object`</i>
 │ │     │       │ ├─┬ <b><a href="#json-schemaproperties">json-schema/properties</a></b>
-│ │     │       │ │ │ 
 │ │     │       │ │ ├── <b><a href="#json-schemadatatype">*json-schema/datatype*</a></b>
-│ │     │       │ │ │   
 │ │     │       │ │ └── <b><a href="#json-schemabody">*json-schema/body*</a></b>
-│ │     │       │ │     
 │ │     │       │ └─┬ <b><a href="#json-schemaadditionalproperties">json-schema/additionalProperties</a></b>
-│ │     │       │   │ 
 │ │     │       │   ├── <b><a href="#json-schemadatatype">*json-schema/datatype*</a></b>
-│ │     │       │   │   
 │ │     │       │   └── <b><a href="#json-schemabody">*json-schema/body*</a></b>
-│ │     │       │       
 │ │     │       ├─┬ <b><a href="#json-schemaarray-items">json-schema/array-items</a></b>
-│ │     │       │ │ 
 │ │     │       │ ├── <b><a href="#json-schemadatatype">*json-schema/datatype*</a></b>
-│ │     │       │ │   
 │ │     │       │ └── <b><a href="#json-schemabody">*json-schema/body*</a></b>
-│ │     │       │     
 │ │     │       ├── <b><a href="#json-schematype-object">*json-schema/type-object*</a></b>
-│ │     │       │   
 │ │     │       ├─┬ <b><a href="#json-schemaallof">json-schema/allOf</a></b>
-│ │     │       │ │ 
 │ │     │       │ ├── <b><a href="#json-schemareference">*json-schema/reference*</a></b>
-│ │     │       │ │   
 │ │     │       │ └── <b><a href="#json-schemabody">*json-schema/body*</a></b>
-│ │     │       │     
 │ │     │       └─┬ <b><a href="#json-schemaanyof">json-schema/anyOf</a></b>
-│ │     │         │ 
 │ │     │         ├── <b><a href="#json-schemadatatype">*json-schema/datatype*</a></b>
-│ │     │         │   
 │ │     │         └── <b><a href="#json-schemabody">*json-schema/body*</a></b>
-│ │     │             
 │ │     ├─┬ <b><a href="#swaggerparameters">swagger/parameters</a></b>
 │ │     │ │ <i>Renders the parameter table within a operation...</i>
 │ │     │ ├── <b><a href="#swaggerparameterrow">swagger/parameterRow</a></b>
 │ │     │ │   <i>Display a single parameter in a table row.</i>
 │ │     │ └── <b><a href="#swaggerparameterrow">*swagger/parameterRow*</a></b>
-│ │     │     
 │ │     ├─┬ <b><a href="#swaggerresponses">swagger/responses</a></b>
 │ │     │ │ <i>Renders the responses section of an operation</i>
 │ │     │ ├── <b><a href="#swaggerlist-of-labels">*swagger/list-of-labels*</a></b>
-│ │     │ │   
 │ │     │ ├── <b><a href="#swaggerlist-of-labels">*swagger/list-of-labels*</a></b>
-│ │     │ │   
 │ │     │ ├─┬ <b><a href="#swaggerresponse">swagger/response</a></b>
 │ │     │ │ │ <i>Renders details about a single response</i>
 │ │     │ │ ├── <b><a href="#swaggermodel">*swagger/model*</a></b>
-│ │     │ │ │   
 │ │     │ │ ├─┬ <b><a href="#swaggerresponseheaderrow">swagger/responseHeaderRow</a></b>
 │ │     │ │ │ │ <i>Display a single parameter in a table row.</i>
 │ │     │ │ │ ├── <b><a href="#json-schemadatatype">*json-schema/datatype*</a></b>
-│ │     │ │ │ │   
 │ │     │ │ │ └── <b><a href="#json-schemadatatype">*json-schema/datatype*</a></b>
-│ │     │ │ │     
 │ │     │ │ └── <b><a href="#swaggerresponseheaderrow">*swagger/responseHeaderRow*</a></b>
-│ │     │ │     
 │ │     │ └── <b><a href="#swaggerresponse">*swagger/response*</a></b>
-│ │     │     
 │ │     └── <b><a href="#swaggersecurity">swagger/security</a></b>
 │ │         <i>Renders the security definitions of the...</i>
 │ ├─┬ <b><a href="#swaggerparameterdefinitions">swagger/parameterDefinitions</a></b>
 │ │ │ <i>Global parameter definitions (see...</i>
 │ │ └── <b><a href="#swaggerparameterrow">*swagger/parameterRow*</a></b>
-│ │     
 │ ├─┬ <b><a href="#swaggerresponsedefinitions">swagger/responseDefinitions</a></b>
 │ │ │ <i>Renders the response definitions</i>
 │ │ └── <b><a href="#swaggerresponse">*swagger/response*</a></b>
-│ │     
 │ └─┬ <b><a href="#swaggerdefinitions">swagger/definitions</a></b>
 │   │ <i>Renders the definition-section of the HTML-page.</i>
 │   └── <b><a href="#swaggermodel">*swagger/model*</a></b>
-│       
 └── <b><a href="#basefooter">base/footer</a></b>
     <i>This partial is displayed at the bottom of the...</i>
 </code></pre>
@@ -118,7 +87,7 @@
 
 ## base/body
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/base/body.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/base/body.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 This partial renders the <body> of the HTML page.
@@ -170,7 +139,7 @@ the Bootprint-result.
 
 ## base/title
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/base/title.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/base/title.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 Renders the page title
@@ -304,7 +273,7 @@ Uses the following partials:
 
 ## swagger/definitions
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/swagger/definitions.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/swagger/definitions.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 Renders the definition-section of the HTML-page.
@@ -320,7 +289,7 @@ Uses the following partials:
 
 ## swagger/list-of-labels
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/swagger/list-of-labels.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/swagger/list-of-labels.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 Renders an array of strings as list of labels
@@ -334,7 +303,7 @@ Renders an array of strings as list of labels
 
 ## swagger/model
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/swagger/model.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/swagger/model.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 Renders a json-schema model within swagger (calls json-schema-partials).
@@ -351,7 +320,7 @@ Uses the following partials:
 
 ## swagger/operation
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/swagger/operation.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/swagger/operation.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 This partial renders a box containing information about a single operation of the service
@@ -372,7 +341,7 @@ Uses the following partials:
 
 ## swagger/parameterDefinitions
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/swagger/parameterDefinitions.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/swagger/parameterDefinitions.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 Global parameter definitions (see https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md#parametersDefinitionsObject)
@@ -388,7 +357,7 @@ Uses the following partials:
 
 ## swagger/parameterRow
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/swagger/parameterRow.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/swagger/parameterRow.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 Display a single parameter in a table row.
@@ -405,7 +374,7 @@ Display a single parameter in a table row.
 
 ## swagger/parameters
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/swagger/parameters.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/swagger/parameters.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 Renders the parameter table within a operation definition.
@@ -425,7 +394,7 @@ Uses the following partials:
 
 ## swagger/path
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/swagger/path.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/swagger/path.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 Renders a single path definition with all its methods (GET, POST).
@@ -442,7 +411,7 @@ Uses the following partials:
 
 ## swagger/paths
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/swagger/paths.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/swagger/paths.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 Renders the paths-section of the Rest-Service definition
@@ -456,7 +425,7 @@ Uses the following partials:
 
 ## swagger/request-body
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/swagger/request-body.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/swagger/request-body.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 Renders the request-body section of an operation.
@@ -475,7 +444,7 @@ Uses the following partials:
 
 ## swagger/response
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/swagger/response.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/swagger/response.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 Renders details about a single response
@@ -493,7 +462,7 @@ Uses the following partials:
 
 ## swagger/responseDefinitions
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/swagger/responseDefinitions.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/swagger/responseDefinitions.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 Renders the response definitions
@@ -507,7 +476,7 @@ Uses the following partials:
 
 ## swagger/responseHeaderRow
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/swagger/responseHeaderRow.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/swagger/responseHeaderRow.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 Display a single parameter in a table row.
@@ -525,7 +494,7 @@ Uses the following partials:
 
 ## swagger/responses
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/swagger/responses.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/swagger/responses.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 Renders the responses section of an operation
@@ -545,7 +514,7 @@ Uses the following partials:
 
 ## swagger/security
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/swagger/security.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/swagger/security.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 Renders the security definitions of the Rest-service.
@@ -559,7 +528,7 @@ Renders the security definitions of the Rest-service.
 
 ## swagger/securityDefinitions
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/swagger/securityDefinitions.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/swagger/securityDefinitions.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 Renders the security-section of the HTML-page
@@ -572,7 +541,7 @@ TODO: Parameters
 
 ## swagger/summary
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/swagger/summary.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/swagger/summary.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 Renders a summary of this services ignoring tags, containing references to all operations and paths
@@ -584,7 +553,7 @@ Renders a summary of this services ignoring tags, containing references to all o
 
 ## swagger/tags
 
-(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.16.0/handlebars/partials/swagger/tags.hbs">jump to source in <code>bootprint-openapi@0.16.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v0.17.0/handlebars/partials/swagger/tags.hbs">jump to source in <code>bootprint-openapi@0.17.0</code></a>)
 
 
 Renders a summary based on the tags of this services, containing references to all operations and paths
