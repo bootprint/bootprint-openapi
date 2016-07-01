@@ -21,7 +21,7 @@ function screenshot (dir, width) {
   var targetFile = path.join('test-output', dir, 'index.html')
   var screenshotFile = path.join('screenshots', dir + '-' + width + '.png')
   // Create screenshot  s in different screen sizes
-  var nightmare = Nightmare({show: true})
+  var nightmare = Nightmare({show: false})
   return nightmare
     .viewport(width, 1000)
     .goto(fileUrl(targetFile))
