@@ -1,11 +1,7 @@
 sudo: false
 language: "node_js"
 node_js:
-  - "0.10"
-  - "0.12"
-  - "iojs"
   - "4"
-  - "5"
 before_script:
   - npm install standard
   - standard
@@ -15,3 +11,8 @@ script:
 after_script:
   - npm install coveralls
   - cat ./coverage/lcov.info | coveralls
+  - node test/screenshots.js
+  - git add screenshots
+  - git commit -m "Added screenshots"
+  - git push
+  
