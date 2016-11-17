@@ -43,10 +43,12 @@
     "customize": "^0.6.0",
     "customize-engine-handlebars": "^0.5.2",
     "deep-aplus": "^1.0.4",
+    "file-url": "^2.0.0",
     "find-package": "^1.0.0",
     "ghooks": "^1.0.3",
     "mocha": "^2.3.3",
     "multilang-apidocs": "^0.2.1",
+    "nightmare": "^2.8.1",
     "q": "^1.4.1",
     "thoughtful-release": "^0.3.1",
     "trace-and-clarify-if-possible": "^1.0.0"
