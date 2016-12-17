@@ -1,6 +1,10 @@
 # Release notes
 
 <a name="current-release"></a>
+# Version 0.17.1 (Sat, 17 Dec 2016 08:24:37 GMT)
+
+* [fa9f407](https://github.com/bootprint/bootprint-openapi/commit/fa9f407) Render response examples as highlighted text, if it is not an Object. (#82) - Nils Knappmeier
+
 # Version 0.17.0 (Fri, 01 Jul 2016 07:53:44 GMT)
 
 * [cc65bcb](https://github.com/bootprint/bootprint-openapi/commit/cc65bcb) Add baseUrl property to generated output body (#71) - Taylor Hicks
