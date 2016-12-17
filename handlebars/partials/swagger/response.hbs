@@ -12,7 +12,7 @@
     {{#each response.examples}}
         <div class="col-md-6 sw-response-examples">
             <div class="label label-default">Example for {{@key}}</div>
-            {{json .}}
+            {{swagger--example . @key}}
         </div>
     {{/each}}
     

@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "bootprint-json-schema": "<1.0.0",
+    "highlight.js": "^8.9.1",
+    "json-stable-stringify": "^1.0.1",
     "lodash": "^3.9.3"
   },
   "repository": {

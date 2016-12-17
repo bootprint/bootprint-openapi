@@ -1,3 +1,10 @@
+var _ = require('lodash')
+var highlight = require('highlight.js')
+
+highlight.configure({
+  'useBR': true
+})
+
 module.exports = {
   'swagger--collection-format': function (value, paramName) {
     return {
@@ -71,5 +78,35 @@ module.exports = {
       '510': 'Not Extended', // rfc2774, 7
       '511': 'Network Authentication Required' // rfc6585, 6
     }[code]
+  },
+
+  /**
+   * Render the value of an [Example object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#exampleObject)
+   *
+   * * If the mime-type is `application/json`, and the example is an object,
+   *   it will be stringified
+   *
+   * * If the mime-type is `application/xml`, and the example is an object,
+   *   the json should be converted to XML (which is not the case at the moment
+   *   TODO, help wanted)
+   *
+   * @param {any} example the value of an [Example Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#exampleObject)
+   * @param {string} mimeType the mime-type of this example
+   */
+  'swagger--example': function (example, mimeType, options, customize) {
+    if (_.isObject(example)) {
+      switch (mimeType) {
+        case 'application/json':
+          example = require('json-stable-stringify')(example, {space: 4})
+          break
+        case 'application/xml':
+          // TODO: This should actually convert the example to XML but I don't know how yet. "help wanted"
+          example = require('json-stable-stringify')(example, {space: 4})
+          break
+      }
+    }
+    var highlighted = highlight.highlightAuto(String(example)).value
+    var fixMarkup = highlight.fixMarkup(highlighted)
+    return new customize.engine.SafeString('<pre>' + fixMarkup + '</pre>')
   }
 }
