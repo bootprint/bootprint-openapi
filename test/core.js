@@ -4,7 +4,7 @@
  * Copyright (c) 2015 Nils Knappmeier.
  * Released under the MIT license.
  */
-var qfs = require('q-io/fs')
+var qfs = require('m-io/fs')
 var cheerio = require('cheerio')
 var path = require('path')
 

@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "preformat": "standard --version || npm -g install standard",
-    "format": "standard --format",
+    "format": "standard --fix",
     "pretest": "standard --version || npm -g install standard",
     "test": "mocha --recursive && standard",
     "thought": "thought run -a",
@@ -18,10 +18,11 @@
     "preversion": "npm run thoughtcheck"
   },
   "dependencies": {
-    "bootprint-json-schema": "<1.0.0",
+    "bootprint-json-schema": "^1.0.0",
     "highlight.js": "^8.9.1",
     "json-stable-stringify": "^1.0.1",
-    "lodash": "^3.9.3"
+    "lodash": "^3.9.3",
+    "m-io": "^0.3.1"
   },
   "repository": {
     "type": "git",
@@ -31,21 +32,24 @@
     "url": "https://github.com/bootprint/bootprint-openapi/issues"
   },
   "homepage": "https://github.com/bootprint/bootprint-openapi",
+  "peerDependencies": {
+    "bootprint": "^1.0.0"
+  },
   "devDependencies": {
-    "bootprint": "<1.0.0",
+    "bootprint": "^1.0.0",
     "chai": "^3.3.0",
     "chai-as-promised": "^5.1.0",
     "cheerio": "^0.19.0",
     "customize": "^0.6.0",
     "customize-engine-handlebars": "^0.5.2",
+    "deep-aplus": "^1.0.4",
     "find-package": "^1.0.0",
     "ghooks": "^1.0.3",
     "mocha": "^2.3.3",
     "multilang-apidocs": "^0.2.1",
     "q": "^1.4.1",
-    "q-deep": "^1.0.1",
-    "q-io": "^1.13.1",
-    "thoughtful-release": "^0.3.0"
+    "thoughtful-release": "^0.3.1",
+    "trace-and-clarify-if-possible": "^1.0.0"
   },
   "keywords": [
     "openapi-to-html",
@@ -54,7 +58,7 @@
   ],
   "config": {
     "ghooks": {
-      "pre-commit": "standard"
+      "pre-push": "standard && thoughtful precommit"
     }
   },
   "files": [
