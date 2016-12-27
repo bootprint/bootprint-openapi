@@ -9,20 +9,21 @@
 
 ## Maintainers / Contributors wanted
 
-*I'm sorry to say that I won't be able to develop new features for this project in the near future. 
-But: I will probably be able to discuss and merge pull-requests, and to publish new versions.*
+I'm still looking for people to help me with the bootprint project. I have found some new ambitions to make 
+bootprint-openapi the greatest offline documentation generator for OpenAPI specifications. I have started, by releasing
+the current version as 1.0 to show that it's time to start using [semver](https://npmjs.com/package/semver) for versioning.
 
-Please understand that I'm not using `bootprint-openapi` myself at the moment and all I'm doing (or not doing 
-at the moment) is for other people to fill their needs. I have a limited time each week to work on open-source
-projects and I want to work on some other projects.
+I have created a Twitter account [@bootprintjs](https://twitter.com/bootprintjs) that will now be used for announcments
+and for gathering user feedback. I also plan to setup a blog.
 
-#### Here is my proposal
+But I might still need your help. I am, for example, certain, that there are greater designers out there than me and I
+feel that some parts of bootprint-openapi need a redesign. So: 
 
 * If you want to start maintaining the module(s), please let me know and I'll give you push access.
 * I will help you by giving pointers to code-lines that need to be changed for a given feature.
 * I will try to publish new versions as fast as possible.
 * I might also give you publishing-rights on npm, although that seems like a large step and I would have to 
-  be confident that you don't misuse it. Asking doesn't cost.
+  be confident that you don't misuse it.
 
 ## Overview
 
