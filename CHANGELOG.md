@@ -1,6 +1,11 @@
 # Release notes
 
 <a name="current-release"></a>
+# Version 1.0.0 (Tue, 27 Dec 2016 21:33:17 GMT)
+
+* [d0d74da](https://github.com/bootprint/bootprint-openapi/commit/d0d74da) Prepare for 1.0 release (#83) - Nils Knappmeier
+* Bump version of bootprint-json-schema dependency to 1.0 (Make datatype-helper more consistent (render unspecific arrays as object[] instead of array))
+
 # Version 0.17.1 (Sat, 17 Dec 2016 08:24:37 GMT)
 
 * [fa9f407](https://github.com/bootprint/bootprint-openapi/commit/fa9f407) Render response examples as highlighted text, if it is not an Object. (#82) - Nils Knappmeier
