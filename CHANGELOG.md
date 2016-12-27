@@ -1,6 +1,12 @@
 # Release notes
 
 <a name="current-release"></a>
+# Version 1.0.1 (Tue, 27 Dec 2016 22:24:26 GMT)
+
+* [fc14a0d](https://github.com/bootprint/bootprint-openapi/commit/fc14a0d) Update the maintainer-notice to reflect the current state (#84) - Nils Knappmeier
+
+
+
 # Version 1.0.0 (Tue, 27 Dec 2016 21:33:17 GMT)
 
 * [d0d74da](https://github.com/bootprint/bootprint-openapi/commit/d0d74da) Prepare for 1.0 release (#83) - Nils Knappmeier
