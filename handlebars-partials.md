@@ -107,7 +107,7 @@ Uses the following partials:
 
 ## base/footer
 
-(<a href="https://github.com/bootprint/bootprint-base/blob/v0.7.3/handlebars/partials/base/footer.hbs">jump to source in <code>bootprint-base@0.7.3</code></a>)
+(<a href="https://github.com/bootprint/bootprint-base/blob/v1.0.0/handlebars/partials/base/footer.hbs">jump to source in <code>bootprint-base@1.0.0</code></a>)
 
 
 This partial is displayed at the bottom of the HTML-body.
@@ -123,7 +123,7 @@ the Bootprint-result.
 
 ## base/header
 
-(<a href="https://github.com/bootprint/bootprint-base/blob/v0.7.3/handlebars/partials/base/header.hbs">jump to source in <code>bootprint-base@0.7.3</code></a>)
+(<a href="https://github.com/bootprint/bootprint-base/blob/v1.0.0/handlebars/partials/base/header.hbs">jump to source in <code>bootprint-base@1.0.0</code></a>)
 
 
 This partial is displayed at the top of the HTML-body.
@@ -153,7 +153,7 @@ Renders the page title
 
 ## json-schema/additionalProperties
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v0.8.6/handlebars/partials/json-schema/additionalProperties.hbs">jump to source in <code>bootprint-json-schema@0.8.6</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/additionalProperties.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
 
 
 Uses the following partials:
@@ -162,7 +162,7 @@ Uses the following partials:
 
 ## json-schema/allOf
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v0.8.6/handlebars/partials/json-schema/allOf.hbs">jump to source in <code>bootprint-json-schema@0.8.6</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/allOf.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
 
 
 Uses the following partials:
@@ -171,7 +171,7 @@ Uses the following partials:
 
 ## json-schema/anyOf
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v0.8.6/handlebars/partials/json-schema/anyOf.hbs">jump to source in <code>bootprint-json-schema@0.8.6</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/anyOf.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
 
 
 Uses the following partials:
@@ -180,7 +180,7 @@ Uses the following partials:
 
 ## json-schema/array-items
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v0.8.6/handlebars/partials/json-schema/array-items.hbs">jump to source in <code>bootprint-json-schema@0.8.6</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/array-items.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
 
 
 Uses the following partials:
@@ -189,7 +189,7 @@ Uses the following partials:
 
 ## json-schema/body
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v0.8.6/handlebars/partials/json-schema/body.hbs">jump to source in <code>bootprint-json-schema@0.8.6</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/body.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
 
 
 Uses the following partials:
@@ -201,7 +201,7 @@ Uses the following partials:
 
 ## json-schema/datatype
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v0.8.6/handlebars/partials/json-schema/datatype.hbs">jump to source in <code>bootprint-json-schema@0.8.6</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/datatype.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
 
 
 Enum values
@@ -225,7 +225,7 @@ Default values (for non-enum types)
 
 ## json-schema/definitions
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v0.8.6/handlebars/partials/json-schema/definitions.hbs">jump to source in <code>bootprint-json-schema@0.8.6</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/definitions.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
 
 
 Uses the following partials:
@@ -233,7 +233,7 @@ Uses the following partials:
 
 ## json-schema/main-panel
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v0.8.6/handlebars/partials/json-schema/main-panel.hbs">jump to source in <code>bootprint-json-schema@0.8.6</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/main-panel.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
 
 
 Uses the following partials:
@@ -243,7 +243,7 @@ Uses the following partials:
 
 ## json-schema/properties
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v0.8.6/handlebars/partials/json-schema/properties.hbs">jump to source in <code>bootprint-json-schema@0.8.6</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/properties.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
 
 
 Uses the following partials:
@@ -252,13 +252,13 @@ Uses the following partials:
 
 ## json-schema/reference
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v0.8.6/handlebars/partials/json-schema/reference.hbs">jump to source in <code>bootprint-json-schema@0.8.6</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/reference.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
 
 
 
 ## json-schema/type-object
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v0.8.6/handlebars/partials/json-schema/type-object.hbs">jump to source in <code>bootprint-json-schema@0.8.6</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/type-object.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
 
 
 Renders the properties of an `object`

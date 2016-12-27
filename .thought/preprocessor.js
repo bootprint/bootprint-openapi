@@ -13,6 +13,9 @@ module.exports = function (input) {
     .registerEngine('less', {
       defaultConfig: {}, run: function () {}
     })
+    .registerEngine('uglify', {
+      defaultConfig: {}, run: function () {}
+    })
     .registerEngine('preprocessor', {
       defaultConfig: {}, run: function () {}
     })
@@ -58,7 +61,6 @@ var hbDocs = function (files) {
       }),
       'children': children
     }
-
   })
 }
 
@@ -71,7 +73,7 @@ function createPartialTree (currentFile, partials, visitedFiles) {
   if (visitedFiles[currentFile.name]) {
     return {
       label: '*' + currentFile.name + '*',
-      name: currentFile.name,
+      name: currentFile.name
     }
   }
   visitedFiles[currentFile.name] = true
@@ -102,7 +104,7 @@ function createPartialTree (currentFile, partials, visitedFiles) {
  */
 function chainOrUndefined (startObj, propertyChain) {
   var result = startObj
-  for (var i = 1; i < arguments.length;i++) {
+  for (var i = 1; i < arguments.length; i++) {
     if (_.isUndefined(result)) {
       return undefined
     }
