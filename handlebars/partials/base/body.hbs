@@ -3,9 +3,7 @@
     @api public
 
 --}}
-<h1>{{info.title}}</h1>
-<p class="sw-info">{{#if basePath}}Base URL: <span class="sw-info-basePath">{{basePath}}</span>, {{/if}}Version: <span class="sw-info-version">{{info.version}}</span></p>
-<p>{{md info.description}}</p>
+{{>swagger/info}}
 
 {{#if consumes}}
     <div id="sw-default-consumes" class="sw-default-value">
