@@ -9,13 +9,13 @@
 /* global it */
 /* global before */
 var expect = require('chai').expect
-var core = require('../core')
+var core = require('bootprint-unit-testing')(require('../..'), __dirname)
 
 describe('The response string-examples fixture', function () {
   this.timeout(10000)
   var context = {}
   before(function () {
-    return core.run(require.resolve('./swagger.yaml'), __dirname, context)
+    return core.run(require.resolve('./swagger.yaml'), context)
   })
   it('should render the response examples', function () {
     expect(context.$('dd.sw-response-200 .sw-response-examples').text(),

@@ -15,13 +15,13 @@ chai.use(chaiAsPromised)
 
 var expect = chai.expect
 
-var core = require('../core')
+var core = require('bootprint-unit-testing')(require('../..'), __dirname)
 
 describe('The undefined-response-ref fixture', function () {
   this.timeout(10000)
   var context = {}
 
   it('should fail to be built with bootprint-swagger', function () {
-    return expect(core.run(require('./swagger.json'), __dirname, context)).to.be.rejected
+    return expect(core.run(require('./swagger.json'), context)).to.be.rejected
   })
 })
