@@ -9,13 +9,13 @@
 /* global it */
 /* global before */
 var expect = require('chai').expect
-var core = require('../core')
+var core = require('bootprint-unit-testing')(require('../..'), __dirname)
 
 describe('The all-of fixture', function () {
   this.timeout(10000)
   var context = {}
   before(function () {
-    return core.run(require('./swagger.json'), __dirname, context)
+    return core.run(require('./swagger.json'), context)
   })
 
   it('should have an inheritance block for definition AAA', function () {
