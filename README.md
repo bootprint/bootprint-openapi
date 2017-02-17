@@ -1,5 +1,7 @@
 # bootprint-openapi 
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/bootprint/bootprint-openapi.svg)](https://greenkeeper.io/)
+
 [![NPM version](https://badge.fury.io/js/bootprint-openapi.svg)](http://badge.fury.io/js/bootprint-openapi)
 [![Travis Build Status](https://travis-ci.org/bootprint/bootprint-openapi.svg?branch=master)](https://travis-ci.org/bootprint/bootprint-openapi)
 [![Coverage Status](https://img.shields.io/coveralls/bootprint/bootprint-openapi.svg)](https://coveralls.io/r/bootprint/bootprint-openapi)
