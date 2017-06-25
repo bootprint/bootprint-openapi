@@ -32,25 +32,29 @@
     "url": "https://github.com/bootprint/bootprint-openapi/issues"
   },
   "homepage": "https://github.com/bootprint/bootprint-openapi",
-  "peerDependencies": {
-    "bootprint": "^1.0.0"
-  },
   "devDependencies": {
-    "bootprint": "^1.0.0",
     "bootprint-unit-testing": "^1.0.0",
-    "chai": "^3.3.0",
-    "chai-as-promised": "^5.1.0",
-    "cheerio": "^0.19.0",
-    "customize": "^0.6.0",
-    "customize-engine-handlebars": "^0.5.2",
-    "deep-aplus": "^1.0.4",
-    "find-package": "^1.0.0",
-    "ghooks": "^1.0.3",
-    "mocha": "^2.3.3",
-    "multilang-apidocs": "^0.2.1",
-    "q": "^1.4.1",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "dirty-chai": "^1.2.2",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "thought": "^1.1.2",
+    "thought-plugin-jsdoc": "^1.0.0",
     "thoughtful-release": "^0.3.1",
     "trace-and-clarify-if-possible": "^1.0.0"
+  },
+  "peerDependencies": {
+    "bootprint": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=6"
   },
   "keywords": [
     "openapi-to-html",
