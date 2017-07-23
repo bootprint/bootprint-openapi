@@ -9,22 +9,21 @@
 /* global it */
 /* global before */
 var expect = require('chai').expect
-var core = require('bootprint-unit-testing')(require('../..'), __dirname)
+var tester = require('bootprint-unit-testing')
 
 describe('The all-of fixture', function () {
   this.timeout(10000)
-  var context = {}
-  before(function () {
-    return core.run(require('./swagger.json'), context)
-  })
+
+  var bptest = tester(require('../..'), __dirname, require('./swagger.json'))
+  before(bptest.run)
 
   it('should have an inheritance block for definition AAA', function () {
-    expect(context.$('#definition-AAA').text())
+    expect(bptest.$('#definition-AAA').text())
       .to.contain('BBB')
   })
 
   it('should have an inheritance block for definition BBB', function () {
-    expect(context.$('#definition-BBB').text())
+    expect(bptest.$('#definition-BBB').text())
       .to.contain('CCC')
   })
 })

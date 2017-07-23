@@ -1,52 +1,52 @@
-{
+{  
+  "publishConfig": {
+    "tag": "next"
+  },
   "name": "bootprint-openapi",
   "version": "1.0.1",
   "description": "Converts a openapi-definition into a static html page",
   "main": "index.js",
-  "preferGlobal": true,
-  "author": "Nils Knappmeier",
-  "license": "MIT",
   "scripts": {
-    "preformat": "standard --version || npm -g install standard",
-    "format": "standard --fix",
-    "pretest": "standard --version || npm -g install standard",
-    "test": "mocha --recursive && standard",
+    "lint": "eslint --fix .",
+    "test": "mocha --recursive && npm run lint",
+    "coverage": "rm coverage -rf && istanbul cover --dir coverage/mocha ./node_modules/.bin/_mocha --print none -- --recursive",
+    "postcoverage": "istanbul report --root coverage text-summary html  && istanbul check-coverage --statements 100",
     "thought": "thought run -a",
-    "prethoughtcheck": "thought --version || npm -g install thought",
-    "thoughtcheck": "thought check-engines",
-    "version": "thoughtful changelog -o -a && npm run thought",
-    "preversion": "npm run thoughtcheck"
+    "version": "thoughtful changelog -o -a && npm run thought"
   },
-  "dependencies": {
-    "bootprint-json-schema": "^1.0.0",
-    "highlight.js": "^8.9.1",
-    "json-stable-stringify": "^1.0.1",
-    "lodash": "^3.9.3",
-    "m-io": "^0.3.1"
-  },
+  "preferGlobal": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/bootprint/bootprint-openapi"
   },
+  "author": "Nils Knappmeier",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/bootprint/bootprint-openapi/issues"
   },
   "homepage": "https://github.com/bootprint/bootprint-openapi",
+  "dependencies": {
+    "bootprint-json-schema": "^2.0.0-rc.1",
+    "highlight.js": "^9.12.0",
+    "json-stable-stringify": "^1.0.1",
+    "lodash": "^4.17.4",
+    "m-io": "^0.5.0"
+  },
   "devDependencies": {
-    "bootprint-unit-testing": "^1.0.0",
-    "chai": "^3.5.0",
-    "chai-as-promised": "^6.0.0",
-    "dirty-chai": "^1.2.2",
-    "eslint": "^3.19.0",
-    "eslint-config-standard": "^10.2.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-node": "^4.2.2",
+    "bootprint-unit-testing": "^2.1.0",
+    "chai": "^4.0.2",
+    "chai-as-promised": "^7.0.0",
+    "dirty-chai": "^2.0.0",
+    "eslint": "^4.1.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-node": "^5.1.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "istanbul": "^0.4.5",
-    "mocha": "^3.2.0",
-    "thought": "^1.1.2",
-    "thought-plugin-jsdoc": "^1.0.0",
+    "mocha": "^3.4.2",
+    "thought": "^1.5.0",
+    "thought-plugin-bootprint": "^1.0.0",
     "thoughtful-release": "^0.3.1",
     "trace-and-clarify-if-possible": "^1.0.0"
   },
@@ -61,15 +61,10 @@
     "swagger-to-html",
     "swagger"
   ],
-  "config": {
-    "ghooks": {
-      "pre-push": "standard && thoughtful precommit"
-    }
-  },
   "files": [
-    "index.js",
     "handlebars",
     "less",
+    "index.js",
     "lib"
   ]
 }
