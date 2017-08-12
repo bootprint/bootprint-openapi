@@ -8,7 +8,7 @@ highlight.configure({
 module.exports = {
   openapi__resolve_ref,
   openapi__subschema_name,
-  'swagger--collection-format': function (value, paramName) {
+  'openapi__collection_format': function (value, paramName) {
     return {
       'csv': 'comma separated (`' + paramName + '=aaa,bbb`)',
       'ssv': 'space separated (`' + paramName + '=aaa bbb`)',

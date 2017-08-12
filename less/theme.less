@@ -55,119 +55,32 @@
   }
 }
 
-.sw-operation-description {
-  .named-section(@msg-sw-section-operation-description);
-}
-
-.sw-request-params {
-  .named-section(@msg-sw-section-request-params);
-}
-
-.sw-request-body {
-  .named-section(@msg-sw-section-request-body);
-}
-
-.sw-responses {
-  .named-section(@msg-sw-section-responses);
-}
-
-.table-header(@label,@width: auto) {
-  width: auto;
-  &:before {
-    content: @label;
-  }
-}
-
-
-.swagger--global {
-  .named-label(@msg-sw-badge-global);
-}
-
-
-// Tables
-table.table {
-
-  th.sw-param-key {
-    .table-header(@msg-sw-param-key, 10%);
-  }
-  th.sw-param-name {
-    .table-header(@msg-sw-param-name, 10%);
-  }
-  th.sw-param-description {
-    .table-header(@msg-sw-param-description);
-  }
-  th.sw-param-data-type {
-    .table-header(@msg-sw-param-data-type, 30%);
-  }
-  th.sw-param-type {
-    .table-header(@msg-sw-param-type, 10%);
-  }
-
-  th.sw-request-security-schema {
-    .table-header(@msg-sw-request-security-schema, 50%);
-  }
-  th.sw-request-security-scopes {
-    .table-header(@msg-sw-request-security-scopes, 50%);
-  }
+#schemes-host-path {
+  .table-condensed();
+  .table-bordered();
   
-  th.sw-response-header-name {
-    .table-header(@msg-sw-response-header-name)
+  tr:first-child {
+    background-color: darken(@body-bg, 10%)
   }
-
-  th.sw-response-header-description {
-    .table-header(@msg-sw-response-header-description)
-  }
-
-  th.sw-response-header-data-type {
-    .table-header(@msg-sw-response-header-data-type)
-  }
-
-
-
-}
-
-.sw-response-name-value {
-  font-weight: bold;
-}
-
-.sw-param-collection-format {
-}
-
-
-.sw-response-description-text {
-  padding-bottom: 0.5em;
-}
-
-
-code.highlight {
-  padding: 0
-}
-
-.panel-security-definition {
-  .panel-variant(@security-definition-panel-border-color, @security-definition-panel-header-text-color, @security-definition-panel-header-bg-color, @security-definition-panel-border-color);
-}
-
-.sw-request-security {
-  .named-section(@msg-sw-section-request-security);
-}
-
-.sw-security-definition-basic {
-  &:before {
-    color: @gray;
-    font-size: smaller;
-    content: @msg-sw-security-definition-type-basic;
+  tr:last-child td {
+    vertical-align: middle;
   }
 }
 
-span.sw-default-value-header {
-  font-weight: bold;
+.navbar-openapi-version {
+  .navbar-text();
 }
 
-.sw-info {
-  font-weight: bold;
-  span {
-    font-family: monospace;
-    font-weight: normal;
-    font-size: 1.1em;
+.navbar-title {
+  .navbar-brand();
+  background-color: darken(@navbar-default-bg, 20%);
+  border-right: 2px solid @body-bg;
+  border-bottom: 2px solid @body-bg;
+}
+
+.util-card {
+  margin-bottom: 0.5em;
+  > .header {
+    color: lighten(@text-color, 10%);
   }
 }

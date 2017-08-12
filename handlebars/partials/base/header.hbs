@@ -1,0 +1,24 @@
+{{!--
+Renders the part at the top of the page, with general information about this swagger spec
+This partial can be overridden in order to remove or change the navigation or
+display additional data
+
+@public
+--}}
+<nav id="openapi--header" class="navbar navbar-default hidden-xs">
+    <div class="container-fluid">
+        <div class="nav navbar-right">
+            <p class="navbar-openapi-version" href="#json-schema--main-schema">OpenAPI v{{swagger}}</p>
+        </div>
+        <ul class="nav navbar-nav">
+            {{#if tags.length}}<li><a href="#tags">Tags</a></li>{{/if}}
+            {{#if paths}}<li><a href="#paths">Paths</a></li>{{/if}}
+            {{#if externalDocs}}<li><a href="#externalDocs">External Documentation</a></li>{{/if}}
+            {{#if parameters}}<li><a href="#parameters">Parameters</a></li>{{/if}}
+            {{#if responses}}<li><a href="#responses">Responses</a></li>{{/if}}
+            {{#if definitions}}<li><a href="#definitions">Definitions</a></li>{{/if}}
+            {{#if securityDefinitions}}<li><a href="#securityDefinitions">Security Definitions</a></li>{{/if}}
+            {{#if security}}<li><a href="#security">Security</a></li>{{/if}}
+        </ul>
+    </div>
+</nav>

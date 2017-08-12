@@ -1,0 +1,20 @@
+swagger: "2.0"
+info: 
+  title: 'Info-Object spec'
+  version: "1.0.0"
+  description: "A swagger-spec with a fully filled info object"
+  termsOfService: 'http://example.com/terms'
+  contact: 
+    name: Nils Knappmeier
+    url: 'http://blog.knappi.org'
+    email: 'npm@knappi.org'
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+paths: 
+  '/users':
+    get: 
+      responses:
+        200: 
+          description: On success
+          schema: {}

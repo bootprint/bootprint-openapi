@@ -1,0 +1,51 @@
+swagger: "2.0"
+host: localhost:8080
+basePath: /basePath
+consumes: 
+  - application/json
+produces: 
+  - application/json
+schemes:
+  - http
+  - https
+info: 
+  title: 'All top-elements'
+  description: 'A `small` description'
+  version: "1.0.0"
+paths: 
+  '/users':
+    get: 
+      responses:
+        200: 
+          description: On success
+          schema: 
+            $ref: '#/definitions/User'
+      security: 
+      - api_key: []
+parameters:
+  skipParam:
+    name: skip
+    in: query
+    description: number of items to skip
+    required: true
+    type: integer
+    format: int32
+definitions: 
+  User:
+    type: object
+responses:
+  NotFound:
+    description: Entity not found.
+securityDefinitions:
+  api_key:
+    type: apiKey
+    name: api_key
+    in: header
+security:
+  - api_key: []
+tags:
+  - name: myTag
+    description: A tag so that the tags object is not empty
+externalDocs:
+  description: Some external doc
+  url: http://www.example.com/

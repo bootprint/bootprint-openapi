@@ -1,43 +1,15 @@
 {{!--
     This partial renders the <body> of the HTML page.
     @api public
-
 --}}
-<h1>{{info.title}}</h1>
-<p class="sw-info">{{#if basePath}}Base URL: <span class="sw-info-basePath">{{basePath}}</span>, {{/if}}Version: <span class="sw-info-version">{{info.version}}</span></p>
-<p>{{md info.description}}</p>
 
-{{#if consumes}}
-    <div id="sw-default-consumes" class="sw-default-value">
-        <span class="sw-default-value-header">Default request content-types:</span>
-        {{#each consumes}}{{.}}{{#unless @last}}, {{/unless}}{{/each}}
-    </div>
-{{/if}}
-{{#if produces}}
-    <div id="sw-default-produces" class="sw-default-value">
-        <span class="sw-default-value-header">Default response content-types:</span>
-        {{#each produces}}{{.}}{{#unless @last}}, {{/unless}}{{/each}}
-    </div>
-{{/if}}
-
-<div id="sw-schemes" class="sw-default-value">
-    <span class="sw-default-value-header">Schemes:</span>
-    {{#each schemes}}{{.}}{{#unless @last}}, {{/unless}}{{/each}}
-</div>
-
-{{#if showTagSummary}}
-    {{>swagger/tags}}
-{{else}}
-    {{>swagger/summary}}
-{{/if}}
-
-{{>swagger/securityDefinitions}}
-
-{{>swagger/paths paths=paths}}
-
-{{>swagger/parameterDefinitions parameters=parameters}}
-
-{{>swagger/responseDefinitions responses=responses}}
-
-{{>swagger/definitions definitions=definitions}}
-
+{{>openapi/info}}
+{{>openapi/externalDocs}}
+{{>openapi/schemes-host-basePath}}
+{{>openapi/tags}}
+{{>openapi/paths}}
+{{>openapi/parameters}}
+{{>openapi/responses}}
+{{>openapi/definitions}}
+{{>openapi/security-definitions}}
+{{>openapi/security}}

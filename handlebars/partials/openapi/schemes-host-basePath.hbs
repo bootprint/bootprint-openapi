@@ -1,0 +1,21 @@
+{{!--
+Render the basic access location for this spec
+--}}
+{{#if (json_schema__has_any . 'schemes' 'host' 'basPath')}}
+    <table id="schemes-host-path" class="table">
+        <tr>
+            <th>Schemes</th>
+            <th>Host</th>
+            <th>Base-Path</th>
+        </tr>
+        <tr>
+            <td>
+                {{#each schemes}}
+                    <div class="openapi--scheme">{{.}}</div>
+                {{/each}}
+            </td>
+            <td>{{host}}</td>
+            <td>{{basePath}}</td>
+        </tr>
+    </table>    
+{{/if}}

@@ -1,0 +1,54 @@
+{{!--
+Renders the info object and other basic information into a table
+
+@param {object} info the info object
+@param {string} host the host property
+@param {string} basePath the basePath property
+@param {string[]} schemes the schemes array
+--}}
+{{#with info}}
+    <h1 data-oai-keywords="info.title">{{title}}</h1>
+    <div class="row">
+        <div class="col-md-12">
+            {{#if description}}
+                <div title="description" data-oai-keywords="info.description">
+                    {{md description}}
+                </div>
+            {{/if}}
+        </div>
+        <div class="col-md-4">
+            {{#if termsOfService}}
+                <div class="openapi--terms-of-service util-card" data-oai-keywords="info.termsOfService">
+                    <div class="header">Terms of Service</div>
+                    <div class="contents"><a href="{{termsOfService}}">{{termsOfService}}</a></div>
+                </div>
+            {{/if}}
+        </div>
+        <div class="col-md-4">
+            {{#with license}}
+                <div class="openapi--license util-card" data-oai-keywords="info.license">
+                    <div class="header">License Information</div>
+                    <div class="contents">
+                        {{#if url}}
+                            <a href="{{url}}">{{name}}</a>
+                        {{else}}
+                            {{name}}
+                        {{/if}}
+                    </div>
+                </div>
+            {{/with}}
+        </div>
+        <div class="col-md-4">
+            {{#with contact}}
+                <div class="openapi--contacts util-card" data-oai-keywords="info.contacts">
+                    <div class="header">Contact information</div>
+                    <div class="contents">{{name}}</div>
+                    {{#if url}}
+                        <div class="contents"><a href="{{url}}">{{url}}</a></div>{{/if}}
+                    {{#if email}}
+                        <div class="contents"><a href="mailto:{{email}}">{{email}}</a></div>{{/if}}
+                </div>
+            {{/with}}
+        </div>
+    </div>
+{{/with}}

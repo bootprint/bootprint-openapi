@@ -1,4 +1,4 @@
-{  
+{
   "publishConfig": {
     "tag": "next"
   },
@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/bootprint/bootprint-openapi",
   "dependencies": {
-    "bootprint-json-schema": "^2.0.0-rc.1",
+    "bootprint-json-schema": "^2.0.0-rc.3",
     "highlight.js": "^9.12.0",
     "json-stable-stringify": "^1.0.1",
     "lodash": "^4.17.4",
@@ -34,19 +34,20 @@
   },
   "devDependencies": {
     "bootprint-unit-testing": "^2.1.0",
-    "chai": "^4.0.2",
-    "chai-as-promised": "^7.0.0",
-    "dirty-chai": "^2.0.0",
-    "eslint": "^4.1.1",
+    "chai": "^4.1.1",
+    "chai-as-promised": "^7.1.1",
+    "cheerio": "^1.0.0-rc.2",
+    "dirty-chai": "^2.0.1",
+    "eslint": "^4.4.1",
     "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.6.0",
-    "eslint-plugin-node": "^5.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "istanbul": "^0.4.5",
-    "mocha": "^3.4.2",
-    "thought": "^1.5.0",
-    "thought-plugin-bootprint": "^1.0.0",
+    "mocha": "^3.5.0",
+    "thought": "^1.5.1",
+    "thought-plugin-bootprint": "^1.1.0",
     "thoughtful-release": "^0.3.1",
     "trace-and-clarify-if-possible": "^1.0.0"
   },
