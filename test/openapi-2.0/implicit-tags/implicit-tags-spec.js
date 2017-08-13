@@ -23,4 +23,12 @@ describe('OpenAPI 2.0: The implicit-tags spec', function () {
   it(`should contain the section "tags" with label "Tags"`, function () {
     expect(bptest.textIn(`#tags`)).to.equal('Tags')
   })
+
+  it(`should contain the tag "reading" with correct header `, function () {
+    expect(bptest.textIn(`#tag-reading .header`)).to.equal('reading')
+  })
+
+  it(`should contain the tag "writing" with correct header`, function () {
+    expect(bptest.textIn(`#tag-writing .header`)).to.equal('writing')
+  })
 })

@@ -1,5 +1,6 @@
+<h2 id="tags" data-oai-keywords="tags">Tags</h2>
+
 {{#if taggedOperations}}
-    <h2 id="tags" data-oai-keywords="tags">Tags</h2>
     {{#each taggedOperations}}
         <div id="tag-{{htmlId name}}" class="openapi--tag">
             <h3 class="header">{{name}}</h3>
@@ -12,7 +13,9 @@
 {{/if}}
 
 {{#if untaggedOperations}}
-    <h3 id="untaggedOperations">Operations without tag</h3>
+    <div id="untaggedOperations" class="openapi--tag">
+        <h3 class="header">Operations without tag</h3>
 
-    {{> openapi/pathSummary paths=untaggedOperations}}
+        {{> openapi/pathSummary paths=untaggedOperations}}
+    </div>
 {{/if}}

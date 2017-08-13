@@ -11,7 +11,8 @@ display additional data
             <p class="navbar-openapi-version" href="#json-schema--main-schema">OpenAPI v{{swagger}}</p>
         </div>
         <ul class="nav navbar-nav">
-            {{#if taggedOperations.length}}<li><a href="#tags">Tags</a></li>{{/if}}
+            {{! The tags-section is always shown, either as tags, or as summary of the untagged operations }} 
+            <li><a href="#tags">Tags</a></li>
             {{#if paths}}<li><a href="#paths">Paths</a></li>{{/if}}
             {{#if externalDocs}}<li><a href="#externalDocs">External Documentation</a></li>{{/if}}
             {{#if parameters}}<li><a href="#parameters">Parameters</a></li>{{/if}}

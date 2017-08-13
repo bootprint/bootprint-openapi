@@ -22,7 +22,6 @@ describe('OpenAPI 2.0: The minimal spec', function () {
     'responses',
     'securityDefinitions',
     'security',
-    'tags',
     'externalDocs',
     'schemes-host-path'
   ]
