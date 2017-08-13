@@ -1,20 +1,22 @@
 @container-lg: 900px;
 @container-sm: 800px;
 
-
-.table.swagger--summary>tbody>tr>td {
-  &.swagger--summary-path {
+.table.openapi--summary > tbody > tr > td {
+  &.openapi--summary-path {
     vertical-align: middle;
   }
 
+  &.openapi--summary-method {
+    width: 12ex;
+  }
   p {
     margin: 0;
   }
 }
 
 // Draw a panel in a given color
-.swagger--panel-operation(@color) {
-  .panel-variant(darken(@color,30%), @panel-default-text, @color, darken(@color, 30%));
+.openapi--panel-operation(@color) {
+  .panel-variant(darken(@color, 30%), @panel-default-text, @color, darken(@color, 30%));
 
   .operation-name {
     font-weight: bold;
@@ -25,40 +27,40 @@
 }
 
 // Panels
-.swagger--panel-operation-post {
-    .swagger--panel-operation(#e7f6ec);
-  }
+.openapi--panel-operation-post {
+  .openapi--panel-operation(#e7f6ec);
+}
 
-.swagger--panel {
+.openapi--panel {
   &-operation-get {
-    .swagger--panel-operation(#e7f0f7);
+    .openapi--panel-operation(#e7f0f7);
   }
 
   &-operation-put {
-    .swagger--panel-operation(#f9f2e9);
+    .openapi--panel-operation(#f9f2e9);
   }
 
   &-operation-patch {
-    .swagger--panel-operation(#FCE9E3);
+    .openapi--panel-operation(#FCE9E3);
   }
 
   &-operation-options {
-    .swagger--panel-operation(#e7f0f7);
+    .openapi--panel-operation(#e7f0f7);
   }
 
   &-operation-delete {
-    .swagger--panel-operation(#f5e8e8);
+    .openapi--panel-operation(#f5e8e8);
   }
 
   &-operation-head {
-    .swagger--panel-operation(#fcffcd);
+    .openapi--panel-operation(#fcffcd);
   }
 }
 
 #schemes-host-path {
   .table-condensed();
   .table-bordered();
-  
+
   tr:first-child {
     background-color: darken(@body-bg, 10%)
   }
@@ -78,9 +80,22 @@
   border-bottom: 2px solid @body-bg;
 }
 
-.util-card {
+#consumes, #produces {
+  height: 100%;
+}
+
+.utils-card {
+  border: 1px solid @panel-default-border;
   margin-bottom: 0.5em;
+
   > .header {
-    color: lighten(@text-color, 10%);
+    padding: 4px;
+    background-color: @panel-default-heading-bg;
+    border-bottom: 1px solid @panel-default-border;
+  }
+
+  > .contents {
+    padding: 4px;
   }
 }
+

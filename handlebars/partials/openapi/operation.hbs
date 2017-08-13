@@ -1,0 +1,24 @@
+{{!--
+    This partial renders a box containing information about a single operation of the service
+    (such as calling a POST on the "/pets" resource).
+    @param {Operation} operation a Swagger-Operation object.
+    @param {string} method the http-method (GET, POST, DELETE, PUT, PATCH)
+    @api public
+--}}
+<div id="operation-{{htmlId path}}-{{htmlId method}}" class="openapi--panel-operation-{{method}} panel">
+    <div class="panel-heading">
+        <div class="operation-summary">{{md summary stripParagraph="true"}}</div>
+        <h3 class="panel-title"><span class="operation-name">{{toUpperCase method}}</span> <strong>{{path}}</strong></h3>
+        {{#if tags}}
+            Tags:
+            {{#each tags}}
+                <a href="#tag-{{htmlId .}}">{{.}}</a>{{#unless @last}}, {{/unless}}
+            {{/each}}
+        {{/if}}
+    </div>
+    <div class="panel-body">
+        <section class="sw-operation-description">
+            {{md operation.description}}
+        </section>
+    </div>
+</div>

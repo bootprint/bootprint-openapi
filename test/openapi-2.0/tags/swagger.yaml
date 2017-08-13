@@ -1,0 +1,50 @@
+swagger: "2.0"
+info: 
+  title: 'Tags spec'
+  version: "1.0.0"
+tags: 
+ - name: reading
+   description: Operations that mostly read
+paths: 
+  '/users':
+    get: 
+      summary: 'Get users'
+      responses:
+        200: 
+          description: On success
+          schema: {}
+      tags: 
+        - reading
+    post: 
+      summary: 'Add a user'
+      responses:
+        200: 
+          description: On success
+          schema: {}
+      tags:
+        - writing
+    put: 
+      summary: 'Modify users'
+      responses:
+        200: 
+          description: On success
+          schema: {}
+      tags:
+        - writing
+  '/dogs':
+    get: 
+      summary: 'Get dogs'
+      responses:
+        200: 
+          description: On success
+          schema: {}
+    post: 
+      summary: 'Add a dog'
+      responses:
+        200: 
+          description: On success
+          schema: {}
+      tags: 
+        - writing
+        - reading
+

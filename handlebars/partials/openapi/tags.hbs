@@ -1,3 +1,18 @@
-{{#if tags.length}}
-<h2 id="tags" data-oai-keywords="tags">Tags</h2>
+{{#if taggedOperations}}
+    <h2 id="tags" data-oai-keywords="tags">Tags</h2>
+    {{#each taggedOperations}}
+        <div id="tag-{{htmlId name}}" class="openapi--tag">
+            <h3 class="header">{{name}}</h3>
+            <div class="description">
+                {{md description}}
+            </div>
+            {{> openapi/pathSummary paths=paths}}
+        </div>
+    {{/each}}
+{{/if}}
+
+{{#if untaggedOperations}}
+    <h3 id="untaggedOperations">Operations without tag</h3>
+
+    {{> openapi/pathSummary paths=untaggedOperations}}
 {{/if}}

@@ -1,0 +1,31 @@
+{{!--
+Render the basic access location for this spec
+--}}
+{{#if (json_schema__has_any . 'produces' 'consumes')}}
+    <div id="produces-consumes" class="row">
+        {{#if produces}}
+            <div class="col-md-6">
+                <div id="produces" data-oai-keywords="produces" class="utils-card" title="Default Response Mime-Types">
+                    <div class="header">Produces (default)</div>
+                    <ul class="contents list-unstyled">
+                        {{#each produces}}
+                            <li>{{.}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        {{/if}}
+        {{#if consumes}}
+            <div class="col-md-6">
+                <div id="consumes" data-oai-keywords="consumes" class="utils-card" title="Default Request-Body Mime-Types">
+                    <div class="header">Consumes (default)</div>
+                    <ul class="contents list-unstyled">
+                        {{#each produces}}
+                            <li>{{.}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+{{/if}}

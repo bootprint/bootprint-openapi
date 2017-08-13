@@ -8,7 +8,7 @@ Renders the info object and other basic information into a table
 --}}
 {{#with info}}
     <h1 data-oai-keywords="info.title">{{title}}</h1>
-    <div class="row">
+    <div class="row row-eq-height">
         <div class="col-md-12">
             {{#if description}}
                 <div title="description" data-oai-keywords="info.description">
@@ -18,7 +18,7 @@ Renders the info object and other basic information into a table
         </div>
         <div class="col-md-4">
             {{#if termsOfService}}
-                <div class="openapi--terms-of-service util-card" data-oai-keywords="info.termsOfService">
+                <div class="openapi--terms-of-service utils-card" data-oai-keywords="info.termsOfService">
                     <div class="header">Terms of Service</div>
                     <div class="contents"><a href="{{termsOfService}}">{{termsOfService}}</a></div>
                 </div>
@@ -26,13 +26,14 @@ Renders the info object and other basic information into a table
         </div>
         <div class="col-md-4">
             {{#with license}}
-                <div class="openapi--license util-card" data-oai-keywords="info.license">
+                <div class="openapi--license utils-card" data-oai-keywords="info.license">
                     <div class="header">License Information</div>
                     <div class="contents">
+                        {{name}}
+                    </div>
+                    <div class="contents">
                         {{#if url}}
-                            <a href="{{url}}">{{name}}</a>
-                        {{else}}
-                            {{name}}
+                            <a href="{{url}}">{{url}}</a>
                         {{/if}}
                     </div>
                 </div>
@@ -40,7 +41,7 @@ Renders the info object and other basic information into a table
         </div>
         <div class="col-md-4">
             {{#with contact}}
-                <div class="openapi--contacts util-card" data-oai-keywords="info.contacts">
+                <div class="openapi--contacts utils-card" data-oai-keywords="info.contact">
                     <div class="header">Contact information</div>
                     <div class="contents">{{name}}</div>
                     {{#if url}}

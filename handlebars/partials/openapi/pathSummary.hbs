@@ -1,0 +1,35 @@
+{{!--
+    Renders a summary of this services ignoring tags, containing references to all operations and paths
+    @params {object} paths a Paths Object
+    @api public
+--}}
+{{#if paths}}
+    <table class="table table-bordered table-condensed openapi--summary">
+        <thead>
+        <tr>
+            <th>Path</th>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#eachSorted paths}}
+            {{#eachSorted .}}
+                <tr>
+                    {{#if @first}}
+                        <td class="openapi--summary-path" rowspan="{{@length}}">
+                            <a href="#path-{{htmlId @../key}}">{{@../key}}</a>
+                        </td>
+                    {{/if}}
+                    <td class="openapi--summary-method">
+                        <a href="#operation-{{htmlId @../key}}-{{htmlId @key}}">{{toUpperCase @key}}</a>
+                    </td>
+                    <td>
+                        {{md summary}}
+                    </td>
+                </tr>
+            {{/eachSorted}}
+        {{/eachSorted}}
+        </tbody>
+    </table>
+{{/if}}

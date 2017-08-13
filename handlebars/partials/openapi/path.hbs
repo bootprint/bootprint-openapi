@@ -1,0 +1,9 @@
+{{!--
+Render a single path object
+@param {string} path the path pattern
+@param {object} pathItem the Path Item Object
+--}}
+<span id="path-{{htmlId path}}"></span>
+{{#eachSorted pathItem}}
+    {{>openapi/operation . operation=. method=@key path=../path}}
+{{/eachSorted}}
