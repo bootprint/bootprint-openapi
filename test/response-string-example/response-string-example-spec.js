@@ -19,6 +19,6 @@ describe('The response string-examples fixture', function () {
   })
   it('should render the response examples', function () {
     expect(context.$('dd.sw-response-200 .sw-response-examples').text(),
-    'Examples consisting of only a string should not be JSON.stringified').not.to.match(/\\n/)
+      'Examples consisting of only a string should not be JSON.stringified').not.to.match(/\\n/)
   })
 })
