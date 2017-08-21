@@ -6,7 +6,7 @@
 
 <dl id="sw-response-definitions">
     {{#each responses}}
-        <dt><a name="{{key}}"></a>{{@key}}</dt>
+        <dt><a name="/responses/{{@key}}"></a>{{@key}}</dt>
         <dd>
             {{> swagger/response response=.}}
         </dd>
