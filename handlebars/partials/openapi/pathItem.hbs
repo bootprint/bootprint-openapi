@@ -4,6 +4,6 @@ Render a single path object
 @param {object} pathItem the Path Item Object
 --}}
 <span id="path-{{htmlId path}}"></span>
-{{#eachSorted pathItem}}
-    {{>openapi/operation . operation=. method=@key path=../path}}
-{{/eachSorted}}
+{{#each (openapi__operations @key .)}}
+    {{>openapi/operation . operation=operation method=method path=path pathItemParameters=../parameters}}
+{{/each}}

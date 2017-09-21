@@ -1,0 +1,14 @@
+{{#if group}}
+        {{#eachSorted group}}
+            <div class="openapi--operation-param {{../cssClass}} {{#if required}}required{{/if}}">
+                <div class="header">
+                    <div class="openapi--param-type">{{../title}}</div>
+                    <div class="openapi--operation--param-name">{{@key}}</div>
+                </div>
+                <div class="contents">
+                    {{#if required}}<span class="label label-required">required</span>{{/if}}
+                    {{> json-schema/schema .}}
+                </div>
+            </div>
+        {{/eachSorted}}
+{{/if}}

@@ -21,10 +21,10 @@
                             <a href="#path-{{htmlId @../key}}">{{@../key}}</a>
                         </td>
                     {{/if}}
-                    <td class="openapi--summary-method">
+                    <td class="openapi--summary-method {{#if deprecated}}deprecated{{/if}}">
                         <a href="#operation-{{htmlId @../key}}-{{htmlId @key}}">{{toUpperCase @key}}</a>
                     </td>
-                    <td>
+                    <td class="{{#if deprecated}}deprecated{{/if}}">
                         {{md summary}}
                     </td>
                 </tr>

@@ -1,0 +1,161 @@
+swagger: "2.0"
+info: 
+  title: 'Paths spec'
+  version: "1.0.0"
+consumes: 
+  - 'application/json'
+produces: 
+  - 'application/xml'
+schemes: 
+  - 'https'
+tags: 
+  - name: important
+    description: Important operations
+paths: 
+  '/user/{id}':
+    get: 
+      operationId: '1123402313'
+      summary: 'Get a user'
+      description: 'This operation returns the details for a specific user.'
+      parameters:
+        - name: id
+          description: 'Override of the id-parameter'
+          in: path
+          type: string
+          required: true
+        - name: levelOfDetail
+          description: 'Defines, how many details are returned in the response'
+          in: query
+          required: true
+          type: string
+          enum: 
+            - simple
+            - extended
+            - full
+        - name: 'Accept-Language'
+          description: 'Set the expected language for translated response values'
+          in: header
+          type: string
+      responses:
+        200: 
+          description: On success
+          schema: 
+            $ref: '#/definitions/User'
+        404: 
+          description: If the user does not exist
+          schema: {
+           $ref: '#/definitions/Error'
+          }
+      tags: 
+        - important
+    post: 
+      deprecated: true
+      summary: 'Add a user'
+      consumes: 
+        - 'application/json'
+        - 'application/xml'
+      produces: 
+        - 'application/json'
+        - 'application/xml'
+      schemes: 
+        - 'http'
+        - 'https'
+        - 'ws'
+        - 'wss'
+      parameters: 
+        - name: body
+          in: body
+          schema: 
+            $ref: '#/definitions/User'
+      responses:
+        200: 
+          description: On success
+          schema: 
+            $ref: '#/definitions/User'
+    put: 
+      summary: 'Modify a user'
+      consumes: 
+        - 'application/x-www-form-urlencoded'
+      parameters: 
+        - name: name
+          in: formData
+          type: string
+          description: The name of the user
+      responses:
+        200: 
+          description: On success
+          schema: {}
+    delete: 
+      summary: 'Modify a user'
+      responses:
+        200: 
+          description: On success
+          schema: {}
+    patch: 
+      summary: 'Modify a user'
+      responses:
+        200: 
+          description: On success
+          schema: {}
+    options: 
+      summary: 'Modify a user'
+      responses:
+        200: 
+          description: On success
+          schema: {}
+    head: 
+      summary: 'Modify a user'
+      responses:
+        200: 
+          description: On success
+          schema: {}
+    parameters:
+      - name: id
+        in: path
+        description: The ID of the user
+        type: string
+        required: true
+        pattern: '[a-zA-Z0-9-]*'
+  '/user/{id}/bag/{bagId}/item/{itemId}':
+    get:
+      summary: Retrieve an item from the bag
+      consumes: []
+      responses:
+        200: 
+          description: On success
+          schema: {}
+    parameters:
+      - name: id
+        in: path
+        description: The ID of the user
+        type: string
+        required: true
+      - name: bagId
+        in: path
+        description: The ID of the bag
+        type: string
+        required: true
+      - name: itemId
+        in: path
+        description: The ID of the item
+        type: string
+        required: true
+definitions: 
+  User: 
+    type: object
+    properties:
+      id:
+        type: string
+        pattern: '[a-zA-Z0-9-]*'
+      name:
+        type: string
+  Error: 
+    type: object
+    properties: 
+      code:
+        type: number
+        format: int32
+        description: The HTTP-code of the response
+      description: 
+        type: string
+        description: A more detailed explanatation of the error

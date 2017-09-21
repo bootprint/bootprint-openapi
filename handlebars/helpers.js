@@ -12,7 +12,9 @@ module.exports = {
   openapi__subschema_name,
   openapi__collection_format,
   openapi__response_code,
-  openapi__example
+  openapi__example,
+  openapi__operations,
+  openapi__path_variables
 }
 
 /**
@@ -161,4 +163,36 @@ function openapi__example (example, mimeType, options) {
   var highlighted = highlight.highlightAuto(String(example)).value
   var fixMarkup = highlight.fixMarkup(highlighted)
   return new options.customize.engine.SafeString('<pre>' + fixMarkup + '</pre>')
+}
+
+/**
+ * Iterate through all operations of a Path Item Object.
+ * This is a block-helper and the block is called for each operation
+ * The block is called with an object containing the following properties
+ *
+ * * **path** The path of the resource as string
+ * * **method** The HTTP method as strting
+ * * **operation** The Operation object
+ * @param {string} path
+ * @param {object} pathItem the Path Item Object
+ *
+ */
+function openapi__operations (path, pathItem, options) {
+  const methods = ['delete', 'get', 'head', 'options', 'patch', 'post', 'put']
+  return methods
+    .map(method => ({
+      path: path,
+      method: method,
+      operation: pathItem[method]
+    }))
+    .filter(a => a) // Remove undefined elements
+}
+
+/**
+ * Extract path variables defined by curly brackets from the path (as string)
+ * @param {string} pathPattern the path pattern (like `/users/{zwang}/{id}/{ywong}`
+ * @return {string[]} a list of variable names like `['zwagn', 'id', 'ywong']`
+ */
+function openapi__path_variables (pathPattern) {
+  return pathPattern.match(/{.*?}/g).map((variable) => variable.substr(1, variable.length - 2))
 }

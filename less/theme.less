@@ -8,6 +8,15 @@
 
   &.openapi--summary-method {
     width: 12ex;
+
+  }
+
+  &.deprecated {
+
+    &, a {
+      text-decoration: line-through;
+      color: #aaa !important;
+    }
   }
   p {
     margin: 0;
@@ -15,45 +24,60 @@
 }
 
 // Draw a panel in a given color
-.openapi--panel-operation(@color) {
+.openapi--make-panel-operation(@color) {
   .panel-variant(darken(@color, 30%), @panel-default-text, @color, darken(@color, 30%));
 
-  .operation-name {
+  .openapi--operation-name {
     font-weight: bold;
   }
-  .operation-summary {
+  .openapi--operation-summary {
     .pull-right
   }
 }
 
-// Panels
-.openapi--panel-operation-post {
-  .openapi--panel-operation(#e7f6ec);
-}
+.openapi--panel-operation {
+  .panel();
 
-.openapi--panel {
-  &-operation-get {
-    .openapi--panel-operation(#e7f0f7);
+  &.deprecated {
+    > .panel-heading > .panel-title {
+      text-decoration: line-through;
+    }
   }
 
-  &-operation-put {
-    .openapi--panel-operation(#f9f2e9);
+  &-get, &-put, &-patch, &-post, &-options, &-delete, &-head {
+    &.deprecated {
+      .openapi--make-panel-operation(#eee);
+      &, .panel-heading {
+        color: #aaa !important;
+      }
+    }
+  }
+  &-get {
+    .openapi--make-panel-operation(#e7f0f7);
   }
 
-  &-operation-patch {
-    .openapi--panel-operation(#FCE9E3);
+  &-put {
+    .openapi--make-panel-operation(#f9f2e9);
   }
 
-  &-operation-options {
-    .openapi--panel-operation(#e7f0f7);
+  &-patch {
+    .openapi--make-panel-operation(#FCE9E3);
   }
 
-  &-operation-delete {
-    .openapi--panel-operation(#f5e8e8);
+  &-post {
+    .openapi--make-panel-operation(#e7f6ec);
   }
 
-  &-operation-head {
-    .openapi--panel-operation(#fcffcd);
+  &-options {
+    .openapi--make-panel-operation(#e7f0f7);
+  }
+
+  &-delete {
+    .openapi--make-panel-operation(#f5e8e8);
+  }
+
+  &-head {
+    .openapi--make-panel-operation(#fcffcd);
   }
 }
 
@@ -84,14 +108,30 @@
   height: 100%;
 }
 
-.utils-card {
-  border: 1px solid @panel-default-border;
-  margin-bottom: 0.5em;
+
+@card-default-border: 1px solid @panel-default-border;
+
+.utils-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: -2px;
+}
+
+.utils-make-card(@bgColor) {
+  flex: 1;
+  flex-grow: 2;
+  flex-shrink: 2;
+  border: 1px solid darken(@bgColor, 30%);
+  background-color: @bgColor;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  position: relative;
 
   > .header {
     padding: 4px;
-    background-color: @panel-default-heading-bg;
-    border-bottom: 1px solid @panel-default-border;
+    background-color: darken(@bgColor, 2%);
+    border-bottom: 1px solid darken(@bgColor, 30%);
   }
 
   > .contents {
@@ -99,3 +139,77 @@
   }
 }
 
+
+.utils-card {
+  .utils-make-card(@gray-lighter);
+}
+
+@required-param-border: 2px solid @panel-default-border;
+
+.openapi--operation-params {
+  .utils-cards();
+
+  > .openapi--operation-param {
+    min-width: 350px;
+    .label-required {
+      .label-default();
+    }
+    
+    > .header {
+      > .openapi--param-type {
+        white-space: nowrap;
+        margin-bottom: 2px;
+        color: lighten(@text-color, 10%);
+        font-size: 90%;
+      }
+    }
+    
+    &.path {
+      .utils-make-card(#f7f7ff);
+      .label-required {
+        // Path variables are always required
+        display: none;
+      }
+      .openapi--operation--param-name {
+        &:before {
+          content: "{";
+        }
+        &:after {
+          content: "}";
+        }
+      }
+    }
+
+    &.query {
+      .utils-make-card(#fff7f7);
+    }
+
+    &.header {
+      .utils-make-card(#ffeecc);
+    }
+
+    &.formData {
+      .utils-make-card(#f7fff7);
+    }
+
+    > div {
+      .openapi--param-type {
+      }
+      .json-schema--section-links {
+        display: none;
+      }
+    }
+
+    /*  .json-schema--section > .header {
+        .make-md-column(12);
+      }
+      .json-schema--section > .contents {
+        .make-md-column(12);
+      }*/
+  }
+}
+
+.openapi--fallback-value {
+  font-style: italic;
+  color: lighten(@text-color, %);
+}
