@@ -1,0 +1,3 @@
+{{#with externalDocs}}
+    <a href="{{url}}" class="sw-external-doc">{{#if this.description}}{{md description stripParagraph=true}}{{else}}{{url}}{{/if}}</a>
+{{/with}}

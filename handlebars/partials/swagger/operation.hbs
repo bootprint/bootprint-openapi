@@ -8,7 +8,8 @@
 <div id="operation-{{htmlId path}}-{{htmlId method}}" class="swagger--panel-operation-{{method}} panel">
     <div class="panel-heading">
         <div class="operation-summary">{{md summary stripParagraph="true"}}</div>
-        <h3 class="panel-title"><span class="operation-name">{{toUpperCase method}}</span> <strong>{{path}}</strong></h3>
+        <h3 class="panel-title"><span class="operation-name">{{toUpperCase method}}</span> <strong>{{path}}</strong>
+        </h3>
         {{#if tags}}
             Tags:
             {{#each tags}}
@@ -20,6 +21,14 @@
         <section class="sw-operation-description">
             {{md operation.description}}
         </section>
+        {{#if operation.externalDocs}}
+            {{#with operation}}
+                <section class="sw-operation-external-docs">
+                    {{>swagger/externalDocs}}
+                </section>
+            {{/with}}
+        {{/if}}
+
         {{! The _request_body variable is filled with the parameter `body` by the preprocessor. }}
         {{#if _show_requst_body_section}}
             {{>swagger/request-body consumes=operation.consumes body=_request_body}}

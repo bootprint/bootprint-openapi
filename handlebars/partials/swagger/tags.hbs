@@ -8,7 +8,9 @@
 {{#eachSorted tags}}
     <h3 id="tag-{{htmlId name}}" class="swagger-summary-tag">Tag: {{name}}</h3>
     {{md description}}
-
+    <p class="sw-tag-external-doc">
+        {{>swagger/externalDocs}}
+    </p>
     <table class="table table-bordered table-condensed swagger--summary">
         <thead>
         <tr>

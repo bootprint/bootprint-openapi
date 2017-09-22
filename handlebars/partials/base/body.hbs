@@ -4,7 +4,10 @@
 
 --}}
 <h1>{{info.title}}</h1>
-<p class="sw-info">{{#if basePath}}Base URL: <span class="sw-info-basePath">{{basePath}}</span>, {{/if}}Version: <span class="sw-info-version">{{info.version}}</span></p>
+<p class="sw-info">
+    {{#if basePath}}Base URL: <span class="sw-info-basePath">{{basePath}}</span>,{{/if}}
+    Version: <span class="sw-info-version">{{info.version}}</span>{{#if externalDocs}}, {{>swagger/externalDocs}}{{/if}}
+</p>
 <p>{{md info.description}}</p>
 
 {{#if consumes}}
