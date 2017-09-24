@@ -20,6 +20,14 @@
         <section class="sw-operation-description">
             {{md operation.description}}
         </section>
+        {{#if operation.externalDocs}}
+            {{#with operation}}
+                <section class="sw-operation-external-docs">
+                    {{>swagger/externalDocs}}
+                </section>
+            {{/with}}
+        {{/if}}
+
         {{! The _request_body variable is filled with the parameter `body` by the preprocessor. }}
         {{#if _show_requst_body_section}}
             {{>swagger/request-body consumes=operation.consumes body=_request_body}}
