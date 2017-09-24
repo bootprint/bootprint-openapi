@@ -1,6 +1,15 @@
 # Release notes
 
 <a name="current-release"></a>
+# Version 1.1.0 (Sun, 24 Sep 2017 06:23:50 GMT)
+
+* [a9d7e23](https://github.com/bootprint/bootprint-openapi/commit/a9d7e23) docs: Doc-Comment in externaDocs-partials - Nils Knappmeier
+* [5151344](https://github.com/bootprint/bootprint-openapi/commit/5151344) Add support for OpenAPI External Documentation Object (#95) - smoldaner
+* [3300625](https://github.com/bootprint/bootprint-openapi/commit/3300625) fix /responses/ links - Jonathan
+* [ea9d37f](https://github.com/bootprint/bootprint-openapi/commit/ea9d37f) closed <td> in param name - Andrey Sorokin
+
+
+
 # Version 1.0.1 (Tue, 27 Dec 2016 22:24:26 GMT)
 
 * [fc14a0d](https://github.com/bootprint/bootprint-openapi/commit/fc14a0d) Update the maintainer-notice to reflect the current state (#84) - Nils Knappmeier
