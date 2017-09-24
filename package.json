@@ -12,8 +12,7 @@
     "pretest": "standard --version || npm -g install standard",
     "test": "mocha --recursive && standard",
     "thought": "thought run -a",
-    "version": "thoughtful changelog -o -a && npm run thought",
-    "preversion": "npm run thoughtcheck"
+    "version": "thoughtful changelog -o -a && npm run thought"
   },
   "dependencies": {
     "bootprint-json-schema": "^1.0.0",
