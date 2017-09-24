@@ -1,9 +1,8 @@
 # bootprint-openapi 
 
-[![NPM version](https://badge.fury.io/js/bootprint-openapi.svg)](http://badge.fury.io/js/bootprint-openapi)
+[![NPM version](https://img.shields.io/npm/v/bootprint-openapi.svg)](https://npmjs.com/package/bootprint-openapi)
 [![Travis Build Status](https://travis-ci.org/bootprint/bootprint-openapi.svg?branch=master)](https://travis-ci.org/bootprint/bootprint-openapi)
 [![Coverage Status](https://img.shields.io/coveralls/bootprint/bootprint-openapi.svg)](https://coveralls.io/r/bootprint/bootprint-openapi)
-
 
 > Converts a openapi-definition into a static html page
 
@@ -120,10 +119,10 @@ those files are in the `test/*`-directories.
 * **test/path-parameters/swagger.json** [asieira](https://github.com/asieira) (issue #18)
 * **test/read-only-property/swagger.json** [asieira](https://github.com/asieira) (issue #28)
 
-## Release-Notes
+# Release-Notes
  
 For release notes, see [CHANGELOG.md](CHANGELOG.md)
  
-## Contributing guidelines
+# Contributing guidelines
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).

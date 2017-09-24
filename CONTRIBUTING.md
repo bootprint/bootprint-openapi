@@ -1,4 +1,4 @@
-## Contributing
+# Contributing
 
 Contributions and feedback are always welcome. The expected procedure is the following:
 

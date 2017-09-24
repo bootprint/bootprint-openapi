@@ -12,8 +12,6 @@
     "pretest": "standard --version || npm -g install standard",
     "test": "mocha --recursive && standard",
     "thought": "thought run -a",
-    "prethoughtcheck": "thought --version || npm -g install thought",
-    "thoughtcheck": "thought check-engines",
     "version": "thoughtful changelog -o -a && npm run thought",
     "preversion": "npm run thoughtcheck"
   },
@@ -48,6 +46,7 @@
     "mocha": "^2.3.3",
     "multilang-apidocs": "^0.2.1",
     "q": "^1.4.1",
+    "thought": "^1.5.2",
     "thoughtful-release": "^0.3.1",
     "trace-and-clarify-if-possible": "^1.0.0"
   },

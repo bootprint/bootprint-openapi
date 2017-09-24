@@ -1,16 +1,20 @@
 # Template structure
 
 <pre><code>
-<b><a href="#index.html">index.html</a></b>
+<b><a href="#indexhtml">index.html</a></b>
 │ <i>Default template for rendering the...</i>
-├── <b><a href="#basetitle">base/title</a></b>
-│   <i>Renders the page title</i>
+├─┬ <b><a href="#basehtml-head">base/html-head</a></b>
+│ └── <b><a href="#basetitle">base/title</a></b>
+│     <i>Renders the page title</i>
 ├── <b><a href="#baseheader">base/header</a></b>
 │   <i>This partial is displayed at the top of the...</i>
 ├─┬ <b><a href="#basebody">base/body</a></b>
 │ │ <i>This partial renders the <body> of the HTML page.</i>
-│ ├── <b><a href="#swaggertags">swagger/tags</a></b>
-│ │   <i>Renders a summary based on the tags of this...</i>
+│ ├── <b><a href="#swaggerexternaldocs">swagger/externalDocs</a></b>
+│ │   <i>Renders the externalDocs-property in various...</i>
+│ ├─┬ <b><a href="#swaggertags">swagger/tags</a></b>
+│ │ │ <i>Renders a summary based on the tags of this...</i>
+│ │ └── <b><a href="#swaggerexternaldocs">*swagger/externalDocs*</a></b>
 │ ├── <b><a href="#swaggersummary">swagger/summary</a></b>
 │ │   <i>Renders a summary of this services ignoring...</i>
 │ ├── <b><a href="#swaggersecuritydefinitions">swagger/securityDefinitions</a></b>
@@ -21,6 +25,7 @@
 │ │   │ <i>Renders a single path definition with all its...</i>
 │ │   └─┬ <b><a href="#swaggeroperation">swagger/operation</a></b>
 │ │     │ <i>This partial renders a box containing...</i>
+│ │     ├── <b><a href="#swaggerexternaldocs">*swagger/externalDocs*</a></b>
 │ │     ├─┬ <b><a href="#swaggerrequest-body">swagger/request-body</a></b>
 │ │     │ │ <i>Renders the request-body section of an operation.</i>
 │ │     │ ├── <b><a href="#swaggerlist-of-labels">swagger/list-of-labels</a></b>
@@ -80,8 +85,9 @@
 │ └─┬ <b><a href="#swaggerdefinitions">swagger/definitions</a></b>
 │   │ <i>Renders the definition-section of the HTML-page.</i>
 │   └── <b><a href="#swaggermodel">*swagger/model*</a></b>
-└── <b><a href="#basefooter">base/footer</a></b>
-    <i>This partial is displayed at the bottom of the...</i>
+├── <b><a href="#basefooter">base/footer</a></b>
+│   <i>This partial is displayed at the bottom of the...</i>
+└── <b><a href="#basejavascript-libs">base/javascript-libs</a></b>
 </code></pre>
 # Partial reference
 
@@ -97,6 +103,7 @@ This partial renders the <body> of the HTML page.
 
 
 Uses the following partials:
+* [swagger/externalDocs](#swaggerexternaldocs)
 * [swagger/tags](#swaggertags)
 * [swagger/summary](#swaggersummary)
 * [swagger/securityDefinitions](#swaggersecuritydefinitions)
@@ -107,7 +114,7 @@ Uses the following partials:
 
 ## base/footer
 
-(<a href="https://github.com/bootprint/bootprint-base/blob/v1.0.0/handlebars/partials/base/footer.hbs">jump to source in <code>bootprint-base@1.0.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-base/blob/v1.1.0/handlebars/partials/base/footer.hbs">jump to source in <code>bootprint-base@1.1.0</code></a>)
 
 
 This partial is displayed at the bottom of the HTML-body.
@@ -123,7 +130,7 @@ the Bootprint-result.
 
 ## base/header
 
-(<a href="https://github.com/bootprint/bootprint-base/blob/v1.0.0/handlebars/partials/base/header.hbs">jump to source in <code>bootprint-base@1.0.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-base/blob/v1.1.0/handlebars/partials/base/header.hbs">jump to source in <code>bootprint-base@1.1.0</code></a>)
 
 
 This partial is displayed at the top of the HTML-body.
@@ -134,6 +141,20 @@ the Bootprint-result.
   * $context$: **object** - the whole input data    
 
 
+
+
+
+## base/html-head
+
+(<a href="https://github.com/bootprint/bootprint-base/blob/v1.1.0/handlebars/partials/base/html-head.hbs">jump to source in <code>bootprint-base@1.1.0</code></a>)
+
+
+Uses the following partials:
+* [base/title](#basetitle)
+
+## base/javascript-libs
+
+(<a href="https://github.com/bootprint/bootprint-base/blob/v1.1.0/handlebars/partials/base/javascript-libs.hbs">jump to source in <code>bootprint-base@1.1.0</code></a>)
 
 
 
@@ -153,7 +174,7 @@ Renders the page title
 
 ## json-schema/additionalProperties
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/additionalProperties.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.1.0/handlebars/partials/json-schema/additionalProperties.hbs">jump to source in <code>bootprint-json-schema@1.1.0</code></a>)
 
 
 Uses the following partials:
@@ -162,7 +183,7 @@ Uses the following partials:
 
 ## json-schema/allOf
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/allOf.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.1.0/handlebars/partials/json-schema/allOf.hbs">jump to source in <code>bootprint-json-schema@1.1.0</code></a>)
 
 
 Uses the following partials:
@@ -171,7 +192,7 @@ Uses the following partials:
 
 ## json-schema/anyOf
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/anyOf.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.1.0/handlebars/partials/json-schema/anyOf.hbs">jump to source in <code>bootprint-json-schema@1.1.0</code></a>)
 
 
 Uses the following partials:
@@ -180,7 +201,7 @@ Uses the following partials:
 
 ## json-schema/array-items
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/array-items.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.1.0/handlebars/partials/json-schema/array-items.hbs">jump to source in <code>bootprint-json-schema@1.1.0</code></a>)
 
 
 Uses the following partials:
@@ -189,7 +210,7 @@ Uses the following partials:
 
 ## json-schema/body
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/body.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.1.0/handlebars/partials/json-schema/body.hbs">jump to source in <code>bootprint-json-schema@1.1.0</code></a>)
 
 
 Uses the following partials:
@@ -201,7 +222,7 @@ Uses the following partials:
 
 ## json-schema/datatype
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/datatype.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.1.0/handlebars/partials/json-schema/datatype.hbs">jump to source in <code>bootprint-json-schema@1.1.0</code></a>)
 
 
 Enum values
@@ -225,7 +246,7 @@ Default values (for non-enum types)
 
 ## json-schema/definitions
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/definitions.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.1.0/handlebars/partials/json-schema/definitions.hbs">jump to source in <code>bootprint-json-schema@1.1.0</code></a>)
 
 
 Uses the following partials:
@@ -233,7 +254,7 @@ Uses the following partials:
 
 ## json-schema/main-panel
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/main-panel.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.1.0/handlebars/partials/json-schema/main-panel.hbs">jump to source in <code>bootprint-json-schema@1.1.0</code></a>)
 
 
 Uses the following partials:
@@ -243,7 +264,7 @@ Uses the following partials:
 
 ## json-schema/properties
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/properties.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.1.0/handlebars/partials/json-schema/properties.hbs">jump to source in <code>bootprint-json-schema@1.1.0</code></a>)
 
 
 Uses the following partials:
@@ -252,13 +273,13 @@ Uses the following partials:
 
 ## json-schema/reference
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/reference.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.1.0/handlebars/partials/json-schema/reference.hbs">jump to source in <code>bootprint-json-schema@1.1.0</code></a>)
 
 
 
 ## json-schema/type-object
 
-(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.0.0/handlebars/partials/json-schema/type-object.hbs">jump to source in <code>bootprint-json-schema@1.0.0</code></a>)
+(<a href="https://github.com/bootprint/bootprint-json-schema/blob/v1.1.0/handlebars/partials/json-schema/type-object.hbs">jump to source in <code>bootprint-json-schema@1.1.0</code></a>)
 
 
 Renders the properties of an `object`
@@ -286,6 +307,18 @@ Renders the definition-section of the HTML-page.
 
 Uses the following partials:
 * [swagger/model](#swaggermodel)
+
+## swagger/externalDocs
+
+(<a href="https://github.com/bootprint/bootprint-openapi/blob/v1.0.1/handlebars/partials/swagger/externalDocs.hbs">jump to source in <code>bootprint-openapi@1.0.1</code></a>)
+
+
+Renders the externalDocs-property in various places
+
+
+
+
+
 
 ## swagger/list-of-labels
 
@@ -334,6 +367,7 @@ This partial renders a box containing information about a single operation of th
 
 
 Uses the following partials:
+* [swagger/externalDocs](#swaggerexternaldocs)
 * [swagger/request-body](#swaggerrequest-body)
 * [swagger/parameters](#swaggerparameters)
 * [swagger/responses](#swaggerresponses)
@@ -564,4 +598,6 @@ Renders a summary based on the tags of this services, containing references to a
 
 
 
+Uses the following partials:
+* [swagger/externalDocs](#swaggerexternaldocs)
 
