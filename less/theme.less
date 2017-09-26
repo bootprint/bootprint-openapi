@@ -109,23 +109,23 @@
 }
 
 
-@card-default-border: 1px solid @panel-default-border;
+@card-default-spacing: 20px;
 
 .utils-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-left: -2px;
+  margin-left: -@card-default-spacing;
 }
 
 .utils-make-card(@bgColor) {
   flex: 1;
-  flex-grow: 2;
-  flex-shrink: 2;
+  flex-grow: 1;
+  flex-shrink: 1;
   border: 1px solid darken(@bgColor, 30%);
   background-color: @bgColor;
-  margin-bottom: 2px;
-  margin-left: 2px;
+  margin-bottom: @card-default-spacing;
+  margin-left: @card-default-spacing;
   position: relative;
 
   > .header {
@@ -147,65 +147,15 @@
 @required-param-border: 2px solid @panel-default-border;
 
 .openapi--operation-params {
-  .utils-cards();
+  th.openapi--operation-param-group-header {
+    background-color: darken(@table-bg-accent, 5%);
+    font-weight: bold;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
 
-  > .openapi--operation-param {
-    min-width: 350px;
-    .label-required {
-      .label-default();
-    }
-    
-    > .header {
-      > .openapi--param-type {
-        white-space: nowrap;
-        margin-bottom: 2px;
-        color: lighten(@text-color, 10%);
-        font-size: 90%;
-      }
-    }
-    
-    &.path {
-      .utils-make-card(#f7f7ff);
-      .label-required {
-        // Path variables are always required
-        display: none;
-      }
-      .openapi--operation--param-name {
-        &:before {
-          content: "{";
-        }
-        &:after {
-          content: "}";
-        }
-      }
-    }
-
-    &.query {
-      .utils-make-card(#fff7f7);
-    }
-
-    &.header {
-      .utils-make-card(#ffeecc);
-    }
-
-    &.formData {
-      .utils-make-card(#f7fff7);
-    }
-
-    > div {
-      .openapi--param-type {
-      }
-      .json-schema--section-links {
-        display: none;
-      }
-    }
-
-    /*  .json-schema--section > .header {
-        .make-md-column(12);
-      }
-      .json-schema--section > .contents {
-        .make-md-column(12);
-      }*/
+  .openapi--param-required {
+    .label-default();
   }
 }
 
