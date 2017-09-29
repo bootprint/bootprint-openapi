@@ -13,7 +13,7 @@ Renders a table row for the schemes, consumes and produces table
 --}}
 {{#*inline "stringArrayRow"}}
     {{#if value}}
-        <tr>
+        <tr data-oai-keywords="{{keyword}}">
             <td>{{key}}</td>
             <td>
                 {{#if value.length}}
@@ -24,7 +24,7 @@ Renders a table row for the schemes, consumes and produces table
             </td>
         </tr>
     {{else if fallbackValue}}
-        <tr class="openapi--fallback-value">
+        <tr class="openapi--fallback-value" data-oai-keywords="{{keyword}}">
             <td>{{key}}</td>
             <td title="global {{key}}">
                 {{#if fallbackValue.length}}
@@ -39,12 +39,12 @@ Renders a table row for the schemes, consumes and produces table
 
 {{#*inline "singleValueRow"}}
     {{#if value}}
-        <tr>
+        <tr data-oai-keywords="{{keyword}}">
             <td>{{key}}</td>
             <td>{{value}}</td>
         </tr>
     {{else if fallbackValue}}
-        <tr class="openapi--fallback-value" title="inherited from global {{key}}">
+        <tr class="openapi--fallback-value" data-oai-keywords="{{keyword}} title="inherited from global {{key}}">
             <td>{{key}}</td>
             <td>{{fallbackValue}}</td>
         </tr>
@@ -77,11 +77,11 @@ Renders a table row for the schemes, consumes and produces table
             </section>
 
             <table class="table openapi--operation-properties">
-                {{> stringArrayRow key='Consumes' value=operation.consumes fallbackValue=@root.consumes}}
-                {{> stringArrayRow key='Produces' value=operation.produces fallbackValue=@root.produces}}
-                {{> stringArrayRow key='Schemes' value=operation.schemes fallbackValue=@root.schemes}}
-                {{> singleValueRow key='Operation ID' value=operation.operationId}}
-                {{> singleValueRow key='Deprecated' value=operation.deprecated}}
+                {{> stringArrayRow key='Consumes' keyword='consumes' value=operation.consumes fallbackValue=@root.consumes}}
+                {{> stringArrayRow key='Produces' keyword='produces' value=operation.produces fallbackValue=@root.produces}}
+                {{> stringArrayRow key='Schemes' keyword='schemes' value=operation.schemes fallbackValue=@root.schemes}}
+                {{> singleValueRow key='Operation ID' keyword='operationId' value=operation.operationId}}
+                {{> singleValueRow key='Deprecated' keyword='deprecated' value=operation.deprecated}}
             </table>
 
             <h4>Parameters</h4>
@@ -112,6 +112,21 @@ Renders a table row for the schemes, consumes and produces table
                     </div>
                 {{/each}}
             {{/if}}
+
+            <h4>Responses</h4>
+            <div class="utils-cards">
+                {{#eachSorted operation.responses}}
+                    <div class="utils-card">
+                        <div class="header">
+                            {{@key}} - {{openapi__response_code @key}}
+                        </div>
+                        <div class="contents">
+                            {{md description}}
+                            {{> json-schema/schema schema}}
+                        </div>
+                    </div>
+                {{/eachSorted}}
+            </div>
         </div>
     </div>
 {{/if}}
