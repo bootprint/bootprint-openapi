@@ -25,7 +25,7 @@
 
 // Draw a panel in a given color
 .openapi--make-panel-operation(@color) {
-  .panel-variant(darken(@color, 30%), @panel-default-text, @color, darken(@color, 30%));
+  .panel-variant(darken(@color, 30%), contrast(@color), @color, darken(@color, 30%));
 
   .openapi--operation-name {
     font-weight: bold;
@@ -46,10 +46,11 @@
 
   &-get, &-put, &-patch, &-post, &-options, &-delete, &-head {
     &.deprecated {
-      .openapi--make-panel-operation(#eee);
-      &, .panel-heading {
-        color: #aaa !important;
+      .openapi--make-panel-operation(#ddd);
+      > .panel-heading {
+        color: #333;
       }
+      color: #777;
     }
   }
   &-get {
@@ -156,6 +157,32 @@
 
   .openapi--param-required {
     .label-default();
+  }
+  
+  .openapi--param-schema
+  
+    // Display values as enumeration rather than with flexbox (saves space)
+    .json-schema--values {
+      display: block;
+      margin: 0px;
+      > .json-schema--value-item {
+        display: inline;
+        border: none;
+        background: none;
+        margin: 0px;
+        &:after {
+          content: ", ";
+        }
+        &:last-child:after {
+          content: "";
+        }
+        > .json-schema--value {
+          display: inline;
+          padding: 0px;
+        }
+      }
+    
+    
   }
 }
 
