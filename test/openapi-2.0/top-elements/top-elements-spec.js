@@ -18,7 +18,7 @@ describe('OpenAPI 2.0: Top-Elements and Navgation', function () {
     'paths': 'Paths',
     'definitions': 'Definitions',
     'parameters': 'Parameters',
-    'responses': 'Responses',
+    'responsesDefinitions': 'Responses',
     'securityDefinitions': 'Security Definitions',
     'security': 'Security',
     'tags': 'Tags'
