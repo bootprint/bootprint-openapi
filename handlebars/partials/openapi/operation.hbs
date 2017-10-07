@@ -44,9 +44,9 @@ Renders a table row for the schemes, consumes and produces table
             <td>{{value}}</td>
         </tr>
     {{else if fallbackValue}}
-        <tr class="openapi--fallback-value" data-oai-keywords="{{keyword}} title="inherited from global {{key}}">
-            <td>{{key}}</td>
-            <td>{{fallbackValue}}</td>
+        <tr class="openapi--fallback-value" data-oai-keywords="{{keyword}} title=" inherited from global {{key}}">
+        <td>{{key}}</td>
+        <td>{{fallbackValue}}</td>
         </tr>
     {{/if}}
 {{/inline}}
@@ -84,23 +84,27 @@ Renders a table row for the schemes, consumes and produces table
                 {{> singleValueRow key='Deprecated' keyword='deprecated' value=operation.deprecated}}
             </table>
 
-            <h4>Parameters</h4>
-            <div class="table-responsive">
-                <table class="table openapi--operation-params">
-                    <thead>
-                    <th>Name</th>
-                    <th>Where</th>
-                    <th>Description</th>
-                    <th>Schema / Type</th>
-                    </thead>
-                    <tbody>
-                    {{> openapi/parameterGroup title='Path Variable' group=operation.paramsIn.path cssClass="path"}}
-                    {{> openapi/parameterGroup title='Query Parameter' group=operation.paramsIn.query cssClass="query"}}
-                    {{> openapi/parameterGroup title='Form Data' group=operation.paramsIn.formData cssClass="formData"}}
-                    {{> openapi/parameterGroup title='Request Header' group=operation.paramsIn.header cssClass="header"}}
-                    </tbody>
-                </table>
-            </div>
+            {{#if (openapi__has_params operation)}}
+                <section class="openapi--operation-parameters" data-oai-keywords="parameters">
+                    <h4>Parameters</h4>
+                    <div class="table-responsive">
+                        <table class="table openapi--operation-params">
+                            <thead>
+                            <th>Name</th>
+                            <th>Where</th>
+                            <th>Description</th>
+                            <th>Schema / Type</th>
+                            </thead>
+                            <tbody>
+                            {{> openapi/parameterGroup title='Path Variable' group=operation.paramsIn.path cssClass="path"}}
+                            {{> openapi/parameterGroup title='Query Parameter' group=operation.paramsIn.query cssClass="query"}}
+                            {{> openapi/parameterGroup title='Form Data' group=operation.paramsIn.formData cssClass="formData"}}
+                            {{> openapi/parameterGroup title='Request Header' group=operation.paramsIn.header cssClass="header"}}
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            {{/if}}
 
             {{#if operation.paramsIn.body}}
                 <h4>Request Body</h4>

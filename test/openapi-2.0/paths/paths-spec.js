@@ -15,7 +15,7 @@ describe('OpenAPI 2.0: The paths spec', function () {
   before(bptest.run)
 
   it('should render panels for all operations', function () {
-    expect(bptest.textIn('.openapi--panel-operation .panel-title')).to.equal('DELETE /user/{id} GET /user/{id} HEAD /user/{id} OPTIONS /user/{id} PATCH /user/{id} POST /user/{id} PUT /user/{id} GET /user/{id}/bag/{bagId}/item/{itemId}')
+    expect(bptest.textIn('.openapi--panel-operation .panel-title')).to.equal('DELETE /user/{id} GET /user/{id} HEAD /user/{id} OPTIONS /user/{id} PATCH /user/{id} POST /user/{id} PUT /user/{id} GET /user/{id}/bag/{bagId}/item/{itemId} GET /without/params POST /without/params')
   })
 
   it('should render the "consumes"-property', function () {
@@ -66,6 +66,33 @@ describe('OpenAPI 2.0: The paths spec', function () {
 
   it('should render no operationId, if none is explicitly specified', function () {
     expect(bptest.$('#operation--user--id--get [data-oai-keywords="operationId"]').length).to.equal(0)
+  })
+
+  it('should render a "parameters"-section if there are any parameters', function () {
+    expect(bptest.$('#operation--user--id--get [data-oai-keywords="parameters"]').length).to.equal(1)
+  })
+
+  it('should render parameters that are explicitly defined in the operations Parameters Object', function () {
+    expect(bptest.$('#operation--user--id--get [data-oai-keywords="parameters"]')).to.match(/levelOfDetail/)
+  })
+
+  it('should render parameters, that are defined in the Path Item Object', function () {
+    expect(bptest.$('#operation--user--id--delete [data-oai-keywords="parameters"]').length, 'Parameters-section must exist').to.equal(1)
+    expect(bptest.$('#operation--user--id--delete [data-oai-keywords="parameters"]'), 'Checking implicit parameter').to.match(/The ID of the user/)
+  })
+
+  it('should render the explicit version of a parameter if it is defined both at the Path Item Object and (explicitly) in the Operation)', function () {
+    expect(bptest.$('#operation--user--id--get [data-oai-keywords="parameters"]')).to.match(/Override of the id-parameter/)
+  })
+
+  it('should not render a "parameters"-section if there are no parameters', function () {
+    expect(bptest.$('#operation--without-params-get').length).to.equal(1)
+    expect(bptest.$('#operation--without-params-get [data-oai-keywords="parameters"]').length).to.equal(0)
+  })
+
+  it('should not render a "parameters"-section if there are is only a "body"-parameters', function () {
+    expect(bptest.$('#operation--without-params-post').length).to.equal(1)
+    expect(bptest.$('#operation--without-params-post [data-oai-keywords="parameters"]').length).to.equal(0)
   })
 
   /**

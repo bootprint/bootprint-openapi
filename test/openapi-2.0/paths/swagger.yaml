@@ -139,6 +139,26 @@ paths:
         description: The ID of the item
         type: string
         required: true
+  '/without/params': 
+    get:
+      summary: An operation without any parameters
+      responses: 
+        200: 
+          description: On success
+          schema: {}
+    post:
+      summary: An post operation without only a "body" parameter
+      parameters: 
+        - name: body
+          in: body
+          description: The request body
+          schema: 
+            type: object
+      responses: 
+        200: 
+          description: On success
+          schema: {}          
+
 definitions: 
   User: 
     type: object

@@ -14,7 +14,8 @@ module.exports = {
   openapi__response_code,
   openapi__example,
   openapi__operations,
-  openapi__path_variables
+  openapi__path_variables,
+  openapi__has_params
 }
 
 /**
@@ -195,4 +196,15 @@ function openapi__operations (path, pathItem, options) {
  */
 function openapi__path_variables (pathPattern) {
   return pathPattern.match(/{.*?}/g).map((variable) => variable.substr(1, variable.length - 2))
+}
+
+/**
+ * Returns true, if an operation has any parameters other than 'in: body' defined
+ *
+ * Implicit parmaeters (via the Path Item Object), or explicit one are both accepted.
+ *
+ * @param {object} operation the Operation Object
+ */
+function openapi__has_params (operation) {
+  return Object.keys(operation.paramsIn).filter(where => where !== 'body').length > 0
 }
