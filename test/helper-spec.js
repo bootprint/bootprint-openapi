@@ -3,7 +3,6 @@
 const chai = require('chai')
 chai.use(require('dirty-chai'))
 const expect = chai.expect
-const Handlebars = require('handlebars')
 const helpers = require('../handlebars/helpers')
 
 describe('Helpers:', function () {
@@ -41,6 +40,5 @@ describe('Helpers:', function () {
     it('should extract multiple path variables in the same order as they appear in the pattern', function () {
       expect(helpers.openapi__path_variables('/users/{zwang}/{id}/{ywong}')).to.deep.equal(['zwang', 'id', 'ywong'])
     })
-
   })
 })
