@@ -1,6 +1,9 @@
 {{#if externalDocs}}
-<div id="externalDocs" data-oai-keywords="externalDocs">
-    <div class="openapi--external-docs-url">see <a href="externalDocs.url">{{externalDocs.url}}</a></div>
-    <div class="openapi--external-docs-description">{{md externalDocs.description}}</div>
-</div>
+    <a data-oai-keywords="externalDocs" href="{{externalDocs.url}}">
+        {{~#if externalDocs.description~}}
+            {{~md externalDocs.description stripParagraph="true"~}}
+            {{~else~}}
+            {{~externalDocs.url~}}
+        {{~/if~}}
+    </a>
 {{/if}}

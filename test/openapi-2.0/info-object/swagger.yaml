@@ -11,6 +11,15 @@ info:
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
+consumes: 
+  - application/json
+produces: 
+  - application/json
+schemes:
+  - http
+  - https
+externalDocs:
+  url: http://www.knappi.org
 paths: 
   '/users':
     get: 

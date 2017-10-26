@@ -15,7 +15,20 @@ describe('OpenAPI 2.0: The paths spec', function () {
   before(bptest.run)
 
   it('should render panels for all operations', function () {
-    expect(bptest.textIn('.openapi--panel-operation .panel-title')).to.equal('DELETE /user/{id} GET /user/{id} HEAD /user/{id} OPTIONS /user/{id} PATCH /user/{id} POST /user/{id} PUT /user/{id} GET /user/{id}/bag/{bagId}/item/{itemId} GET /without/params POST /without/params')
+    expect(bptest.textIn('.openapi--panel-operation .panel-title')).to.equal('GET /deprecated/resource DELETE /user/{id} GET /user/{id} HEAD /user/{id} OPTIONS /user/{id} PATCH /user/{id} POST /user/{id} PUT /user/{id} GET /user/{id}/bag/{bagId}/item/{itemId} GET /without/params POST /without/params')
+  })
+
+  it('should render the operation summary', function () {
+    expect(bptest.textIn('#operation--user--id--post [data-oai-keywords="summary"]')).to.equal('Add a user')
+  })
+
+  it('should render the deprecation notice to deprecated operations', function () {
+    expect(bptest.textIn('#operation--deprecated-resource-get [data-oai-keywords="deprecated"]')).to.match(/deprecated/)
+  })
+
+  it('should not add the deprecation notice to other operations', function () {
+    expect(bptest.$('#operation--user--id--post').length).to.equal(1)
+    expect(bptest.$('#operation--user--id--post [data-oai-keywords="deprecated"]').length).to.equal(0)
   })
 
   it('should render the "consumes"-property', function () {
@@ -93,6 +106,29 @@ describe('OpenAPI 2.0: The paths spec', function () {
   it('should not render a "parameters"-section if there are is only a "body"-parameters', function () {
     expect(bptest.$('#operation--without-params-post').length).to.equal(1)
     expect(bptest.$('#operation--without-params-post [data-oai-keywords="parameters"]').length).to.equal(0)
+  })
+
+  it('should always render a "response"-section', function () {
+    expect(bptest.$('#operation--user--id--post').length).to.equal(1)
+    expect(bptest.$('#operation--user--id--post [data-oai-keywords="responses"]').length).to.equal(1)
+  })
+
+  it('should render a "response"-panel for each response-code, with the correct operations', function () {
+    expect(bptest.$('#operation--user--id--get').length).to.equal(1)
+    let responsePanelHeaders = bptest.$('#operation--user--id--get [data-oai-keywords="responses"] > .utils-cards > .utils-card > .header')
+    expect(responsePanelHeaders.length).to.equal(2)
+    expect(responsePanelHeaders.eq(0).text()).to.match(/200.*OK/)
+    expect(responsePanelHeaders.eq(1).text()).to.match(/404.*Not Found/)
+  })
+
+  it('should render an "externalDocs"-link with description, if provided', function () {
+    expect(bptest.$('#operation--user--id--get [data-oai-keywords="externalDocs"]').html().trim()).to.equal('An <strong>external</strong> documentation')
+    expect(bptest.$('#operation--user--id--get [data-oai-keywords="externalDocs"]').attr('href')).to.equal('http://example.com/get-user')
+  })
+
+  it('should render an "externalDocs"-link with the url as link-text, if no description is given', function () {
+    expect(bptest.$('#operation--user--id--post [data-oai-keywords="externalDocs"]').html().trim()).to.equal('http://example.com/post-user')
+    expect(bptest.$('#operation--user--id--post [data-oai-keywords="externalDocs"]').attr('href')).to.equal('http://example.com/post-user')
   })
 
   /**

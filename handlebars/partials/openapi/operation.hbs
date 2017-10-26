@@ -44,7 +44,7 @@ Renders a table row for the schemes, consumes and produces table
             <td>{{value}}</td>
         </tr>
     {{else if fallbackValue}}
-        <tr class="openapi--fallback-value" data-oai-keywords="{{keyword}} title=" inherited from global {{key}}">
+        <tr class="openapi--fallback-value" data-oai-keywords="{{keyword}}" title="inherited from global {{key}}">
         <td>{{key}}</td>
         <td>{{fallbackValue}}</td>
         </tr>
@@ -57,8 +57,8 @@ Renders a table row for the schemes, consumes and produces table
                  operation.deprecated}}deprecated{{/if}}">
         <div class="panel-heading">
             <div class="openapi--operation-summary">
-                {{#if operation.deprecated}}<span class="label label-danger right">deprecated</span>{{/if}}
-                {{md operation.summary stripParagraph="true"}}
+                {{#if operation.deprecated}}<span data-oai-keywords="deprecated" class="label label-danger right">deprecated</span>{{/if}}
+                <span data-oai-keywords="summary">{{md operation.summary stripParagraph="true"}}</span>
             </div>
             <h3 class="panel-title">
                 <span class="openapi--operation-name">{{toUpperCase method}}</span>
@@ -81,7 +81,12 @@ Renders a table row for the schemes, consumes and produces table
                 {{> stringArrayRow key='Produces' keyword='produces' value=operation.produces fallbackValue=@root.produces}}
                 {{> stringArrayRow key='Schemes' keyword='schemes' value=operation.schemes fallbackValue=@root.schemes}}
                 {{> singleValueRow key='Operation ID' keyword='operationId' value=operation.operationId}}
-                {{> singleValueRow key='Deprecated' keyword='deprecated' value=operation.deprecated}}
+                {{#if operation.externalDocs}}
+                    <tr>
+                        <td>External Docs</td>
+                        <td>{{> openapi/externalDocs externalDocs=operation.externalDocs}}</td>
+                    </tr>
+                {{/if}}
             </table>
 
             {{#if (openapi__has_params operation)}}
@@ -91,9 +96,9 @@ Renders a table row for the schemes, consumes and produces table
                         <table class="table openapi--operation-params">
                             <thead>
                             <th>Name</th>
-                            <th>Where</th>
+                            <th>Location</th>
                             <th>Description</th>
-                            <th>Schema / Type</th>
+                            <th>Data-Type</th>
                             </thead>
                             <tbody>
                             {{> openapi/parameterGroup title='Path Variable' group=operation.paramsIn.path cssClass="path"}}
@@ -117,20 +122,22 @@ Renders a table row for the schemes, consumes and produces table
                 {{/each}}
             {{/if}}
 
-            <h4>Responses</h4>
-            <div class="utils-cards">
-                {{#eachSorted operation.responses}}
-                    <div class="utils-card">
-                        <div class="header">
-                            {{@key}} - {{openapi__response_code @key}}
+            <section class="openapi--operation-responses" data-oai-keywords="responses">
+                <h4>Responses</h4>
+                <div class="utils-cards">
+                    {{#eachSorted operation.responses}}
+                        <div class="utils-card">
+                            <div class="header">
+                                {{@key}} - {{openapi__response_code @key}}
+                            </div>
+                            <div class="contents">
+                                {{md description}}
+                                {{> json-schema/schema schema}}
+                            </div>
                         </div>
-                        <div class="contents">
-                            {{md description}}
-                            {{> json-schema/schema schema}}
-                        </div>
-                    </div>
-                {{/eachSorted}}
-            </div>
+                    {{/eachSorted}}
+                </div>
+            </section>
         </div>
     </div>
 {{/if}}

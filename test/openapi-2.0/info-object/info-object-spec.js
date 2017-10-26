@@ -23,7 +23,8 @@ describe('OpenAPI 2.0: The info-object spec', function () {
   })
 
   it('should contain a license', function () {
-    expect(bptest.textIn('[data-oai-keywords="info.license"]')).to.equal('License Information MIT https://opensource.org/licenses/MIT')
+    expect(bptest.textIn('[data-oai-keywords="info.license"]')).to.match(/License Information.*MIT/)
+    expect(bptest.textIn('[data-oai-keywords="info.license"]')).to.match(/License Information.*https:\/\/opensource.org\/licenses\/MIT/)
   })
 
   it('should contain a contact', function () {

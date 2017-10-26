@@ -47,7 +47,8 @@ describe('OpenAPI 2.0: Top-Elements and Navgation', function () {
   })
 
   it('should include an externalDocs-link', function () {
-    expect(bptest.textIn('#externalDocs')).to.equal('see http://www.example.com/ Some external doc')
+    expect(bptest.$('#externalDocs').html()).to.match(/Some external doc/)
+    expect(bptest.$('#externalDocs').html()).to.match(/http:\/\/www.example.com\//)
   })
 
   it('should include an default "produces" section', function () {

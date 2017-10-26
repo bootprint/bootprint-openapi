@@ -47,6 +47,9 @@ paths:
           }
       tags: 
         - important
+      externalDocs: 
+        description: 'An **external** documentation'
+        url: 'http://example.com/get-user'
     post: 
       summary: 'Add a user'
       consumes: 
@@ -71,6 +74,8 @@ paths:
           description: On success
           schema: 
             $ref: '#/definitions/User'
+      externalDocs: 
+        url: 'http://example.com/post-user'
     put: 
       summary: 'Modify a user'
       consumes: 
@@ -158,6 +163,14 @@ paths:
         200: 
           description: On success
           schema: {}          
+  '/deprecated/resource': 
+    get:
+      deprecated: true
+      summary: An operation without any parameters
+      responses: 
+        200: 
+          description: On success
+          schema: {}
 
 definitions: 
   User: 
