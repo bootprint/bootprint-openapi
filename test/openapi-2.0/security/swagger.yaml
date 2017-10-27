@@ -1,0 +1,82 @@
+swagger: "2.0"
+info: 
+  title: 'Security spec'
+  version: "1.0.0"
+consumes: 
+  - 'application/json'
+produces: 
+  - 'application/xml'
+schemes: 
+  - 'https'  
+securityDefinitions:
+  headerToken: 
+    type: apiKey
+    description: Authenticate via header token
+    name: authToken
+    in: header
+  queryToken: 
+    type: apiKey
+    description: Authenticate via token in query parameter
+    name: authToken
+    in: query
+  basicAuth: 
+    type: basic
+    description: Authenticate via Basic-Authentication
+  oauthImplicit:
+    type: oauth2
+    description: OAuth2-Scheme using Implicit Flow
+    flow: implicit
+    authorizationUrl: http://example.com/authorize
+    scopes:
+      'write:user': 'Write access to user data'
+      'read:user': 'Read access to user data'
+  oauthAccessCode:
+    type: oauth2
+    description: OAuth2-Scheme using AccessCode Flow
+    flow: accessCode
+    authorizationUrl: http://example.com/authorize
+    tokenUrl: http://example.com/token
+    scopes:
+      'write:user': 'Write access to user data'
+      'read:user': 'Read access to user data'
+  oauthPassword:
+    type: oauth2
+    description: OAuth2-Scheme using AccessCode Flow
+    flow: password
+    tokenUrl: http://example.com/token
+    scopes:
+      'write:user': 'Write access to user data'
+      'read:user': 'Read access to user data'
+  oauthApplication:
+    type: oauth2
+    description: OAuth2-Scheme using AccessCode Flow
+    flow: application
+    tokenUrl: http://example.com/token
+    scopes:
+      'write:user': 'Write access to user data'
+      'read:user': 'Read access to user data'
+paths: 
+  '/user':
+    post: 
+      summary: 'Add a user'
+      responses:
+        200: 
+          description: On success
+          schema: 
+            $ref: '#/definitions/User'
+    get: 
+      summary: 'Add a user'
+      responses:
+        200: 
+          description: On success
+          schema: 
+            $ref: '#/definitions/User'
+definitions: 
+  User: 
+    type: object
+    properties:
+      id:
+        type: string
+        pattern: '[a-zA-Z0-9-]*'
+      name:
+        type: string

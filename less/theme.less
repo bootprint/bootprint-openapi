@@ -189,3 +189,21 @@
   font-style: italic;
   color: lighten(@text-color, %);
 }
+
+.openapi--security-definitions {
+  > .utils-card {
+    min-width: 300px;
+  }
+ 
+  .openapi--key-value {
+    .clearfix();
+    .key {
+      float: left;
+      font-weight: bold;
+      margin-right: 0.5em;
+    }
+    .value {
+      margin-left: 1em;
+    }
+  }
+}

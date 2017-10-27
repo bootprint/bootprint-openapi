@@ -1,3 +1,43 @@
 {{#if securityDefinitions}}
+    {{#*inline "row"}}
+        {{#if (lookup . keyword)}}
+            <div class="openapi--key-value" data-oai-keywords="{{keyword}}">
+                <div class="key" title="{{description}}">{{label}}:</div>
+                <div class="value" title="{{description}}">{{lookup . keyword}}</div>
+            </div>
+        {{/if}}
+    {{/inline}}
     <h2 id="securityDefinitions" data-oai-keywords="securityDefinitions">Security Definitions</h2>
+    <div class="utils-cards openapi--security-definitions">
+        {{#eachSorted securityDefinitions}}
+            <div id="security-definition-{{htmlId @key}}" class="utils-card">
+                <div class="header">{{@key}}</div>
+                <div class="contents">
+                    {{md description}}
+                    <div class="openapi--key-value">
+                        {{> row label="Type" keyword="type" description="The type of the security scheme."}}
+                        {{> row label="Name" keyword="name" description="The name of the header or query parameter to be used."}}
+                        {{> row label="Location" keyword="in" description="The location of the API key. Valid values are 'query' or 'header'"}}
+                        {{> row label="Flow" keyword="flow"description="The flow used by the OAuth2 security scheme."}}
+                        {{> row label="Authorization-Url" keyword="authorizationUrl" description="The location of the API key. Valid values are 'query' or 'header'"}}
+                        {{> row label="Token-Url" keyword="tokenUrl" description="The token URL to be used for this flow."}}
+                    </div>
+                </div>
+                {{#if scopes}}
+                    <div class="contents">
+                        <h4>Scopes</h4>
+                        <div class="scopes">
+                            {{#eachSorted scopes}}
+                                <div class="openapi--key-value" data-scope-name="{{@key}}">
+                                    <div class="key">{{@key}}</div>
+                                    <div class="value">{{.}}</div>
+                                </div>
+                            {{/eachSorted}}
+                        </div>
+                    </div>
+                {{/if}}
+            </div>
+        {{/eachSorted}}
+    </div>
 {{/if}}
+
