@@ -41,7 +41,7 @@ npm install -g bootprint
 npm install -g bootprint-openapi
 ```
 
-**Check this out:** You can now [try out the new bootprint-openapi playground](http://bootprint.knappmeier.de/).
+**Check this out:** You can now [try out the new bootprint-openapi playground](https://bootprint.kanppi.org)
 Just paste a OpenAPI-specification and make it readable. 
 
 
