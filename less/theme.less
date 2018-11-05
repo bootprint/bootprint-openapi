@@ -12,6 +12,11 @@
   }
 }
 
+.swagger--summary-operation-deprecated {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
 // Draw a panel in a given color
 .swagger--panel-operation(@color) {
   .panel-variant(darken(@color,30%), @panel-default-text, @color, darken(@color, 30%));
@@ -25,10 +30,6 @@
 }
 
 // Panels
-.swagger--panel-operation-post {
-    .swagger--panel-operation(#e7f6ec);
-  }
-
 .swagger--panel {
   &-operation-get {
     .swagger--panel-operation(#e7f0f7);
@@ -42,6 +43,10 @@
     .swagger--panel-operation(#FCE9E3);
   }
 
+  &-operation-post {
+    .swagger--panel-operation(#e7f6ec);
+  }
+
   &-operation-options {
     .swagger--panel-operation(#e7f0f7);
   }
@@ -53,6 +58,17 @@
   &-operation-head {
     .swagger--panel-operation(#fcffcd);
   }
+  
+  &-operation-deprecated {
+    opacity: 0.6;
+    .panel-title strong {
+      text-decoration: line-through;
+    }
+  }
+}
+
+.sw-operation-deprecated {
+  .named-section(@msg-sw-section-operation-deprecated);
 }
 
 .sw-operation-description {

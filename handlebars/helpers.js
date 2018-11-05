@@ -97,11 +97,11 @@ module.exports = {
     if (_.isObject(example)) {
       switch (mimeType) {
         case 'application/json':
-          example = require('json-stable-stringify')(example, {space: 4})
+          example = require('json-stable-stringify')(example, { space: 4 })
           break
         case 'application/xml':
           // TODO: This should actually convert the example to XML but I don't know how yet. "help wanted"
-          example = require('json-stable-stringify')(example, {space: 4})
+          example = require('json-stable-stringify')(example, { space: 4 })
           break
       }
     }
