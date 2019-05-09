@@ -1,6 +1,12 @@
 # Release notes
 
 <a name="current-release"></a>
+# Version 1.1.1 (Thu, 09 May 2019 20:09:53 GMT)
+
+* [d1901a9](https://github.com/bootprint/bootprint-openapi/commit/d1901a9) Remove precommit hooks - Nils Knappmeier
+* [cbfb02c](https://github.com/bootprint/bootprint-openapi/commit/cbfb02c) update link to playground - Nils Knappmeier
+
+
 # Version 1.1.0 (Sun, 24 Sep 2017 06:23:50 GMT)
 
 * [a9d7e23](https://github.com/bootprint/bootprint-openapi/commit/a9d7e23) docs: Doc-Comment in externaDocs-partials - Nils Knappmeier
