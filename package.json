@@ -41,7 +41,6 @@
     "customize-engine-handlebars": "^0.5.2",
     "deep-aplus": "^1.0.4",
     "find-package": "^1.0.0",
-    "ghooks": "^1.0.3",
     "mocha": "^2.3.3",
     "multilang-apidocs": "^0.2.1",
     "q": "^1.4.1",
@@ -54,11 +53,6 @@
     "swagger-to-html",
     "swagger"
   ],
-  "config": {
-    "ghooks": {
-      "pre-push": "standard && thoughtful precommit"
-    }
-  },
   "files": [
     "index.js",
     "handlebars",
