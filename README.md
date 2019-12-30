@@ -1,3 +1,5 @@
+**This repository has moved to https://github.com/bootprint/bootprint-monorepo/packages/bootprint-openapi**
+
 # bootprint-openapi 
 
 [![NPM version](https://img.shields.io/npm/v/bootprint-openapi.svg)](https://npmjs.com/package/bootprint-openapi)
