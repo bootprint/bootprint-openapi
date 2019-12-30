@@ -1,4 +1,4 @@
-**This repository has moved to https://github.com/bootprint/bootprint-monorepo/packages/bootprint-openapi**
+**This repository has moved to https://github.com/bootprint/bootprint-monorepo/**
 
 # bootprint-openapi 
 
