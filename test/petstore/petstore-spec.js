@@ -27,12 +27,20 @@ describe('The petstore example', function () {
     expect(context.$(".swagger--summary a[href='#operation--pet-post']").text()).to.equal('POST /pet')
   })
 
+  it("should contain a deprecated summary item '/pet/findByTags'", function () {
+    expect(context.$(".swagger--summary .swagger--summary-operation-deprecated a[href='#operation--pet-findByTags-get']").text()).to.equal('GET /pet/findByTags')
+  })
+
   it("should contain an path item '/pet' with id 'path--pet'", function () {
     expect(context.$('#path--pet').length).to.equal(1)
   })
 
   it("should contain a tag-based summary for the tag 'pet'", function () {
     expect(context.$('#tag-pet').length).to.equal(1)
+  })
+
+  it("should contain a deprecated GET operation '/pet/findByTags'", function () {
+    expect(context.$('#operation--pet-findByTags-get.swagger--panel-operation-deprecated').length).to.equal(1)
   })
 
   function responseHeader () {

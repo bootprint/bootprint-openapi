@@ -20,7 +20,7 @@
         </thead>
         <tbody>
             {{#each operations}}
-            <tr>
+            <tr{{#if deprecated}} class="swagger--summary-operation-deprecated"{{/if}}>
                 <td><a href="#operation-{{htmlId path}}-{{htmlId method}}">{{toUpperCase method}} {{path}}</a></td>
                 <td>{{md summary}}</td>
             </tr>

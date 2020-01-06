@@ -17,12 +17,12 @@
         {{#eachSorted .}}
             <tr>
                 {{#if @first}}
-                    <td class="swagger--summary-path" rowspan="{{@length}}">
+                    <td class="swagger--summary-path{{#if deprecated}} swagger--summary-operation-deprecated{{/if}}" rowspan="{{@length}}">
                         <a href="#path-{{htmlId @../key}}">{{@../key}}</a>
                     </td>
                 {{/if}}
                 <td>
-                    <a href="#operation-{{htmlId @../key}}-{{htmlId @key}}">{{toUpperCase @key}}</a>
+                    <a href="#operation-{{htmlId @../key}}-{{htmlId @key}}"{{#if deprecated}} class="swagger--summary-operation-deprecated"{{/if}}>{{toUpperCase @key}}</a>
                 </td>
                 <td>
                     {{md summary}}
